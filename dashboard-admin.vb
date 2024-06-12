@@ -1,3 +1,3 @@
-﻿Public Class sidebar_admin
+﻿Public Class Dashboard_admin
 
 End Class

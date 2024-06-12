@@ -79,6 +79,12 @@
     <Compile Include="booking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dashboard-admin.Designer.vb">
+      <DependentUpon>Dashboard-admin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard-admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="dashboard-cust.Designer.vb">
       <DependentUpon>dashboard-cust.vb</DependentUpon>
     </Compile>
@@ -107,6 +113,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -122,12 +129,6 @@
       <DependentUpon>payment.vb</DependentUpon>
     </Compile>
     <Compile Include="payment.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="dashboard-admin.Designer.vb">
-      <DependentUpon>dashboard-admin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="dashboard-admin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="sidebar-admin.Designer.vb">
@@ -153,6 +154,9 @@
     <EmbeddedResource Include="booking.resx">
       <DependentUpon>booking.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard-admin.resx">
+      <DependentUpon>Dashboard-admin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dashboard-cust.resx">
       <DependentUpon>dashboard-cust.vb</DependentUpon>
     </EmbeddedResource>
@@ -173,9 +177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="payment.resx">
       <DependentUpon>payment.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="dashboard-admin.resx">
-      <DependentUpon>dashboard-admin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sidebar-admin.resx">
       <DependentUpon>sidebar-admin.vb</DependentUpon>
