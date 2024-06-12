@@ -155,7 +155,7 @@ Partial Class payment
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label2.Font = New System.Drawing.Font("Malgun Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.BurlyWood
-        Me.Label2.Location = New System.Drawing.Point(206, 60)
+        Me.Label2.Location = New System.Drawing.Point(341, 74)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(129, 37)
         Me.Label2.TabIndex = 12
