@@ -1,6 +1,5 @@
 ﻿Public Class home
 
-
     Private Sub btnSignup1_Click(sender As Object, e As EventArgs) Handles btnSignup1.Click 'Button SignUp
 
         ' Create a new instance of the signup.vb form
@@ -34,5 +33,6 @@
         ' Show the signup.vb form
         loginAdminForm.Show()
     End Sub
+
 
 End Class

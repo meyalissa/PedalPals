@@ -20,4 +20,5 @@
         ' Show the signup.vb form
         bookingForm.Show()
     End Sub
+
 End Class
