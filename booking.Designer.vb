@@ -61,9 +61,8 @@ Partial Class booking
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(239, 922)
+        Me.Panel1.Size = New System.Drawing.Size(179, 578)
         Me.Panel1.TabIndex = 2
         '
         'Button5
@@ -76,10 +75,9 @@ Partial Class booking
         Me.Button5.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Button5.Image = Global.PedalPals.My.Resources.Resources.signout_icon
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(0, 769)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button5.Location = New System.Drawing.Point(0, 506)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(239, 57)
+        Me.Button5.Size = New System.Drawing.Size(179, 46)
         Me.Button5.TabIndex = 3
         Me.Button5.Text = "Sign Out"
         Me.Button5.UseVisualStyleBackColor = True
@@ -87,10 +85,9 @@ Partial Class booking
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.PedalPals.My.Resources.Resources.logo3
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 15)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(124, 105)
+        Me.PictureBox1.Size = New System.Drawing.Size(93, 85)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
@@ -105,10 +102,9 @@ Partial Class booking
         Me.Button4.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Button4.Image = Global.PedalPals.My.Resources.Resources.profile_icon3
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(0, 400)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button4.Location = New System.Drawing.Point(0, 325)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(239, 57)
+        Me.Button4.Size = New System.Drawing.Size(179, 46)
         Me.Button4.TabIndex = 2
         Me.Button4.Text = "Profile"
         Me.Button4.UseVisualStyleBackColor = True
@@ -123,10 +119,9 @@ Partial Class booking
         Me.Button3.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Button3.Image = Global.PedalPals.My.Resources.Resources.myrent_icon3
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(0, 336)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button3.Location = New System.Drawing.Point(0, 273)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(239, 57)
+        Me.Button3.Size = New System.Drawing.Size(179, 46)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "My Rental"
         Me.Button3.UseVisualStyleBackColor = True
@@ -141,10 +136,9 @@ Partial Class booking
         Me.Button2.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Button2.Image = Global.PedalPals.My.Resources.Resources.book_icon3
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(0, 272)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button2.Location = New System.Drawing.Point(0, 221)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(239, 57)
+        Me.Button2.Size = New System.Drawing.Size(179, 46)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Booking"
         Me.Button2.UseVisualStyleBackColor = True
@@ -158,10 +152,9 @@ Partial Class booking
         Me.Button1.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Button1.Image = Global.PedalPals.My.Resources.Resources.dash_icon3
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(0, 208)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Location = New System.Drawing.Point(0, 169)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(239, 57)
+        Me.Button1.Size = New System.Drawing.Size(179, 46)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Dashboard"
         Me.Button1.UseVisualStyleBackColor = True
@@ -174,10 +167,9 @@ Partial Class booking
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label2.Font = New System.Drawing.Font("Malgun Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.BurlyWood
-        Me.Label2.Location = New System.Drawing.Point(275, 74)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(188, 45)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(162, 48)
+        Me.Label2.Size = New System.Drawing.Size(123, 37)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Booking"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -189,10 +181,9 @@ Partial Class booking
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(384, 297)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(282, 234)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 30)
+        Me.Label4.Size = New System.Drawing.Size(54, 21)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "Date :"
         '
@@ -203,10 +194,9 @@ Partial Class booking
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Location = New System.Drawing.Point(384, 223)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(278, 174)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 30)
+        Me.Label3.Size = New System.Drawing.Size(58, 21)
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "Place :"
         '
@@ -217,10 +207,9 @@ Partial Class booking
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label1.Location = New System.Drawing.Point(384, 369)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(278, 293)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 30)
+        Me.Label1.Size = New System.Drawing.Size(56, 21)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Type :"
         '
@@ -231,10 +220,9 @@ Partial Class booking
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label5.Location = New System.Drawing.Point(384, 447)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(252, 358)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(105, 30)
+        Me.Label5.Size = New System.Drawing.Size(82, 21)
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "Quantity :"
         '
@@ -245,10 +233,9 @@ Partial Class booking
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label6.Location = New System.Drawing.Point(384, 519)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(277, 413)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(72, 30)
+        Me.Label6.Size = New System.Drawing.Size(57, 21)
         Me.Label6.TabIndex = 22
         Me.Label6.Text = "Hour :"
         '
@@ -259,10 +246,9 @@ Partial Class booking
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label7.Location = New System.Drawing.Point(376, 590)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(277, 472)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(70, 30)
+        Me.Label7.Size = New System.Drawing.Size(56, 21)
         Me.Label7.TabIndex = 24
         Me.Label7.Text = "Price :"
         '
@@ -273,10 +259,9 @@ Partial Class booking
         Me.lblPrice.BackColor = System.Drawing.Color.Transparent
         Me.lblPrice.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblPrice.Location = New System.Drawing.Point(492, 590)
-        Me.lblPrice.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPrice.Location = New System.Drawing.Point(342, 472)
         Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(0, 30)
+        Me.lblPrice.Size = New System.Drawing.Size(0, 21)
         Me.lblPrice.TabIndex = 25
         '
         'lblTotPrice
@@ -286,39 +271,35 @@ Partial Class booking
         Me.lblTotPrice.BackColor = System.Drawing.Color.Transparent
         Me.lblTotPrice.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblTotPrice.Location = New System.Drawing.Point(500, 590)
-        Me.lblTotPrice.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTotPrice.Location = New System.Drawing.Point(348, 472)
         Me.lblTotPrice.Name = "lblTotPrice"
-        Me.lblTotPrice.Size = New System.Drawing.Size(112, 30)
+        Me.lblTotPrice.Size = New System.Drawing.Size(89, 21)
         Me.lblTotPrice.TabIndex = 26
         Me.lblTotPrice.Text = "Total Price"
         '
         'NumericUpDown1
         '
         Me.NumericUpDown1.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NumericUpDown1.Location = New System.Drawing.Point(505, 444)
-        Me.NumericUpDown1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(352, 356)
         Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(200, 35)
+        Me.NumericUpDown1.Size = New System.Drawing.Size(150, 29)
         Me.NumericUpDown1.TabIndex = 27
         '
         'NumericUpDown2
         '
         Me.NumericUpDown2.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NumericUpDown2.Location = New System.Drawing.Point(505, 519)
-        Me.NumericUpDown2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.NumericUpDown2.Location = New System.Drawing.Point(352, 413)
         Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(200, 35)
+        Me.NumericUpDown2.Size = New System.Drawing.Size(150, 29)
         Me.NumericUpDown2.TabIndex = 28
         '
         'DateTimePicker1
         '
         Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(505, 290)
-        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(352, 228)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(379, 35)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(285, 29)
         Me.DateTimePicker1.TabIndex = 29
         '
         'ComboBox1
@@ -326,10 +307,9 @@ Partial Class booking
         Me.ComboBox1.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Trialthon", "Road Bike", "BMX", "Mountain Bike", "Electrical Bike", "City Bike"})
-        Me.ComboBox1.Location = New System.Drawing.Point(505, 368)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox1.Location = New System.Drawing.Point(352, 290)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(379, 38)
+        Me.ComboBox1.Size = New System.Drawing.Size(285, 29)
         Me.ComboBox1.TabIndex = 30
         '
         'ComboBox2
@@ -337,10 +317,9 @@ Partial Class booking
         Me.ComboBox2.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Bukit Kiara Park", "Perdana Botanical Garden", "Titiwangsa Lake Garden"})
-        Me.ComboBox2.Location = New System.Drawing.Point(505, 219)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox2.Location = New System.Drawing.Point(352, 171)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(379, 38)
+        Me.ComboBox2.Size = New System.Drawing.Size(285, 29)
         Me.ComboBox2.TabIndex = 31
         '
         'Button
@@ -353,20 +332,19 @@ Partial Class booking
         Me.Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.Button.Location = New System.Drawing.Point(1544, 81)
-        Me.Button.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button.Location = New System.Drawing.Point(1140, 51)
         Me.Button.Name = "Button"
-        Me.Button.Size = New System.Drawing.Size(160, 47)
+        Me.Button.Size = New System.Drawing.Size(120, 38)
         Me.Button.TabIndex = 32
         Me.Button.Text = "NEXT"
         Me.Button.UseVisualStyleBackColor = False
         '
         'booking
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1827, 922)
+        Me.ClientSize = New System.Drawing.Size(992, 578)
         Me.Controls.Add(Me.Button)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.ComboBox1)
@@ -383,10 +361,9 @@ Partial Class booking
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "booking"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "booking"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()

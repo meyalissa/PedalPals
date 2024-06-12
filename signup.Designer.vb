@@ -44,7 +44,7 @@ Partial Class signup
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label2.Font = New System.Drawing.Font("Malgun Gothic", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.BurlyWood
-        Me.Label2.Location = New System.Drawing.Point(642, 139)
+        Me.Label2.Location = New System.Drawing.Point(441, 118)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(118, 37)
         Me.Label2.TabIndex = 3
@@ -59,7 +59,7 @@ Partial Class signup
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label1.Font = New System.Drawing.Font("Malgun Gothic", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.Label1.Location = New System.Drawing.Point(570, 68)
+        Me.Label1.Location = New System.Drawing.Point(369, 47)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(270, 71)
         Me.Label1.TabIndex = 2
@@ -73,7 +73,7 @@ Partial Class signup
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Location = New System.Drawing.Point(575, 214)
+        Me.Label3.Location = New System.Drawing.Point(374, 193)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 20)
         Me.Label3.TabIndex = 4
@@ -84,7 +84,7 @@ Partial Class signup
         Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TextBox1.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(666, 214)
+        Me.TextBox1.Location = New System.Drawing.Point(465, 193)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(150, 25)
         Me.TextBox1.TabIndex = 5
@@ -94,7 +94,7 @@ Partial Class signup
         Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox2.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TextBox2.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(666, 255)
+        Me.TextBox2.Location = New System.Drawing.Point(465, 234)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(150, 25)
         Me.TextBox2.TabIndex = 7
@@ -106,7 +106,7 @@ Partial Class signup
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(575, 255)
+        Me.Label4.Location = New System.Drawing.Point(374, 234)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(80, 20)
         Me.Label4.TabIndex = 6
@@ -117,7 +117,7 @@ Partial Class signup
         Me.TextBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox3.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TextBox3.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(666, 296)
+        Me.TextBox3.Location = New System.Drawing.Point(465, 275)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(150, 25)
         Me.TextBox3.TabIndex = 9
@@ -129,7 +129,7 @@ Partial Class signup
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label5.Location = New System.Drawing.Point(601, 296)
+        Me.Label5.Location = New System.Drawing.Point(400, 275)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(54, 20)
         Me.Label5.TabIndex = 8
@@ -140,7 +140,7 @@ Partial Class signup
         Me.TextBox4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox4.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TextBox4.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(666, 338)
+        Me.TextBox4.Location = New System.Drawing.Point(465, 317)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(150, 25)
         Me.TextBox4.TabIndex = 11
@@ -152,7 +152,7 @@ Partial Class signup
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label6.Location = New System.Drawing.Point(564, 335)
+        Me.Label6.Location = New System.Drawing.Point(363, 314)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(95, 20)
         Me.Label6.TabIndex = 10
@@ -168,7 +168,7 @@ Partial Class signup
         Me.btnSignup2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSignup2.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSignup2.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.btnSignup2.Location = New System.Drawing.Point(721, 398)
+        Me.btnSignup2.Location = New System.Drawing.Point(520, 377)
         Me.btnSignup2.Name = "btnSignup2"
         Me.btnSignup2.Size = New System.Drawing.Size(104, 33)
         Me.btnSignup2.TabIndex = 13
@@ -185,7 +185,7 @@ Partial Class signup
         Me.btnBack2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack2.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack2.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.btnBack2.Location = New System.Drawing.Point(592, 398)
+        Me.btnBack2.Location = New System.Drawing.Point(391, 377)
         Me.btnBack2.Name = "btnBack2"
         Me.btnBack2.Size = New System.Drawing.Size(104, 33)
         Me.btnBack2.TabIndex = 12
@@ -198,7 +198,7 @@ Partial Class signup
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.PedalPals.My.Resources.Resources.background_1_
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1370, 749)
+        Me.ClientSize = New System.Drawing.Size(992, 578)
         Me.Controls.Add(Me.btnSignup2)
         Me.Controls.Add(Me.btnBack2)
         Me.Controls.Add(Me.TextBox4)
@@ -213,8 +213,8 @@ Partial Class signup
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
         Me.Name = "signup"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "signup"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

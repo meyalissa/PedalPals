@@ -46,7 +46,7 @@ Partial Class sidebar_cust
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(179, 749)
+        Me.Panel1.Size = New System.Drawing.Size(179, 578)
         Me.Panel1.TabIndex = 1
         '
         'Button5
@@ -59,7 +59,7 @@ Partial Class sidebar_cust
         Me.Button5.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Button5.Image = Global.PedalPals.My.Resources.Resources.signout_icon
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(0, 625)
+        Me.Button5.Location = New System.Drawing.Point(0, 506)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(179, 46)
         Me.Button5.TabIndex = 3
@@ -151,7 +151,7 @@ Partial Class sidebar_cust
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label2.Font = New System.Drawing.Font("Malgun Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.BurlyWood
-        Me.Label2.Location = New System.Drawing.Point(206, 60)
+        Me.Label2.Location = New System.Drawing.Point(209, 48)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(167, 37)
         Me.Label2.TabIndex = 11
@@ -163,12 +163,12 @@ Partial Class sidebar_cust
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1370, 749)
+        Me.ClientSize = New System.Drawing.Size(992, 578)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "sidebar_cust"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "sidebar_cust"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -20,4 +20,5 @@
         ' Show the signup.vb form
         dashCustomerForm.Show()
     End Sub
+
 End Class
