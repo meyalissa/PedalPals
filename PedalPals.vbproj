@@ -124,6 +124,12 @@
     <Compile Include="payment.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="dashboard-admin.Designer.vb">
+      <DependentUpon>dashboard-admin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="sidebar-admin.Designer.vb">
       <DependentUpon>sidebar-admin.vb</DependentUpon>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="payment.resx">
       <DependentUpon>payment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboard-admin.resx">
+      <DependentUpon>dashboard-admin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sidebar-admin.resx">
       <DependentUpon>sidebar-admin.vb</DependentUpon>
