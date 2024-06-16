@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -109,6 +124,12 @@
     <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="members.Designer.vb">
+      <DependentUpon>members.vb</DependentUpon>
+    </Compile>
+    <Compile Include="members.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -125,12 +146,37 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="myrent-cust.Designer.vb">
+      <DependentUpon>myrent-cust.vb</DependentUpon>
+    </Compile>
+    <Compile Include="myrent-cust.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="payment.Designer.vb">
       <DependentUpon>payment.vb</DependentUpon>
     </Compile>
     <Compile Include="payment.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="profile-admin.Designer.vb">
+      <DependentUpon>profile-admin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="profile-admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="profile-cust.Designer.vb">
+      <DependentUpon>profile-cust.vb</DependentUpon>
+    </Compile>
+    <Compile Include="profile-cust.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="record.Designer.vb">
+      <DependentUpon>record.vb</DependentUpon>
+    </Compile>
+    <Compile Include="record.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sharedFunctions.vb" />
     <Compile Include="sidebar-admin.Designer.vb">
       <DependentUpon>sidebar-admin.vb</DependentUpon>
     </Compile>
@@ -169,14 +215,29 @@
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="members.resx">
+      <DependentUpon>members.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myrent-cust.resx">
+      <DependentUpon>myrent-cust.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="payment.resx">
       <DependentUpon>payment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profile-admin.resx">
+      <DependentUpon>profile-admin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profile-cust.resx">
+      <DependentUpon>profile-cust.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="record.resx">
+      <DependentUpon>record.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sidebar-admin.resx">
       <DependentUpon>sidebar-admin.vb</DependentUpon>
@@ -202,30 +263,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background%281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dash-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\book-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dash-icon2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\book-icon2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\myrent-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\profile-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo3.png" />
@@ -255,22 +292,37 @@
     <None Include="Resources\record-icon2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\triathlon.png" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\road.png" />
+    <None Include="Resources\qrcode2 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bmx.png" />
+    <None Include="Resources\bmx-1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mountain.png" />
+    <None Include="Resources\city-1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\electric.png" />
+    <None Include="Resources\electric-1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\city.png" />
+    <None Include="Resources\mountain1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\road1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trialthon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
