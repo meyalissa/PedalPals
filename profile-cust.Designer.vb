@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Dashboard_admin
+Partial Class profile_cust
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -35,12 +35,12 @@ Partial Class Dashboard_admin
         Me.Label2.ForeColor = System.Drawing.Color.BurlyWood
         Me.Label2.Location = New System.Drawing.Point(30, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(157, 37)
-        Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Dashboard"
+        Me.Label2.Size = New System.Drawing.Size(101, 37)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Profile"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Dashboard_admin
+        'profile_cust
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -48,13 +48,12 @@ Partial Class Dashboard_admin
         Me.ClientSize = New System.Drawing.Size(795, 554)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "Dashboard_admin"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Dashboard_admin"
+        Me.Name = "profile_cust"
+        Me.Text = "profile_cust"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
+
     Friend WithEvents Label2 As Label
 End Class
