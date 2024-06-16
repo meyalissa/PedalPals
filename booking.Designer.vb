@@ -22,7 +22,7 @@ Partial Class booking
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -38,14 +38,15 @@ Partial Class booking
         Me.Button = New System.Windows.Forms.Button()
         Me.btnBook1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.addBooking = New System.Windows.Forms.Button()
-        Me.btnCalcPrice = New System.Windows.Forms.Button()
         Me.placeBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dateBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.typeBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.hourBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.priceBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.addBooking = New System.Windows.Forms.Button()
+        Me.btnCalcPrice = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.hourBooking, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,9 +59,10 @@ Partial Class booking
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label2.Font = New System.Drawing.Font("Malgun Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.BurlyWood
-        Me.Label2.Location = New System.Drawing.Point(30, 29)
+        Me.Label2.Location = New System.Drawing.Point(40, 36)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(123, 37)
+        Me.Label2.Size = New System.Drawing.Size(154, 46)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Booking"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -72,9 +74,10 @@ Partial Class booking
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(48, 159)
+        Me.Label4.Location = New System.Drawing.Point(64, 196)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 17)
+        Me.Label4.Size = New System.Drawing.Size(56, 23)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "Date :"
         '
@@ -85,9 +88,10 @@ Partial Class booking
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Location = New System.Drawing.Point(45, 112)
+        Me.Label3.Location = New System.Drawing.Point(60, 138)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(46, 17)
+        Me.Label3.Size = New System.Drawing.Size(60, 23)
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "Place :"
         '
@@ -98,9 +102,10 @@ Partial Class booking
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label1.Location = New System.Drawing.Point(356, 112)
+        Me.Label1.Location = New System.Drawing.Point(475, 138)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 17)
+        Me.Label1.Size = New System.Drawing.Size(56, 23)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Type :"
         '
@@ -111,9 +116,10 @@ Partial Class booking
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label6.Location = New System.Drawing.Point(354, 155)
+        Me.Label6.Location = New System.Drawing.Point(472, 191)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(46, 17)
+        Me.Label6.Size = New System.Drawing.Size(58, 23)
         Me.Label6.TabIndex = 22
         Me.Label6.Text = "Hour :"
         '
@@ -124,9 +130,10 @@ Partial Class booking
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label7.Location = New System.Drawing.Point(556, 112)
+        Me.Label7.Location = New System.Drawing.Point(741, 138)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(44, 17)
+        Me.Label7.Size = New System.Drawing.Size(57, 23)
         Me.Label7.TabIndex = 24
         Me.Label7.Text = "Price :"
         '
@@ -137,9 +144,10 @@ Partial Class booking
         Me.lblPrice.BackColor = System.Drawing.Color.Transparent
         Me.lblPrice.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblPrice.Location = New System.Drawing.Point(621, 112)
+        Me.lblPrice.Location = New System.Drawing.Point(828, 138)
+        Me.lblPrice.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(0, 17)
+        Me.lblPrice.Size = New System.Drawing.Size(0, 23)
         Me.lblPrice.TabIndex = 25
         '
         'lblPriceBooking
@@ -149,27 +157,30 @@ Partial Class booking
         Me.lblPriceBooking.BackColor = System.Drawing.Color.Transparent
         Me.lblPriceBooking.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPriceBooking.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblPriceBooking.Location = New System.Drawing.Point(612, 112)
+        Me.lblPriceBooking.Location = New System.Drawing.Point(816, 138)
+        Me.lblPriceBooking.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPriceBooking.Name = "lblPriceBooking"
-        Me.lblPriceBooking.Size = New System.Drawing.Size(15, 17)
+        Me.lblPriceBooking.Size = New System.Drawing.Size(19, 23)
         Me.lblPriceBooking.TabIndex = 26
         Me.lblPriceBooking.Text = "0"
         '
         'hourBooking
         '
         Me.hourBooking.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.hourBooking.Location = New System.Drawing.Point(406, 153)
+        Me.hourBooking.Location = New System.Drawing.Point(541, 188)
+        Me.hourBooking.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.hourBooking.Name = "hourBooking"
-        Me.hourBooking.Size = New System.Drawing.Size(130, 25)
+        Me.hourBooking.Size = New System.Drawing.Size(173, 29)
         Me.hourBooking.TabIndex = 28
         '
         'dateBooking
         '
         Me.dateBooking.CalendarFont = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dateBooking.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateBooking.Location = New System.Drawing.Point(103, 153)
+        Me.dateBooking.Location = New System.Drawing.Point(137, 188)
+        Me.dateBooking.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dateBooking.Name = "dateBooking"
-        Me.dateBooking.Size = New System.Drawing.Size(233, 25)
+        Me.dateBooking.Size = New System.Drawing.Size(309, 29)
         Me.dateBooking.TabIndex = 29
         '
         'typeBooking
@@ -177,9 +188,10 @@ Partial Class booking
         Me.typeBooking.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.typeBooking.FormattingEnabled = True
         Me.typeBooking.Items.AddRange(New Object() {"Trialthon", "Road Bike", "BMX", "Mountain Bike", "Electrical Bike", "City Bike"})
-        Me.typeBooking.Location = New System.Drawing.Point(406, 109)
+        Me.typeBooking.Location = New System.Drawing.Point(541, 134)
+        Me.typeBooking.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.typeBooking.Name = "typeBooking"
-        Me.typeBooking.Size = New System.Drawing.Size(130, 25)
+        Me.typeBooking.Size = New System.Drawing.Size(172, 29)
         Me.typeBooking.TabIndex = 30
         '
         'placeBooking
@@ -187,9 +199,10 @@ Partial Class booking
         Me.placeBooking.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.placeBooking.FormattingEnabled = True
         Me.placeBooking.Items.AddRange(New Object() {"Bukit Kiara Park", "Perdana Botanical Garden", "Titiwangsa Lake Garden"})
-        Me.placeBooking.Location = New System.Drawing.Point(103, 109)
+        Me.placeBooking.Location = New System.Drawing.Point(137, 134)
+        Me.placeBooking.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.placeBooking.Name = "placeBooking"
-        Me.placeBooking.Size = New System.Drawing.Size(233, 25)
+        Me.placeBooking.Size = New System.Drawing.Size(309, 29)
         Me.placeBooking.TabIndex = 31
         '
         'Button
@@ -202,9 +215,10 @@ Partial Class booking
         Me.Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.Button.Location = New System.Drawing.Point(1041, 39)
+        Me.Button.Location = New System.Drawing.Point(1388, 48)
+        Me.Button.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button.Name = "Button"
-        Me.Button.Size = New System.Drawing.Size(120, 38)
+        Me.Button.Size = New System.Drawing.Size(160, 47)
         Me.Button.TabIndex = 32
         Me.Button.Text = "NEXT"
         Me.Button.UseVisualStyleBackColor = False
@@ -219,9 +233,10 @@ Partial Class booking
         Me.btnBook1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBook1.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBook1.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.btnBook1.Location = New System.Drawing.Point(641, 28)
+        Me.btnBook1.Location = New System.Drawing.Point(855, 34)
+        Me.btnBook1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnBook1.Name = "btnBook1"
-        Me.btnBook1.Size = New System.Drawing.Size(120, 38)
+        Me.btnBook1.Size = New System.Drawing.Size(160, 47)
         Me.btnBook1.TabIndex = 33
         Me.btnBook1.Text = "CONTINUE"
         Me.btnBook1.UseVisualStyleBackColor = False
@@ -230,10 +245,61 @@ Partial Class booking
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.placeBook, Me.dateBook, Me.typeBook, Me.hourBook, Me.priceBook, Me.Delete})
-        Me.DataGridView1.Location = New System.Drawing.Point(103, 212)
+        Me.DataGridView1.Location = New System.Drawing.Point(137, 261)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(602, 293)
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.Size = New System.Drawing.Size(803, 361)
         Me.DataGridView1.TabIndex = 34
+        '
+        'placeBook
+        '
+        Me.placeBook.HeaderText = "Place"
+        Me.placeBook.MinimumWidth = 6
+        Me.placeBook.Name = "placeBook"
+        Me.placeBook.Width = 125
+        '
+        'dateBook
+        '
+        Me.dateBook.HeaderText = "Date"
+        Me.dateBook.MinimumWidth = 6
+        Me.dateBook.Name = "dateBook"
+        Me.dateBook.Width = 125
+        '
+        'typeBook
+        '
+        Me.typeBook.HeaderText = "Type"
+        Me.typeBook.MinimumWidth = 6
+        Me.typeBook.Name = "typeBook"
+        Me.typeBook.Width = 125
+        '
+        'hourBook
+        '
+        Me.hourBook.HeaderText = "Hour"
+        Me.hourBook.MinimumWidth = 6
+        Me.hourBook.Name = "hourBook"
+        Me.hourBook.Width = 125
+        '
+        'priceBook
+        '
+        Me.priceBook.HeaderText = "Price"
+        Me.priceBook.MinimumWidth = 6
+        Me.priceBook.Name = "priceBook"
+        Me.priceBook.Width = 125
+        '
+        'Delete
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Delete.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Delete.HeaderText = "Delete"
+        Me.Delete.MinimumWidth = 6
+        Me.Delete.Name = "Delete"
+        Me.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Delete.Text = "Delete"
+        Me.Delete.UseColumnTextForButtonValue = True
+        Me.Delete.Width = 60
         '
         'addBooking
         '
@@ -242,9 +308,10 @@ Partial Class booking
         Me.addBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.addBooking.Font = New System.Drawing.Font("Malgun Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addBooking.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.addBooking.Location = New System.Drawing.Point(641, 155)
+        Me.addBooking.Location = New System.Drawing.Point(855, 191)
+        Me.addBooking.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.addBooking.Name = "addBooking"
-        Me.addBooking.Size = New System.Drawing.Size(66, 29)
+        Me.addBooking.Size = New System.Drawing.Size(88, 36)
         Me.addBooking.TabIndex = 35
         Me.addBooking.Text = "ADD"
         Me.addBooking.UseVisualStyleBackColor = False
@@ -256,57 +323,30 @@ Partial Class booking
         Me.btnCalcPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCalcPrice.Font = New System.Drawing.Font("Malgun Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCalcPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnCalcPrice.Location = New System.Drawing.Point(559, 155)
+        Me.btnCalcPrice.Location = New System.Drawing.Point(745, 191)
+        Me.btnCalcPrice.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCalcPrice.Name = "btnCalcPrice"
-        Me.btnCalcPrice.Size = New System.Drawing.Size(66, 29)
+        Me.btnCalcPrice.Size = New System.Drawing.Size(88, 36)
         Me.btnCalcPrice.TabIndex = 36
         Me.btnCalcPrice.Text = "TOTAL"
         Me.btnCalcPrice.UseVisualStyleBackColor = False
         '
-        'placeBook
+        'Button1
         '
-        Me.placeBook.HeaderText = "Place"
-        Me.placeBook.Name = "placeBook"
-        '
-        'dateBook
-        '
-        Me.dateBook.HeaderText = "Date"
-        Me.dateBook.Name = "dateBook"
-        '
-        'typeBook
-        '
-        Me.typeBook.HeaderText = "Type"
-        Me.typeBook.Name = "typeBook"
-        '
-        'hourBook
-        '
-        Me.hourBook.HeaderText = "Hour"
-        Me.hourBook.Name = "hourBook"
-        '
-        'priceBook
-        '
-        Me.priceBook.HeaderText = "Price"
-        Me.priceBook.Name = "priceBook"
-        '
-        'Delete
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Delete.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Delete.HeaderText = "Delete"
-        Me.Delete.Name = "Delete"
-        Me.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Delete.Text = "Delete"
-        Me.Delete.UseColumnTextForButtonValue = True
-        Me.Delete.Width = 60
+        Me.Button1.Location = New System.Drawing.Point(799, 323)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 37
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'booking
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(795, 554)
+        Me.ClientSize = New System.Drawing.Size(1060, 682)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnCalcPrice)
         Me.Controls.Add(Me.addBooking)
         Me.Controls.Add(Me.DataGridView1)
@@ -325,6 +365,7 @@ Partial Class booking
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "booking"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "booking"
@@ -357,4 +398,5 @@ Partial Class booking
     Friend WithEvents hourBook As DataGridViewTextBoxColumn
     Friend WithEvents priceBook As DataGridViewTextBoxColumn
     Friend WithEvents Delete As DataGridViewButtonColumn
+    Friend WithEvents Button1 As Button
 End Class
