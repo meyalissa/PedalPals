@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class profile_admin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class profile_admin
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAddmem = New System.Windows.Forms.Button()
@@ -37,8 +37,6 @@ Partial Class profile_admin
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label2
@@ -59,7 +57,7 @@ Partial Class profile_admin
         '
         'btnAddmem
         '
-        Me.btnAddmem.Location = New System.Drawing.Point(539, 414)
+        Me.btnAddmem.Location = New System.Drawing.Point(460, 413)
         Me.btnAddmem.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAddmem.Name = "btnAddmem"
         Me.btnAddmem.Size = New System.Drawing.Size(100, 28)
@@ -195,40 +193,12 @@ Partial Class profile_admin
         Me.TextBox3.Size = New System.Drawing.Size(543, 22)
         Me.TextBox3.TabIndex = 38
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(407, 414)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 28)
-        Me.Button1.TabIndex = 39
-        Me.Button1.Text = "CANCEL"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label8
-        '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label8.Font = New System.Drawing.Font("Malgun Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.BurlyWood
-        Me.Label8.Location = New System.Drawing.Point(249, 104)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(140, 46)
-        Me.Label8.TabIndex = 40
-        Me.Label8.Text = "ADMIN"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'profile_admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1060, 682)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label7)
@@ -269,6 +239,4 @@ Partial Class profile_admin
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Label8 As Label
 End Class

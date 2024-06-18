@@ -23,8 +23,6 @@ Partial Class profile_cust
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -56,32 +54,6 @@ Partial Class profile_cust
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Profile"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label8
-        '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label8.Font = New System.Drawing.Font("Malgun Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.BurlyWood
-        Me.Label8.Location = New System.Drawing.Point(249, 104)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(205, 46)
-        Me.Label8.TabIndex = 56
-        Me.Label8.Text = "CUSTOMER"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(407, 414)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 28)
-        Me.Button1.TabIndex = 55
-        Me.Button1.Text = "CANCEL"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox3
         '
@@ -133,7 +105,7 @@ Partial Class profile_cust
         '
         'btnAddmem
         '
-        Me.btnAddmem.Location = New System.Drawing.Point(539, 414)
+        Me.btnAddmem.Location = New System.Drawing.Point(460, 413)
         Me.btnAddmem.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAddmem.Name = "btnAddmem"
         Me.btnAddmem.Size = New System.Drawing.Size(100, 28)
@@ -227,8 +199,6 @@ Partial Class profile_cust
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1060, 682)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label7)
@@ -254,8 +224,6 @@ Partial Class profile_cust
     End Sub
 
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label7 As Label
