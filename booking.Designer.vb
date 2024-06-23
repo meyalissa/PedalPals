@@ -22,7 +22,7 @@ Partial Class booking
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -46,7 +46,6 @@ Partial Class booking
         Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.addBooking = New System.Windows.Forms.Button()
         Me.btnCalcPrice = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.hourBooking, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -289,9 +288,9 @@ Partial Class booking
         '
         'Delete
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Delete.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Delete.DefaultCellStyle = DataGridViewCellStyle2
         Me.Delete.HeaderText = "Delete"
         Me.Delete.MinimumWidth = 6
         Me.Delete.Name = "Delete"
@@ -331,22 +330,12 @@ Partial Class booking
         Me.btnCalcPrice.Text = "TOTAL"
         Me.btnCalcPrice.UseVisualStyleBackColor = False
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(799, 323)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 37
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1060, 682)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnCalcPrice)
         Me.Controls.Add(Me.addBooking)
         Me.Controls.Add(Me.DataGridView1)
@@ -398,5 +387,4 @@ Partial Class booking
     Friend WithEvents hourBook As DataGridViewTextBoxColumn
     Friend WithEvents priceBook As DataGridViewTextBoxColumn
     Friend WithEvents Delete As DataGridViewButtonColumn
-    Friend WithEvents Button1 As Button
 End Class
