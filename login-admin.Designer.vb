@@ -22,14 +22,17 @@ Partial Class login_admin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnLogin3 = New System.Windows.Forms.Button()
         Me.btnBack3 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtPass = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtusername = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnLogin3
@@ -42,9 +45,10 @@ Partial Class login_admin
         Me.btnLogin3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin3.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin3.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.btnLogin3.Location = New System.Drawing.Point(513, 317)
+        Me.btnLogin3.Location = New System.Drawing.Point(684, 390)
+        Me.btnLogin3.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLogin3.Name = "btnLogin3"
-        Me.btnLogin3.Size = New System.Drawing.Size(104, 33)
+        Me.btnLogin3.Size = New System.Drawing.Size(139, 41)
         Me.btnLogin3.TabIndex = 23
         Me.btnLogin3.Text = "LOG IN"
         Me.btnLogin3.UseVisualStyleBackColor = False
@@ -59,22 +63,24 @@ Partial Class login_admin
         Me.btnBack3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack3.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack3.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.btnBack3.Location = New System.Drawing.Point(384, 317)
+        Me.btnBack3.Location = New System.Drawing.Point(512, 390)
+        Me.btnBack3.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBack3.Name = "btnBack3"
-        Me.btnBack3.Size = New System.Drawing.Size(104, 33)
+        Me.btnBack3.Size = New System.Drawing.Size(139, 41)
         Me.btnBack3.TabIndex = 22
         Me.btnBack3.Text = "BACK"
         Me.btnBack3.UseVisualStyleBackColor = False
         '
-        'TextBox2
+        'txtPass
         '
-        Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TextBox2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox2.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(467, 249)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(150, 25)
-        Me.TextBox2.TabIndex = 21
+        Me.txtPass.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtPass.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtPass.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.Location = New System.Drawing.Point(623, 306)
+        Me.txtPass.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPass.Name = "txtPass"
+        Me.txtPass.Size = New System.Drawing.Size(199, 29)
+        Me.txtPass.TabIndex = 21
         '
         'Label4
         '
@@ -83,21 +89,23 @@ Partial Class login_admin
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(376, 249)
+        Me.Label4.Location = New System.Drawing.Point(501, 306)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(80, 20)
+        Me.Label4.Size = New System.Drawing.Size(103, 25)
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "Password :"
         '
-        'TextBox1
+        'txtusername
         '
-        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox1.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(467, 208)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(150, 25)
-        Me.TextBox1.TabIndex = 19
+        Me.txtusername.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtusername.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtusername.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtusername.Location = New System.Drawing.Point(623, 256)
+        Me.txtusername.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtusername.Name = "txtusername"
+        Me.txtusername.Size = New System.Drawing.Size(199, 29)
+        Me.txtusername.TabIndex = 19
         '
         'Label3
         '
@@ -106,9 +114,10 @@ Partial Class login_admin
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Location = New System.Drawing.Point(376, 208)
+        Me.Label3.Location = New System.Drawing.Point(501, 256)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 20)
+        Me.Label3.Size = New System.Drawing.Size(109, 25)
         Me.Label3.TabIndex = 18
         Me.Label3.Text = "Username :"
         '
@@ -120,9 +129,10 @@ Partial Class login_admin
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label2.Font = New System.Drawing.Font("Malgun Gothic", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.BurlyWood
-        Me.Label2.Location = New System.Drawing.Point(405, 120)
+        Me.Label2.Location = New System.Drawing.Point(540, 148)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(191, 37)
+        Me.Label2.Size = New System.Drawing.Size(241, 46)
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Admin Log In"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -135,35 +145,38 @@ Partial Class login_admin
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label1.Font = New System.Drawing.Font("Malgun Gothic", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.Label1.Location = New System.Drawing.Point(371, 49)
+        Me.Label1.Location = New System.Drawing.Point(495, 60)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(270, 71)
+        Me.Label1.Size = New System.Drawing.Size(338, 89)
         Me.Label1.TabIndex = 16
         Me.Label1.Text = "PedalPals"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'login_admin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.PedalPals.My.Resources.Resources.background_1_
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(992, 578)
+        Me.ClientSize = New System.Drawing.Size(1323, 711)
         Me.Controls.Add(Me.btnLogin3)
         Me.Controls.Add(Me.btnBack3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtPass)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtusername)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "login_admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "login_admin"
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,10 +184,11 @@ Partial Class login_admin
 
     Friend WithEvents btnLogin3 As Button
     Friend WithEvents btnBack3 As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtPass As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtusername As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents BindingSource1 As BindingSource
 End Class
