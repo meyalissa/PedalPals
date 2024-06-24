@@ -22,7 +22,7 @@ Partial Class booking
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -61,7 +61,7 @@ Partial Class booking
         Me.Label2.Location = New System.Drawing.Point(40, 36)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(162, 48)
+        Me.Label2.Size = New System.Drawing.Size(154, 46)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Booking"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -169,7 +169,7 @@ Partial Class booking
         Me.hourBooking.Location = New System.Drawing.Point(541, 188)
         Me.hourBooking.Margin = New System.Windows.Forms.Padding(4)
         Me.hourBooking.Name = "hourBooking"
-        Me.hourBooking.Size = New System.Drawing.Size(173, 30)
+        Me.hourBooking.Size = New System.Drawing.Size(173, 29)
         Me.hourBooking.TabIndex = 28
         '
         'dateBooking
@@ -179,29 +179,27 @@ Partial Class booking
         Me.dateBooking.Location = New System.Drawing.Point(137, 188)
         Me.dateBooking.Margin = New System.Windows.Forms.Padding(4)
         Me.dateBooking.Name = "dateBooking"
-        Me.dateBooking.Size = New System.Drawing.Size(309, 30)
+        Me.dateBooking.Size = New System.Drawing.Size(309, 29)
         Me.dateBooking.TabIndex = 29
         '
         'typeBooking
         '
         Me.typeBooking.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.typeBooking.FormattingEnabled = True
-        Me.typeBooking.Items.AddRange(New Object() {"Trialthon", "Road Bike", "BMX", "Mountain Bike", "Electrical Bike", "City Bike"})
         Me.typeBooking.Location = New System.Drawing.Point(541, 134)
         Me.typeBooking.Margin = New System.Windows.Forms.Padding(4)
         Me.typeBooking.Name = "typeBooking"
-        Me.typeBooking.Size = New System.Drawing.Size(172, 31)
+        Me.typeBooking.Size = New System.Drawing.Size(172, 29)
         Me.typeBooking.TabIndex = 30
         '
         'placeBooking
         '
         Me.placeBooking.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.placeBooking.FormattingEnabled = True
-        Me.placeBooking.Items.AddRange(New Object() {"Bukit Kiara Park", "Perdana Botanical Garden", "Titiwangsa Lake Garden"})
         Me.placeBooking.Location = New System.Drawing.Point(137, 134)
         Me.placeBooking.Margin = New System.Windows.Forms.Padding(4)
         Me.placeBooking.Name = "placeBooking"
-        Me.placeBooking.Size = New System.Drawing.Size(309, 31)
+        Me.placeBooking.Size = New System.Drawing.Size(309, 29)
         Me.placeBooking.TabIndex = 31
         '
         'Button
@@ -248,7 +246,7 @@ Partial Class booking
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(803, 361)
+        Me.DataGridView1.Size = New System.Drawing.Size(777, 361)
         Me.DataGridView1.TabIndex = 34
         '
         'placeBook
@@ -288,9 +286,9 @@ Partial Class booking
         '
         'Delete
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Delete.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Delete.DefaultCellStyle = DataGridViewCellStyle6
         Me.Delete.HeaderText = "Delete"
         Me.Delete.MinimumWidth = 6
         Me.Delete.Name = "Delete"
