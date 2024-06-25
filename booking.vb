@@ -8,7 +8,7 @@ Public Class booking
             connection.Open()
         End If
 
-        Dim cmdType As New OleDbCommand("SELECT type FROM bike", connection)
+        Dim cmdType As New OleDbCommand("SELECT type_name FROM bike", connection)
         Dim cmdAdd As New OleDbCommand("SELECT address FROM location", connection)
 
 
@@ -16,7 +16,7 @@ Public Class booking
         Using readerType As OleDbDataReader = cmdType.ExecuteReader()
             While readerType.Read()
                 ' Add each bicycle type to the ComboBox
-                typeBooking.Items.Add(readerType("type").ToString())
+                typeBooking.Items.Add(readerType("type_name").ToString())
 
 
             End While
@@ -72,32 +72,7 @@ Public Class booking
 
     End Sub
 
-    'Add booking into list
-    Private Sub addBooking_Click(sender As Object, e As EventArgs) Handles addBooking.Click
-        DataGridView1.Rows.Add(placeBooking.Text, dateBooking.Text, typeBooking.Text, hourBooking.Text, lblPriceBooking.Text)
-        'Clear txtbox after add
-        placeBooking.Text = ""
-        dateBooking.Text = ""
-        typeBooking.Text = ""
-        hourBooking.Text = ""
-        lblPriceBooking.Text = ""
-    End Sub
 
-    'Delete booking
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        ' Check if the clicked column is the "Delete" column
-        If DataGridView1.Columns(e.ColumnIndex).Name = "Delete" Then
-            ' Check if there is a selected row
-            If DataGridView1.SelectedRows.Count > 0 Then
-                ' Confirm the deletion
-                Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this row?", "Delete Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                If result = DialogResult.Yes Then
-                    ' Remove the selected row
-                    DataGridView1.Rows.RemoveAt(DataGridView1.SelectedRows(0).Index)
-                End If
-            End If
-        End If
-    End Sub
 
 
 End Class

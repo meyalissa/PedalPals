@@ -8,7 +8,7 @@ Public Class dashboard_cust
             connection.Open()
         End If
 
-        Dim cmd As New OleDbCommand("SELECT type, hourly_price FROM bike", connection)
+        Dim cmd As New OleDbCommand("SELECT type_name, hourly_price FROM bike", connection)
 
         Using reader As OleDbDataReader = cmd.ExecuteReader()
             Dim index As Integer = 1
@@ -17,7 +17,7 @@ Public Class dashboard_cust
                 Dim lblPrice As Label = CType(Me.Controls("lblP" & index), Label)
 
                 If lblType IsNot Nothing AndAlso lblPrice IsNot Nothing Then
-                    lblType.Text = reader("type").ToString()
+                    lblType.Text = reader("type_name").ToString()
                     lblType.TextAlign = ContentAlignment.MiddleCenter
                     lblPrice.Text = "Price Per Hour: RM" & reader("hourly_price").ToString()
 
