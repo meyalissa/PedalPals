@@ -1,33 +1,32 @@
-﻿Public Class profile_admin
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+﻿
+Imports System.Data.OleDb
+Public Class profile_admin
+    Dim connection As New OleDbConnection(My.Settings.dataConnectionString)
 
+    Private Sub profile_admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        If connection.State = ConnectionState.Closed Then
+            connection.Open()
+        End If
+
+        Dim cmd As New OleDbCommand("SELECT adm_username, adm_first_name, adm_last_name, adm_phone, adm_email FROM admin WHERE adm_username = @username", connection)
+        cmd.Parameters.AddWithValue("@username", loggedInUsername)
+
+        Using reader As OleDbDataReader = cmd.ExecuteReader()
+            If reader.HasRows Then
+                While reader.Read()
+                    txtusername.Text = reader("adm_username").ToString()
+                    txtfname.Text = reader("adm_first_name").ToString()
+                    txtlname.Text = reader("adm_last_name").ToString()
+                    txtcontact.Text = reader("adm_phone").ToString()
+                    txtadminemail.Text = reader("adm_email").ToString()
+                End While
+            Else
+                MessageBox.Show("No records found in the admin table.")
+            End If
+        End Using
     End Sub
 
-    Private Sub txtmemID_TextChanged(sender As Object, e As EventArgs) Handles txtmemID.TextChanged
 
-    End Sub
-
-    Private Sub txtcontact_TextChanged(sender As Object, e As EventArgs) Handles txtcontact.TextChanged
-
-    End Sub
-
-    Private Sub txtusername_TextChanged(sender As Object, e As EventArgs) Handles txtusername.TextChanged
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub txtemail_TextChanged(sender As Object, e As EventArgs) Handles txtemail.TextChanged
-
-    End Sub
 End Class

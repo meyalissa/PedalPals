@@ -24,6 +24,8 @@ Public Class login_admin
             Dim count = Convert.ToInt32(cmd.ExecuteScalar())
 
             If (count > 0) Then
+
+                loggedInUsername = txtusername.Text
                 MsgBox("Login succeed", MsgBoxStyle.Information)
                 ' Show the Dashboard-admin.vb form
                 sidebar_admin.Show()
