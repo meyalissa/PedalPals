@@ -51,7 +51,7 @@ Public Class booking
 
 
         ' Prepare the SQL command to fetch the price for the given bicycle type
-        Dim cmdPrice As New OleDbCommand("SELECT hourly_price FROM bike WHERE type = ?", connection)
+        Dim cmdPrice As New OleDbCommand("SELECT hourly_price FROM bike WHERE type_name = ?", connection)
         cmdPrice.Parameters.AddWithValue("?", bicycleType)
 
         ' Execute the command and read the result

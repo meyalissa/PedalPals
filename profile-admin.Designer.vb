@@ -25,16 +25,16 @@ Partial Class profile_admin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAddmem = New System.Windows.Forms.Button()
         Me.txtusername = New System.Windows.Forms.TextBox()
-        Me.txtmemID = New System.Windows.Forms.TextBox()
+        Me.txtfname = New System.Windows.Forms.TextBox()
         Me.txtcontact = New System.Windows.Forms.TextBox()
-        Me.txtemail = New System.Windows.Forms.TextBox()
+        Me.txtlname = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtadminemail = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtaddress = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
@@ -73,13 +73,13 @@ Partial Class profile_admin
         Me.txtusername.Size = New System.Drawing.Size(187, 22)
         Me.txtusername.TabIndex = 32
         '
-        'txtmemID
+        'txtfname
         '
-        Me.txtmemID.Location = New System.Drawing.Point(257, 224)
-        Me.txtmemID.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtmemID.Name = "txtmemID"
-        Me.txtmemID.Size = New System.Drawing.Size(187, 22)
-        Me.txtmemID.TabIndex = 31
+        Me.txtfname.Location = New System.Drawing.Point(257, 224)
+        Me.txtfname.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtfname.Name = "txtfname"
+        Me.txtfname.Size = New System.Drawing.Size(187, 22)
+        Me.txtfname.TabIndex = 31
         '
         'txtcontact
         '
@@ -89,13 +89,13 @@ Partial Class profile_admin
         Me.txtcontact.Size = New System.Drawing.Size(194, 22)
         Me.txtcontact.TabIndex = 30
         '
-        'txtemail
+        'txtlname
         '
-        Me.txtemail.Location = New System.Drawing.Point(257, 269)
-        Me.txtemail.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtemail.Name = "txtemail"
-        Me.txtemail.Size = New System.Drawing.Size(187, 22)
-        Me.txtemail.TabIndex = 29
+        Me.txtlname.Location = New System.Drawing.Point(257, 269)
+        Me.txtlname.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtlname.Name = "txtlname"
+        Me.txtlname.Size = New System.Drawing.Size(187, 22)
+        Me.txtlname.TabIndex = 29
         '
         'Label5
         '
@@ -145,13 +145,13 @@ Partial Class profile_admin
         Me.Label1.TabIndex = 25
         Me.Label1.Text = "First Name   :"
         '
-        'TextBox1
+        'txtadminemail
         '
-        Me.TextBox1.Location = New System.Drawing.Point(606, 224)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(194, 22)
-        Me.TextBox1.TabIndex = 35
+        Me.txtadminemail.Location = New System.Drawing.Point(606, 224)
+        Me.txtadminemail.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtadminemail.Name = "txtadminemail"
+        Me.txtadminemail.Size = New System.Drawing.Size(194, 22)
+        Me.txtadminemail.TabIndex = 35
         '
         'Label6
         '
@@ -165,13 +165,13 @@ Partial Class profile_admin
         Me.Label6.TabIndex = 34
         Me.Label6.Text = "Email         :"
         '
-        'TextBox2
+        'txtaddress
         '
-        Me.TextBox2.Location = New System.Drawing.Point(257, 313)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(543, 22)
-        Me.TextBox2.TabIndex = 37
+        Me.txtaddress.Location = New System.Drawing.Point(257, 313)
+        Me.txtaddress.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtaddress.Name = "txtaddress"
+        Me.txtaddress.Size = New System.Drawing.Size(543, 22)
+        Me.txtaddress.TabIndex = 37
         '
         'Label7
         '
@@ -200,22 +200,22 @@ Partial Class profile_admin
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1060, 682)
         Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtaddress)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtadminemail)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnAddmem)
         Me.Controls.Add(Me.txtusername)
-        Me.Controls.Add(Me.txtmemID)
+        Me.Controls.Add(Me.txtfname)
         Me.Controls.Add(Me.txtcontact)
-        Me.Controls.Add(Me.txtemail)
+        Me.Controls.Add(Me.txtlname)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "profile_admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "profile_admin"
@@ -227,16 +227,16 @@ Partial Class profile_admin
     Friend WithEvents Label2 As Label
     Friend WithEvents btnAddmem As Button
     Friend WithEvents txtusername As TextBox
-    Friend WithEvents txtmemID As TextBox
+    Friend WithEvents txtfname As TextBox
     Friend WithEvents txtcontact As TextBox
-    Friend WithEvents txtemail As TextBox
+    Friend WithEvents txtlname As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtadminemail As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtaddress As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBox3 As TextBox
 End Class
