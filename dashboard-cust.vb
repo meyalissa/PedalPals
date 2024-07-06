@@ -4,6 +4,7 @@ Public Class dashboard_cust
     Dim connection As New OleDbConnection(My.Settings.dataConnectionString)
 
     Private Sub dashboard_cust_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lbltest.Text = login.LoggedInUsername
         If connection.State = ConnectionState.Closed Then
             connection.Open()
         End If
@@ -26,5 +27,13 @@ Public Class dashboard_cust
                 index += 1
             End While
         End Using
+
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+    End Sub
+
+    Private Sub lbltest_Click(sender As Object, e As EventArgs) Handles lbltest.Click
+
     End Sub
 End Class
