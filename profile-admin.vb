@@ -11,7 +11,7 @@ Public Class profile_admin
         End If
 
         Dim cmd As New OleDbCommand("SELECT adm_username, adm_first_name, adm_last_name, adm_phone, adm_email FROM admin WHERE adm_username = @username", connection)
-        cmd.Parameters.AddWithValue("@username", loggedInUsername)
+
 
         Using reader As OleDbDataReader = cmd.ExecuteReader()
             If reader.HasRows Then

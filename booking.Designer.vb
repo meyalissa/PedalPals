@@ -165,6 +165,7 @@ Partial Class booking
         'dateBooking
         '
         Me.dateBooking.CalendarFont = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateBooking.Checked = False
         Me.dateBooking.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dateBooking.Location = New System.Drawing.Point(204, 281)
         Me.dateBooking.Margin = New System.Windows.Forms.Padding(4)

@@ -22,18 +22,14 @@ Partial Class myrent_cust
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.BookID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PlaceBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TypeBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HourBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PriceBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnDelete = New System.Windows.Forms.DataGridViewButtonColumn()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataGridViewRental = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lbltest = New System.Windows.Forms.Label()
+        CType(Me.DataGridViewRental, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -52,79 +48,55 @@ Partial Class myrent_cust
         Me.Label2.Text = "My Rental"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'DataGridView3
+        'DataGridViewRental
         '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookID, Me.PlaceBook, Me.DateBook, Me.TypeBook, Me.HourBook, Me.PriceBook, Me.btnDelete})
-        Me.DataGridView3.Location = New System.Drawing.Point(49, 117)
-        Me.DataGridView3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.RowHeadersWidth = 51
-        Me.DataGridView3.Size = New System.Drawing.Size(976, 507)
-        Me.DataGridView3.TabIndex = 14
+        Me.DataGridViewRental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewRental.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
+        Me.DataGridViewRental.Location = New System.Drawing.Point(49, 117)
+        Me.DataGridViewRental.Margin = New System.Windows.Forms.Padding(4)
+        Me.DataGridViewRental.Name = "DataGridViewRental"
+        Me.DataGridViewRental.RowHeadersWidth = 51
+        Me.DataGridViewRental.Size = New System.Drawing.Size(976, 507)
+        Me.DataGridViewRental.TabIndex = 14
         '
-        'BookID
+        'Column1
         '
-        Me.BookID.HeaderText = "Book ID"
-        Me.BookID.MaxInputLength = 4
-        Me.BookID.MinimumWidth = 6
-        Me.BookID.Name = "BookID"
-        Me.BookID.Width = 125
+        Me.Column1.HeaderText = "Rent Place"
+        Me.Column1.MinimumWidth = 6
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 125
         '
-        'PlaceBook
+        'Column2
         '
-        Me.PlaceBook.HeaderText = "Place"
-        Me.PlaceBook.MaxInputLength = 50
-        Me.PlaceBook.MinimumWidth = 6
-        Me.PlaceBook.Name = "PlaceBook"
-        Me.PlaceBook.Width = 125
+        Me.Column2.HeaderText = "Bicycle Type"
+        Me.Column2.MinimumWidth = 6
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 125
         '
-        'DateBook
+        'Column3
         '
-        DataGridViewCellStyle3.Format = "d"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DateBook.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DateBook.HeaderText = "Date"
-        Me.DateBook.MaxInputLength = 15
-        Me.DateBook.MinimumWidth = 6
-        Me.DateBook.Name = "DateBook"
-        Me.DateBook.Width = 125
+        Me.Column3.HeaderText = "Rent Date"
+        Me.Column3.MinimumWidth = 6
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 125
         '
-        'TypeBook
+        'Column4
         '
-        Me.TypeBook.HeaderText = "Type"
-        Me.TypeBook.MaxInputLength = 50
-        Me.TypeBook.MinimumWidth = 6
-        Me.TypeBook.Name = "TypeBook"
-        Me.TypeBook.Width = 125
+        Me.Column4.HeaderText = "Rent Hour"
+        Me.Column4.MinimumWidth = 6
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 125
         '
-        'HourBook
+        'lbltest
         '
-        DataGridViewCellStyle4.Format = "N0"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.HourBook.DefaultCellStyle = DataGridViewCellStyle4
-        Me.HourBook.HeaderText = "Hour"
-        Me.HourBook.MinimumWidth = 6
-        Me.HourBook.Name = "HourBook"
-        Me.HourBook.Width = 125
-        '
-        'PriceBook
-        '
-        Me.PriceBook.HeaderText = "Price"
-        Me.PriceBook.MaxInputLength = 10000
-        Me.PriceBook.MinimumWidth = 6
-        Me.PriceBook.Name = "PriceBook"
-        Me.PriceBook.Width = 125
-        '
-        'btnDelete
-        '
-        Me.btnDelete.HeaderText = "Action"
-        Me.btnDelete.MinimumWidth = 6
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.btnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.Width = 125
+        Me.lbltest.AutoSize = True
+        Me.lbltest.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltest.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lbltest.Location = New System.Drawing.Point(904, 36)
+        Me.lbltest.Name = "lbltest"
+        Me.lbltest.Size = New System.Drawing.Size(106, 39)
+        Me.lbltest.TabIndex = 39
+        Me.lbltest.Text = "lbltest"
         '
         'myrent_cust
         '
@@ -132,25 +104,24 @@ Partial Class myrent_cust
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1060, 682)
-        Me.Controls.Add(Me.DataGridView3)
+        Me.Controls.Add(Me.lbltest)
+        Me.Controls.Add(Me.DataGridViewRental)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "myrent_cust"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "myrent_cust"
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewRental, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label2 As Label
-    Friend WithEvents DataGridView3 As DataGridView
-    Friend WithEvents BookID As DataGridViewTextBoxColumn
-    Friend WithEvents PlaceBook As DataGridViewTextBoxColumn
-    Friend WithEvents DateBook As DataGridViewTextBoxColumn
-    Friend WithEvents TypeBook As DataGridViewTextBoxColumn
-    Friend WithEvents HourBook As DataGridViewTextBoxColumn
-    Friend WithEvents PriceBook As DataGridViewTextBoxColumn
-    Friend WithEvents btnDelete As DataGridViewButtonColumn
+    Friend WithEvents DataGridViewRental As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents lbltest As Label
 End Class

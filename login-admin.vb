@@ -25,7 +25,7 @@ Public Class login_admin
 
             If (count > 0) Then
 
-                loggedInUsername = txtusername.Text
+
                 MsgBox("Login succeed", MsgBoxStyle.Information)
                 ' Show the Dashboard-admin.vb form
                 sidebar_admin.Show()
