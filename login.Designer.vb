@@ -38,10 +38,9 @@ Partial Class login
         Me.txtPass.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtPass.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.Location = New System.Drawing.Point(621, 306)
-        Me.txtPass.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPass.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPass.Name = "txtPass"
-        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPass.Size = New System.Drawing.Size(199, 30)
+        Me.txtPass.Size = New System.Drawing.Size(199, 29)
         Me.txtPass.TabIndex = 13
         '
         'Label4
@@ -54,7 +53,7 @@ Partial Class login
         Me.Label4.Location = New System.Drawing.Point(500, 306)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(108, 28)
+        Me.Label4.Size = New System.Drawing.Size(103, 25)
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Password :"
         '
@@ -64,9 +63,9 @@ Partial Class login
         Me.txtUsername.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtUsername.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.Location = New System.Drawing.Point(621, 256)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(199, 30)
+        Me.txtUsername.Size = New System.Drawing.Size(199, 29)
         Me.txtUsername.TabIndex = 11
         '
         'Label3
@@ -79,7 +78,7 @@ Partial Class login
         Me.Label3.Location = New System.Drawing.Point(500, 256)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(115, 28)
+        Me.Label3.Size = New System.Drawing.Size(109, 25)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Username :"
         '
@@ -94,7 +93,7 @@ Partial Class login
         Me.Label2.Location = New System.Drawing.Point(589, 148)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(129, 48)
+        Me.Label2.Size = New System.Drawing.Size(123, 46)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Log In"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -110,7 +109,7 @@ Partial Class login
         Me.Label1.Location = New System.Drawing.Point(493, 60)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(354, 93)
+        Me.Label1.Size = New System.Drawing.Size(338, 89)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "PedalPals"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -126,7 +125,7 @@ Partial Class login
         Me.btnLogin2.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin2.ForeColor = System.Drawing.Color.AntiqueWhite
         Me.btnLogin2.Location = New System.Drawing.Point(683, 390)
-        Me.btnLogin2.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLogin2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnLogin2.Name = "btnLogin2"
         Me.btnLogin2.Size = New System.Drawing.Size(139, 41)
         Me.btnLogin2.TabIndex = 15
@@ -144,7 +143,7 @@ Partial Class login
         Me.btnBack1.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack1.ForeColor = System.Drawing.Color.AntiqueWhite
         Me.btnBack1.Location = New System.Drawing.Point(511, 390)
-        Me.btnBack1.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBack1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnBack1.Name = "btnBack1"
         Me.btnBack1.Size = New System.Drawing.Size(139, 41)
         Me.btnBack1.TabIndex = 14
@@ -168,7 +167,7 @@ Partial Class login
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "login"

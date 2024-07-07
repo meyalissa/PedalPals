@@ -12,23 +12,17 @@ Public Class booking
 
         connection.Open()
 
-        ' Populate bike types ComboBox (typeBooking)
-        Dim cmdType As New OleDbCommand("SELECT type_name, bike_id FROM bike", connection)
+        Dim cmdType As New OleDbCommand("SELECT type_name FROM bike", connection)
         Using readerType As OleDbDataReader = cmdType.ExecuteReader()
             While readerType.Read()
-                ' Create a new KeyValuePair to store both ID and name
-                Dim bikeType As New KeyValuePair(Of Integer, String)(readerType("bike_id"), readerType("type_name").ToString())
-                typeBooking.Items.Add(bikeType)
+                typeBooking.Items.Add(readerType("type_name").ToString())
             End While
         End Using
 
-        ' Populate locations ComboBox (placeBooking)
-        Dim cmdAdd As New OleDbCommand("SELECT address, location_id FROM location", connection)
+        Dim cmdAdd As New OleDbCommand("SELECT address FROM location", connection)
         Using readerAdd As OleDbDataReader = cmdAdd.ExecuteReader()
             While readerAdd.Read()
-                ' Create a new KeyValuePair to store both ID and name
-                Dim location As New KeyValuePair(Of Integer, String)(readerAdd("location_id"), readerAdd("address").ToString())
-                placeBooking.Items.Add(location)
+                placeBooking.Items.Add(readerAdd("address").ToString())
             End While
         End Using
 
@@ -83,36 +77,39 @@ Public Class booking
             connection.Open()
 
             ' Get the selected bicycle type from the ComboBox
-            Dim selectedType As KeyValuePair(Of Integer, String) = DirectCast(typeBooking.SelectedItem, KeyValuePair(Of Integer, String))
+            Dim selectedTypeName As String = typeBooking.SelectedItem.ToString()
 
             ' Get the number of hours from the TextBox
-            Dim hours As Integer = Integer.Parse(hourBooking.Text)
+            Dim hours As Integer
+            If Integer.TryParse(hourBooking.Text, hours) Then
+                ' Prepare the SQL command to fetch the price for the given bicycle type
+                Dim cmdPrice As New OleDbCommand("SELECT hourly_price FROM bike WHERE type_name = ?", connection)
+                cmdPrice.Parameters.AddWithValue("?", selectedTypeName)
 
-            ' Prepare the SQL command to fetch the price for the given bicycle type
-            Dim cmdPrice As New OleDbCommand("SELECT hourly_price FROM bike WHERE bike_id = ?", connection)
-            cmdPrice.Parameters.AddWithValue("?", selectedType.Key)
+                Try
+                    ' Execute the command and read the result
+                    Using readerPrice As OleDbDataReader = cmdPrice.ExecuteReader()
+                        If readerPrice.HasRows Then
+                            readerPrice.Read()
+                            Dim pricePerHour As Decimal = readerPrice.GetDecimal(0) ' Get the hourly_price
 
-            Try
-                ' Execute the command and read the result
-                Using readerPrice As OleDbDataReader = cmdPrice.ExecuteReader()
-                    If readerPrice.HasRows Then
-                        readerPrice.Read()
-                        Dim pricePerHour As Decimal = readerPrice.GetDecimal(0) ' Get the hourly_price
+                            ' Calculate the total price
+                            Dim totalPrice As Decimal = pricePerHour * hours
 
-                        ' Calculate the total price
-                        Dim totalPrice As Decimal = pricePerHour * hours
-
-                        ' Display the total price
-                        lblPriceBooking.Text = "RM " & totalPrice.ToString("F2")
-                    Else
-                        MessageBox.Show("Bicycle type not found in the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End If
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                connection.Close()
-            End Try
+                            ' Display the total price
+                            lblPriceBooking.Text = "RM " & totalPrice.ToString("F2")
+                        Else
+                            MessageBox.Show("Bicycle type not found in the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    End Using
+                Catch ex As Exception
+                    MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Finally
+                    connection.Close()
+                End Try
+            Else
+                MessageBox.Show("Please enter a valid number of hours.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         Else
             MessageBox.Show("Please select a bicycle type and enter hours to calculate the price.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If

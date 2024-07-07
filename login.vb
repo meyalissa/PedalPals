@@ -2,8 +2,7 @@
 
 Public Class login
     Dim connection As New OleDbConnection(My.Settings.dataConnectionString)
-
-    Public Shared logInuserID As Integer
+    Public Shared LoggedInUsername As String ' Public variable to store the logged-in username
 
     Private Sub btnLogin2_Click(sender As Object, e As EventArgs) Handles btnLogin2.Click
         If txtUsername.Text = Nothing Or txtPass.Text = Nothing Then
@@ -13,38 +12,28 @@ Public Class login
                 connection.Open()
             End If
 
-            Dim cmd As New OleDbCommand("SELECT mem_id FROM member WHERE mem_username=? AND mem_password=?", connection)
-            cmd.Parameters.AddWithValue("@1", txtUsername.Text)
-            cmd.Parameters.AddWithValue("@2", txtPass.Text)
+            Dim cmd As New OleDbCommand("SELECT * FROM member WHERE mem_username=? AND mem_password=?", connection)
+            cmd.Parameters.AddWithValue("@1", OleDbType.VarChar).Value = txtUsername.Text
+            cmd.Parameters.AddWithValue("@2", OleDbType.VarChar).Value = txtPass.Text
 
-            Dim reader As OleDbDataReader = cmd.ExecuteReader()
+            Dim result As Object = cmd.ExecuteScalar()
 
-            If reader.HasRows Then
-                reader.Read()
-                Dim memberId As Integer = reader("mem_id")
+            If result IsNot Nothing Then
+                Dim memberId As Integer = Convert.ToInt32(result)
                 MsgBox("Login succeed", MsgBoxStyle.Information)
-
-                ' Store the logged-in username and user ID
-
-                logInuserID = memberId.ToString()
+                Dim myRentForm As New myrent_cust()
+                ' Store the logged-in username
+                LoggedInUsername = txtUsername.Text
 
                 sidebar_cust.Show()
+
+
+
             Else
                 MsgBox("Invalid username/password", MsgBoxStyle.Information)
             End If
-
-            reader.Close()
         End If
         Me.Hide() ' Hide the login form
     End Sub
-
-    Private Sub btnBack1_Click(sender As Object, e As EventArgs) Handles btnBack1.Click 'Button Back3
-        ' Hide the current login-admin.vb form
-        Me.Hide()
-
-        ' Show the home.vb form
-        home.Show()
-    End Sub
-
 
 End Class
