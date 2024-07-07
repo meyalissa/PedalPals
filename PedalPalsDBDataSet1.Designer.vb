@@ -39,6 +39,10 @@ Partial Public Class PedalPalsDBDataSet1
     
     Private tablemember_Query As member_QueryDataTable
     
+    Private relationlocationrental As Global.System.Data.DataRelation
+    
+    Private relationmemberrental As Global.System.Data.DataRelation
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -338,6 +342,8 @@ Partial Public Class PedalPalsDBDataSet1
                 Me.tablemember_Query.InitVars
             End If
         End If
+        Me.relationlocationrental = Me.Relations("locationrental")
+        Me.relationmemberrental = Me.Relations("memberrental")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -362,6 +368,10 @@ Partial Public Class PedalPalsDBDataSet1
         MyBase.Tables.Add(Me.tablerental)
         Me.tablemember_Query = New member_QueryDataTable()
         MyBase.Tables.Add(Me.tablemember_Query)
+        Me.relationlocationrental = New Global.System.Data.DataRelation("locationrental", New Global.System.Data.DataColumn() {Me.tablelocation.location_idColumn}, New Global.System.Data.DataColumn() {Me.tablerental.location_idColumn}, false)
+        Me.Relations.Add(Me.relationlocationrental)
+        Me.relationmemberrental = New Global.System.Data.DataRelation("memberrental", New Global.System.Data.DataColumn() {Me.tablemember.mem_idColumn}, New Global.System.Data.DataColumn() {Me.tablerental.mem_idColumn}, false)
+        Me.Relations.Add(Me.relationmemberrental)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2214,9 +2224,15 @@ Partial Public Class PedalPalsDBDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddrentalRow(ByVal rent_date As Date, ByVal rent_hour As Integer, ByVal bike_id As Integer, ByVal mem_id As Integer, ByVal location_id As Integer, ByVal rent_time_start As Date, ByVal rent_time_end As Date) As rentalRow
+        Public Overloads Function AddrentalRow(ByVal rent_date As Date, ByVal rent_hour As Integer, ByVal bike_id As Integer, ByVal parentmemberRowBymemberrental As memberRow, ByVal parentlocationRowBylocationrental As locationRow, ByVal rent_time_start As Date, ByVal rent_time_end As Date) As rentalRow
             Dim rowrentalRow As rentalRow = CType(Me.NewRow,rentalRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, rent_date, rent_hour, bike_id, mem_id, location_id, rent_time_start, rent_time_end}
+            Dim columnValuesArray() As Object = New Object() {Nothing, rent_date, rent_hour, bike_id, Nothing, Nothing, rent_time_start, rent_time_end}
+            If (Not (parentmemberRowBymemberrental) Is Nothing) Then
+                columnValuesArray(4) = parentmemberRowBymemberrental(0)
+            End If
+            If (Not (parentlocationRowBylocationrental) Is Nothing) Then
+                columnValuesArray(5) = parentlocationRowBylocationrental(0)
+            End If
             rowrentalRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowrentalRow)
             Return rowrentalRow
@@ -3093,6 +3109,16 @@ Partial Public Class PedalPalsDBDataSet1
         Public Sub SetaddressNull()
             Me(Me.tablelocation.addressColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function GetrentalRows() As rentalRow()
+            If (Me.Table.ChildRelations("locationrental") Is Nothing) Then
+                Return New rentalRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("locationrental")),rentalRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -3309,6 +3335,16 @@ Partial Public Class PedalPalsDBDataSet1
         Public Sub Setmem_addressNull()
             Me(Me.tablemember.mem_addressColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function GetrentalRows() As rentalRow()
+            If (Me.Table.ChildRelations("memberrental") Is Nothing) Then
+                Return New rentalRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("memberrental")),rentalRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -3520,6 +3556,28 @@ Partial Public Class PedalPalsDBDataSet1
             End Get
             Set
                 Me(Me.tablerental.rent_time_endColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property locationRow() As locationRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("locationrental")),locationRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("locationrental"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property memberRow() As memberRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("memberrental")),memberRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("memberrental"))
             End Set
         End Property
         
@@ -6880,24 +6938,6 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As PedalPalsDBDataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._adminTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.admin.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._adminTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._bikeTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.bike.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._bikeTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._locationTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.location.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -6913,6 +6953,24 @@ Namespace PedalPalsDBDataSet1TableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._memberTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._adminTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.admin.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._adminTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._bikeTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.bike.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._bikeTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -6944,22 +7002,6 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As PedalPalsDBDataSet1, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._adminTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.admin.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._adminTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._bikeTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.bike.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._bikeTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._locationTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.location.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -6973,6 +7015,22 @@ Namespace PedalPalsDBDataSet1TableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._memberTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._adminTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.admin.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._adminTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._bikeTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.bike.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._bikeTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -7018,22 +7076,6 @@ Namespace PedalPalsDBDataSet1TableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._memberTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.member.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._memberTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._locationTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.location.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._locationTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._bikeTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.bike.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -7047,6 +7089,22 @@ Namespace PedalPalsDBDataSet1TableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._adminTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._memberTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.member.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._memberTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._locationTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.location.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._locationTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
