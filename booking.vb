@@ -12,46 +12,49 @@ Public Class booking
 
         connection.Open()
 
-        ' Populate bike types ComboBox (typeBooking)
-        Dim cmdType As New OleDbCommand("SELECT type_name, bike_id FROM bike", connection)
+        Dim cmdType As New OleDbCommand("SELECT type_name FROM bike", connection)
         Using readerType As OleDbDataReader = cmdType.ExecuteReader()
             While readerType.Read()
-                ' Create a new KeyValuePair to store both ID and name
-                Dim bikeType As New KeyValuePair(Of Integer, String)(readerType("bike_id"), readerType("type_name").ToString())
-                typeBooking.Items.Add(bikeType)
+                typeBooking.Items.Add(readerType("type_name").ToString())
             End While
         End Using
 
-        ' Populate locations ComboBox (placeBooking)
-        Dim cmdAdd As New OleDbCommand("SELECT address, location_id FROM location", connection)
+        Dim cmdAdd As New OleDbCommand("SELECT address FROM location", connection)
         Using readerAdd As OleDbDataReader = cmdAdd.ExecuteReader()
             While readerAdd.Read()
-                ' Create a new KeyValuePair to store both ID and name
-                Dim location As New KeyValuePair(Of Integer, String)(readerAdd("location_id"), readerAdd("address").ToString())
-                placeBooking.Items.Add(location)
+                placeBooking.Items.Add(readerAdd("address").ToString())
             End While
         End Using
 
         connection.Close()
-
-        ' Set display member for ComboBoxes
-        typeBooking.DisplayMember = "Value"
-        placeBooking.DisplayMember = "Value"
     End Sub
-
-
 
     'Continue Button to Payment Page
     Private Sub btnBook1_Click(sender As Object, e As EventArgs) Handles btnBook1.Click
+        If placeBooking.SelectedItem Is Nothing OrElse typeBooking.SelectedItem Is Nothing Then
+            MessageBox.Show("Please select a place and a bicycle type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
         connection.Open()
 
-        ' Get the selected place and type
-        Dim selectedPlace As KeyValuePair(Of Integer, String) = DirectCast(placeBooking.SelectedItem, KeyValuePair(Of Integer, String))
-        Dim selectedType As KeyValuePair(Of Integer, String) = DirectCast(typeBooking.SelectedItem, KeyValuePair(Of Integer, String))
+        ' Retrieve selected place and type
+        Dim selectedPlace As String = placeBooking.SelectedItem.ToString()
+        Dim selectedType As String = typeBooking.SelectedItem.ToString()
+
+        ' Retrieve IDs from database based on selected values
+        Dim placeID As Integer
+        Dim bikeID As Integer
+
+        Dim cmdPlaceID As New OleDbCommand("SELECT location_id FROM location WHERE address = ?", connection)
+        cmdPlaceID.Parameters.AddWithValue("?", selectedPlace)
+        placeID = Convert.ToInt32(cmdPlaceID.ExecuteScalar())
+
+        Dim cmdBikeID As New OleDbCommand("SELECT bike_id FROM bike WHERE type_name = ?", connection)
+        cmdBikeID.Parameters.AddWithValue("?", selectedType)
+        bikeID = Convert.ToInt32(cmdBikeID.ExecuteScalar())
 
         ' Retrieve values from controls
-        Dim placeID As Integer = selectedPlace.Key
-        Dim bikeID As Integer = selectedType.Key
         Dim bookingDate As Date = dateBooking.Value.Date ' Get the date value
         Dim bookingHour As Integer = CInt(hourBooking.Value) ' Get the integer value
 
@@ -68,10 +71,10 @@ Public Class booking
 
         connection.Close()
 
-        MessageBox.Show("You have make a bicycle booking", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("You have made a bicycle booking", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ' Raise the event to add a row to the DataGridView in FormWithDataGridView if it is subscribed
-        RaiseEvent AddRowRequested(selectedPlace.Value, selectedType.Value, bookingDate, bookingHour)
+        RaiseEvent AddRowRequested(selectedPlace, selectedType, bookingDate, bookingHour)
 
         ' Show the payment form
         payment.Show()
@@ -83,14 +86,14 @@ Public Class booking
             connection.Open()
 
             ' Get the selected bicycle type from the ComboBox
-            Dim selectedType As KeyValuePair(Of Integer, String) = DirectCast(typeBooking.SelectedItem, KeyValuePair(Of Integer, String))
+            Dim selectedTypeName As String = typeBooking.SelectedItem.ToString()
 
-            ' Get the number of hours from the TextBox
-            Dim hours As Integer = Integer.Parse(hourBooking.Text)
+            ' Get the number of hours from the NumericUpDown control
+            Dim hours As Integer = CInt(hourBooking.Value)
 
             ' Prepare the SQL command to fetch the price for the given bicycle type
-            Dim cmdPrice As New OleDbCommand("SELECT hourly_price FROM bike WHERE bike_id = ?", connection)
-            cmdPrice.Parameters.AddWithValue("?", selectedType.Key)
+            Dim cmdPrice As New OleDbCommand("SELECT hourly_price FROM bike WHERE type_name = ?", connection)
+            cmdPrice.Parameters.AddWithValue("?", selectedTypeName)
 
             Try
                 ' Execute the command and read the result
@@ -117,7 +120,4 @@ Public Class booking
             MessageBox.Show("Please select a bicycle type and enter hours to calculate the price.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-
-
-
 End Class
