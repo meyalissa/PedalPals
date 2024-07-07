@@ -2,30 +2,32 @@
 
 Public Class myrent_cust
     Private Sub myrent_cust_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbltest.Text = login.LoggedInUsername
-        ' Load data into DataGridView from database
-        LoadDataGridView()
+        'TODO: This line of code loads data into the 'PedalPalsDBDataSet1.myRental' table. You can move, or remove it, as needed.
+        Me.MyRentalTableAdapter.Fill(Me.PedalPalsDBDataSet1.myRental)
+
+        Dim userId As Integer = login.logInuserID
+
+        ' Load data into DataGridView based on the logged-in user's ID
+        LoadDataGridView(userId)
     End Sub
 
-    Private Sub LoadDataGridView()
-        Dim connection As New OleDbConnection(My.Settings.dataConnectionString)
-        Dim cmd As New OleDbCommand("SELECT r.Place, r.Type, r.Date_Booking, r.Hour 
-                                    FROM Rental2 r 
-                                    JOIN member m ON m.mem_id = r.mem_id 
-                                    WHERE m.mem_username = lbltest.Text", connection)
-        Dim adapter As New OleDbDataAdapter(cmd)
-        Dim dataTable As New DataTable()
 
-        Try
+    Private Sub LoadDataGridView(userId As Integer)
+        Using connection As New OleDbConnection(My.Settings.dataConnectionString)
             connection.Open()
-            adapter.Fill(dataTable)
+            Dim query As String = "SELECT * FROM myRental WHERE mem_ID = ?"
+            Using command As New OleDbCommand(query, connection)
+                command.Parameters.AddWithValue("?", userId)
+                Using adapter As New OleDbDataAdapter(command)
+                    Dim rentalData As New DataTable()
+                    adapter.Fill(rentalData)
+                    MyRentalDataGridView.DataSource = rentalData
+                End Using
+            End Using
+        End Using
+    End Sub
 
-            ' Bind the DataTable to DataGridView
-            DataGridViewRental.DataSource = dataTable
-        Catch ex As Exception
-            MessageBox.Show("Error loading data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            connection.Close()
-        End Try
+    Private Sub MyRentalDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MyRentalDataGridView.CellContentClick
+
     End Sub
 End Class

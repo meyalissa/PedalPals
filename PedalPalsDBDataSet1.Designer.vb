@@ -39,7 +39,9 @@ Partial Public Class PedalPalsDBDataSet1
     
     Private tablemember_Query As member_QueryDataTable
     
-    Private tableRental2 As Rental2DataTable
+    Private tablemyRental As myRentalDataTable
+    
+    Private tableRentalStat As RentalStatDataTable
     
     Private relationlocationrental As Global.System.Data.DataRelation
     
@@ -95,8 +97,11 @@ Partial Public Class PedalPalsDBDataSet1
             If (Not (ds.Tables("member Query")) Is Nothing) Then
                 MyBase.Tables.Add(New member_QueryDataTable(ds.Tables("member Query")))
             End If
-            If (Not (ds.Tables("Rental2")) Is Nothing) Then
-                MyBase.Tables.Add(New Rental2DataTable(ds.Tables("Rental2")))
+            If (Not (ds.Tables("myRental")) Is Nothing) Then
+                MyBase.Tables.Add(New myRentalDataTable(ds.Tables("myRental")))
+            End If
+            If (Not (ds.Tables("RentalStat")) Is Nothing) Then
+                MyBase.Tables.Add(New RentalStatDataTable(ds.Tables("RentalStat")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -189,9 +194,19 @@ Partial Public Class PedalPalsDBDataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Rental2() As Rental2DataTable
+    Public ReadOnly Property myRental() As myRentalDataTable
         Get
-            Return Me.tableRental2
+            Return Me.tablemyRental
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property RentalStat() As RentalStatDataTable
+        Get
+            Return Me.tableRentalStat
         End Get
     End Property
     
@@ -283,8 +298,11 @@ Partial Public Class PedalPalsDBDataSet1
             If (Not (ds.Tables("member Query")) Is Nothing) Then
                 MyBase.Tables.Add(New member_QueryDataTable(ds.Tables("member Query")))
             End If
-            If (Not (ds.Tables("Rental2")) Is Nothing) Then
-                MyBase.Tables.Add(New Rental2DataTable(ds.Tables("Rental2")))
+            If (Not (ds.Tables("myRental")) Is Nothing) Then
+                MyBase.Tables.Add(New myRentalDataTable(ds.Tables("myRental")))
+            End If
+            If (Not (ds.Tables("RentalStat")) Is Nothing) Then
+                MyBase.Tables.Add(New RentalStatDataTable(ds.Tables("RentalStat")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -360,10 +378,16 @@ Partial Public Class PedalPalsDBDataSet1
                 Me.tablemember_Query.InitVars
             End If
         End If
-        Me.tableRental2 = CType(MyBase.Tables("Rental2"),Rental2DataTable)
+        Me.tablemyRental = CType(MyBase.Tables("myRental"),myRentalDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableRental2) Is Nothing) Then
-                Me.tableRental2.InitVars
+            If (Not (Me.tablemyRental) Is Nothing) Then
+                Me.tablemyRental.InitVars
+            End If
+        End If
+        Me.tableRentalStat = CType(MyBase.Tables("RentalStat"),RentalStatDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableRentalStat) Is Nothing) Then
+                Me.tableRentalStat.InitVars
             End If
         End If
         Me.relationlocationrental = Me.Relations("locationrental")
@@ -392,8 +416,10 @@ Partial Public Class PedalPalsDBDataSet1
         MyBase.Tables.Add(Me.tablerental)
         Me.tablemember_Query = New member_QueryDataTable()
         MyBase.Tables.Add(Me.tablemember_Query)
-        Me.tableRental2 = New Rental2DataTable()
-        MyBase.Tables.Add(Me.tableRental2)
+        Me.tablemyRental = New myRentalDataTable()
+        MyBase.Tables.Add(Me.tablemyRental)
+        Me.tableRentalStat = New RentalStatDataTable()
+        MyBase.Tables.Add(Me.tableRentalStat)
         Me.relationlocationrental = New Global.System.Data.DataRelation("locationrental", New Global.System.Data.DataColumn() {Me.tablelocation.location_idColumn}, New Global.System.Data.DataColumn() {Me.tablerental.location_idColumn}, false)
         Me.Relations.Add(Me.relationlocationrental)
         Me.relationmemberrental = New Global.System.Data.DataRelation("memberrental", New Global.System.Data.DataColumn() {Me.tablemember.mem_idColumn}, New Global.System.Data.DataColumn() {Me.tablerental.mem_idColumn}, false)
@@ -444,7 +470,13 @@ Partial Public Class PedalPalsDBDataSet1
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializeRental2() As Boolean
+    Private Function ShouldSerializemyRental() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+    Private Function ShouldSerializeRentalStat() As Boolean
         Return false
     End Function
     
@@ -528,7 +560,10 @@ Partial Public Class PedalPalsDBDataSet1
     Public Delegate Sub member_QueryRowChangeEventHandler(ByVal sender As Object, ByVal e As member_QueryRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub Rental2RowChangeEventHandler(ByVal sender As Object, ByVal e As Rental2RowChangeEvent)
+    Public Delegate Sub myRentalRowChangeEventHandler(ByVal sender As Object, ByVal e As myRentalRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+    Public Delegate Sub RentalStatRowChangeEventHandler(ByVal sender As Object, ByVal e As RentalStatRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -2123,6 +2158,8 @@ Partial Public Class PedalPalsDBDataSet1
         
         Private columnrent_time_end As Global.System.Data.DataColumn
         
+        Private columnrent_status As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -2223,6 +2260,14 @@ Partial Public Class PedalPalsDBDataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property rent_statusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrent_status
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2259,9 +2304,9 @@ Partial Public Class PedalPalsDBDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddrentalRow(ByVal rent_date As Date, ByVal rent_hour As Integer, ByVal bike_id As Integer, ByVal parentmemberRowBymemberrental As memberRow, ByVal parentlocationRowBylocationrental As locationRow, ByVal rent_time_start As Date, ByVal rent_time_end As Date) As rentalRow
+        Public Overloads Function AddrentalRow(ByVal rent_date As Date, ByVal rent_hour As Integer, ByVal bike_id As Integer, ByVal parentmemberRowBymemberrental As memberRow, ByVal parentlocationRowBylocationrental As locationRow, ByVal rent_time_start As Date, ByVal rent_time_end As Date, ByVal rent_status As String) As rentalRow
             Dim rowrentalRow As rentalRow = CType(Me.NewRow,rentalRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, rent_date, rent_hour, bike_id, Nothing, Nothing, rent_time_start, rent_time_end}
+            Dim columnValuesArray() As Object = New Object() {Nothing, rent_date, rent_hour, bike_id, Nothing, Nothing, rent_time_start, rent_time_end, rent_status}
             If (Not (parentmemberRowBymemberrental) Is Nothing) Then
                 columnValuesArray(4) = parentmemberRowBymemberrental(0)
             End If
@@ -2304,6 +2349,7 @@ Partial Public Class PedalPalsDBDataSet1
             Me.columnlocation_id = MyBase.Columns("location_id")
             Me.columnrent_time_start = MyBase.Columns("rent_time_start")
             Me.columnrent_time_end = MyBase.Columns("rent_time_end")
+            Me.columnrent_status = MyBase.Columns("rent_status")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2325,12 +2371,15 @@ Partial Public Class PedalPalsDBDataSet1
             MyBase.Columns.Add(Me.columnrent_time_start)
             Me.columnrent_time_end = New Global.System.Data.DataColumn("rent_time_end", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnrent_time_end)
+            Me.columnrent_status = New Global.System.Data.DataColumn("rent_status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_status)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnrent_id}, true))
             Me.columnrent_id.AutoIncrement = true
             Me.columnrent_id.AutoIncrementSeed = -1
             Me.columnrent_id.AutoIncrementStep = -1
             Me.columnrent_id.AllowDBNull = false
             Me.columnrent_id.Unique = true
+            Me.columnrent_status.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2827,26 +2876,32 @@ Partial Public Class PedalPalsDBDataSet1
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class Rental2DataTable
-        Inherits Global.System.Data.TypedTableBase(Of Rental2Row)
+    Partial Public Class myRentalDataTable
+        Inherits Global.System.Data.TypedTableBase(Of myRentalRow)
         
-        Private columnID As Global.System.Data.DataColumn
+        Private columnrent_id As Global.System.Data.DataColumn
         
-        Private columnPlace As Global.System.Data.DataColumn
+        Private columnrent_date As Global.System.Data.DataColumn
         
-        Private columnType As Global.System.Data.DataColumn
+        Private columnrent_hour As Global.System.Data.DataColumn
         
-        Private columnDate_Booking As Global.System.Data.DataColumn
+        Private columntype_name As Global.System.Data.DataColumn
         
-        Private columnHour As Global.System.Data.DataColumn
+        Private columnrent_time_start As Global.System.Data.DataColumn
         
         Private columnmem_id As Global.System.Data.DataColumn
+        
+        Private columntotal_price As Global.System.Data.DataColumn
+        
+        Private columnaddress As Global.System.Data.DataColumn
+        
+        Private columnrent_status As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Rental2"
+            Me.TableName = "myRental"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -2879,41 +2934,41 @@ Partial Public Class PedalPalsDBDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property rent_idColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnID
+                Return Me.columnrent_id
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property PlaceColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property rent_dateColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnPlace
+                Return Me.columnrent_date
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property TypeColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property rent_hourColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnType
+                Return Me.columnrent_hour
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Date_BookingColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property type_nameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnDate_Booking
+                Return Me.columntype_name
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property HourColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property rent_time_startColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnHour
+                Return Me.columnrent_time_start
             End Get
         End Property
         
@@ -2922,6 +2977,30 @@ Partial Public Class PedalPalsDBDataSet1
         Public ReadOnly Property mem_idColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnmem_id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property total_priceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotal_price
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property addressColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnaddress
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property rent_statusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrent_status
             End Get
         End Property
         
@@ -2936,50 +3015,44 @@ Partial Public Class PedalPalsDBDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As Rental2Row
+        Public Default ReadOnly Property Item(ByVal index As Integer) As myRentalRow
             Get
-                Return CType(Me.Rows(index),Rental2Row)
+                Return CType(Me.Rows(index),myRentalRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event Rental2RowChanging As Rental2RowChangeEventHandler
+        Public Event myRentalRowChanging As myRentalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event Rental2RowChanged As Rental2RowChangeEventHandler
+        Public Event myRentalRowChanged As myRentalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event Rental2RowDeleting As Rental2RowChangeEventHandler
+        Public Event myRentalRowDeleting As myRentalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event Rental2RowDeleted As Rental2RowChangeEventHandler
+        Public Event myRentalRowDeleted As myRentalRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddRental2Row(ByVal row As Rental2Row)
+        Public Overloads Sub AddmyRentalRow(ByVal row As myRentalRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddRental2Row(ByVal Place As String, ByVal Type As String, ByVal Date_Booking As Date, ByVal Hour As Integer, ByVal mem_id As Integer) As Rental2Row
-            Dim rowRental2Row As Rental2Row = CType(Me.NewRow,Rental2Row)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Place, Type, Date_Booking, Hour, mem_id}
-            rowRental2Row.ItemArray = columnValuesArray
-            Me.Rows.Add(rowRental2Row)
-            Return rowRental2Row
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByID(ByVal ID As Integer) As Rental2Row
-            Return CType(Me.Rows.Find(New Object() {ID}),Rental2Row)
+        Public Overloads Function AddmyRentalRow(ByVal rent_date As Date, ByVal rent_hour As Integer, ByVal type_name As String, ByVal rent_time_start As Date, ByVal total_price As Decimal, ByVal address As String, ByVal rent_status As String) As myRentalRow
+            Dim rowmyRentalRow As myRentalRow = CType(Me.NewRow,myRentalRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, rent_date, rent_hour, type_name, rent_time_start, Nothing, total_price, address, rent_status}
+            rowmyRentalRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowmyRentalRow)
+            Return rowmyRentalRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As Rental2DataTable = CType(MyBase.Clone,Rental2DataTable)
+            Dim cln As myRentalDataTable = CType(MyBase.Clone,myRentalDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -2987,69 +3060,80 @@ Partial Public Class PedalPalsDBDataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New Rental2DataTable()
+            Return New myRentalDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnID = MyBase.Columns("ID")
-            Me.columnPlace = MyBase.Columns("Place")
-            Me.columnType = MyBase.Columns("Type")
-            Me.columnDate_Booking = MyBase.Columns("Date_Booking")
-            Me.columnHour = MyBase.Columns("Hour")
+            Me.columnrent_id = MyBase.Columns("rent_id")
+            Me.columnrent_date = MyBase.Columns("rent_date")
+            Me.columnrent_hour = MyBase.Columns("rent_hour")
+            Me.columntype_name = MyBase.Columns("type_name")
+            Me.columnrent_time_start = MyBase.Columns("rent_time_start")
             Me.columnmem_id = MyBase.Columns("mem_id")
+            Me.columntotal_price = MyBase.Columns("total_price")
+            Me.columnaddress = MyBase.Columns("address")
+            Me.columnrent_status = MyBase.Columns("rent_status")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnID)
-            Me.columnPlace = New Global.System.Data.DataColumn("Place", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPlace)
-            Me.columnType = New Global.System.Data.DataColumn("Type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnType)
-            Me.columnDate_Booking = New Global.System.Data.DataColumn("Date_Booking", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDate_Booking)
-            Me.columnHour = New Global.System.Data.DataColumn("Hour", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnHour)
+            Me.columnrent_id = New Global.System.Data.DataColumn("rent_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_id)
+            Me.columnrent_date = New Global.System.Data.DataColumn("rent_date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_date)
+            Me.columnrent_hour = New Global.System.Data.DataColumn("rent_hour", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_hour)
+            Me.columntype_name = New Global.System.Data.DataColumn("type_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntype_name)
+            Me.columnrent_time_start = New Global.System.Data.DataColumn("rent_time_start", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_time_start)
             Me.columnmem_id = New Global.System.Data.DataColumn("mem_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmem_id)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
-            Me.columnID.AutoIncrement = true
-            Me.columnID.AutoIncrementSeed = -1
-            Me.columnID.AutoIncrementStep = -1
-            Me.columnID.AllowDBNull = false
-            Me.columnID.Unique = true
-            Me.columnPlace.MaxLength = 536870910
-            Me.columnType.MaxLength = 536870910
+            Me.columntotal_price = New Global.System.Data.DataColumn("total_price", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal_price)
+            Me.columnaddress = New Global.System.Data.DataColumn("address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnaddress)
+            Me.columnrent_status = New Global.System.Data.DataColumn("rent_status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_status)
+            Me.columnrent_id.AutoIncrement = true
+            Me.columnrent_id.AutoIncrementSeed = -1
+            Me.columnrent_id.AutoIncrementStep = -1
+            Me.columntype_name.MaxLength = 255
+            Me.columnmem_id.AutoIncrement = true
+            Me.columnmem_id.AutoIncrementSeed = -1
+            Me.columnmem_id.AutoIncrementStep = -1
+            Me.columntotal_price.ReadOnly = true
+            Me.columnaddress.MaxLength = 536870910
+            Me.columnrent_status.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewRental2Row() As Rental2Row
-            Return CType(Me.NewRow,Rental2Row)
+        Public Function NewmyRentalRow() As myRentalRow
+            Return CType(Me.NewRow,myRentalRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New Rental2Row(builder)
+            Return New myRentalRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(Rental2Row)
+            Return GetType(myRentalRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.Rental2RowChangedEvent) Is Nothing) Then
-                RaiseEvent Rental2RowChanged(Me, New Rental2RowChangeEvent(CType(e.Row,Rental2Row), e.Action))
+            If (Not (Me.myRentalRowChangedEvent) Is Nothing) Then
+                RaiseEvent myRentalRowChanged(Me, New myRentalRowChangeEvent(CType(e.Row,myRentalRow), e.Action))
             End If
         End Sub
         
@@ -3057,8 +3141,8 @@ Partial Public Class PedalPalsDBDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.Rental2RowChangingEvent) Is Nothing) Then
-                RaiseEvent Rental2RowChanging(Me, New Rental2RowChangeEvent(CType(e.Row,Rental2Row), e.Action))
+            If (Not (Me.myRentalRowChangingEvent) Is Nothing) Then
+                RaiseEvent myRentalRowChanging(Me, New myRentalRowChangeEvent(CType(e.Row,myRentalRow), e.Action))
             End If
         End Sub
         
@@ -3066,8 +3150,8 @@ Partial Public Class PedalPalsDBDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.Rental2RowDeletedEvent) Is Nothing) Then
-                RaiseEvent Rental2RowDeleted(Me, New Rental2RowChangeEvent(CType(e.Row,Rental2Row), e.Action))
+            If (Not (Me.myRentalRowDeletedEvent) Is Nothing) Then
+                RaiseEvent myRentalRowDeleted(Me, New myRentalRowChangeEvent(CType(e.Row,myRentalRow), e.Action))
             End If
         End Sub
         
@@ -3075,14 +3159,14 @@ Partial Public Class PedalPalsDBDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.Rental2RowDeletingEvent) Is Nothing) Then
-                RaiseEvent Rental2RowDeleting(Me, New Rental2RowChangeEvent(CType(e.Row,Rental2Row), e.Action))
+            If (Not (Me.myRentalRowDeletingEvent) Is Nothing) Then
+                RaiseEvent myRentalRowDeleting(Me, New myRentalRowChangeEvent(CType(e.Row,myRentalRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemoveRental2Row(ByVal row As Rental2Row)
+        Public Sub RemovemyRentalRow(ByVal row As myRentalRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -3109,7 +3193,376 @@ Partial Public Class PedalPalsDBDataSet1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "Rental2DataTable"
+            attribute2.FixedValue = "myRentalDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class RentalStatDataTable
+        Inherits Global.System.Data.TypedTableBase(Of RentalStatRow)
+        
+        Private columnrent_id As Global.System.Data.DataColumn
+        
+        Private columnrent_date As Global.System.Data.DataColumn
+        
+        Private columnrent_hour As Global.System.Data.DataColumn
+        
+        Private columnbike_id As Global.System.Data.DataColumn
+        
+        Private columnmem_id As Global.System.Data.DataColumn
+        
+        Private columnlocation_id As Global.System.Data.DataColumn
+        
+        Private columnrent_time_start As Global.System.Data.DataColumn
+        
+        Private columnrent_time_end As Global.System.Data.DataColumn
+        
+        Private columnrent_status As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "RentalStat"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property rent_idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrent_id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property rent_dateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrent_date
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property rent_hourColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrent_hour
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property bike_idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbike_id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property mem_idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnmem_id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property location_idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlocation_id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property rent_time_startColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrent_time_start
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property rent_time_endColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrent_time_end
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property rent_statusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrent_status
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As RentalStatRow
+            Get
+                Return CType(Me.Rows(index),RentalStatRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event RentalStatRowChanging As RentalStatRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event RentalStatRowChanged As RentalStatRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event RentalStatRowDeleting As RentalStatRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event RentalStatRowDeleted As RentalStatRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Overloads Sub AddRentalStatRow(ByVal row As RentalStatRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Overloads Function AddRentalStatRow(ByVal rent_date As Date, ByVal rent_hour As Integer, ByVal bike_id As Integer, ByVal mem_id As Integer, ByVal location_id As Integer, ByVal rent_time_start As Date, ByVal rent_time_end As Date, ByVal rent_status As String) As RentalStatRow
+            Dim rowRentalStatRow As RentalStatRow = CType(Me.NewRow,RentalStatRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, rent_date, rent_hour, bike_id, mem_id, location_id, rent_time_start, rent_time_end, rent_status}
+            rowRentalStatRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowRentalStatRow)
+            Return rowRentalStatRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function FindByrent_id(ByVal rent_id As Integer) As RentalStatRow
+            Return CType(Me.Rows.Find(New Object() {rent_id}),RentalStatRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As RentalStatDataTable = CType(MyBase.Clone,RentalStatDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New RentalStatDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnrent_id = MyBase.Columns("rent_id")
+            Me.columnrent_date = MyBase.Columns("rent_date")
+            Me.columnrent_hour = MyBase.Columns("rent_hour")
+            Me.columnbike_id = MyBase.Columns("bike_id")
+            Me.columnmem_id = MyBase.Columns("mem_id")
+            Me.columnlocation_id = MyBase.Columns("location_id")
+            Me.columnrent_time_start = MyBase.Columns("rent_time_start")
+            Me.columnrent_time_end = MyBase.Columns("rent_time_end")
+            Me.columnrent_status = MyBase.Columns("rent_status")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnrent_id = New Global.System.Data.DataColumn("rent_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_id)
+            Me.columnrent_date = New Global.System.Data.DataColumn("rent_date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_date)
+            Me.columnrent_hour = New Global.System.Data.DataColumn("rent_hour", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_hour)
+            Me.columnbike_id = New Global.System.Data.DataColumn("bike_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbike_id)
+            Me.columnmem_id = New Global.System.Data.DataColumn("mem_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnmem_id)
+            Me.columnlocation_id = New Global.System.Data.DataColumn("location_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlocation_id)
+            Me.columnrent_time_start = New Global.System.Data.DataColumn("rent_time_start", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_time_start)
+            Me.columnrent_time_end = New Global.System.Data.DataColumn("rent_time_end", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_time_end)
+            Me.columnrent_status = New Global.System.Data.DataColumn("rent_status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrent_status)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnrent_id}, true))
+            Me.columnrent_id.AutoIncrement = true
+            Me.columnrent_id.AutoIncrementSeed = -1
+            Me.columnrent_id.AutoIncrementStep = -1
+            Me.columnrent_id.AllowDBNull = false
+            Me.columnrent_id.Unique = true
+            Me.columnrent_status.MaxLength = 255
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function NewRentalStatRow() As RentalStatRow
+            Return CType(Me.NewRow,RentalStatRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New RentalStatRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(RentalStatRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.RentalStatRowChangedEvent) Is Nothing) Then
+                RaiseEvent RentalStatRowChanged(Me, New RentalStatRowChangeEvent(CType(e.Row,RentalStatRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.RentalStatRowChangingEvent) Is Nothing) Then
+                RaiseEvent RentalStatRowChanging(Me, New RentalStatRowChangeEvent(CType(e.Row,RentalStatRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.RentalStatRowDeletedEvent) Is Nothing) Then
+                RaiseEvent RentalStatRowDeleted(Me, New RentalStatRowChangeEvent(CType(e.Row,RentalStatRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.RentalStatRowDeletingEvent) Is Nothing) Then
+                RaiseEvent RentalStatRowDeleting(Me, New RentalStatRowChangeEvent(CType(e.Row,RentalStatRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub RemoveRentalStatRow(ByVal row As RentalStatRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As PedalPalsDBDataSet1 = New PedalPalsDBDataSet1()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "RentalStatDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -3927,6 +4380,21 @@ Partial Public Class PedalPalsDBDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property rent_status() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablerental.rent_statusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_status' in table 'rental' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablerental.rent_statusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property locationRow() As locationRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("locationrental")),locationRow)
@@ -4029,6 +4497,18 @@ Partial Public Class PedalPalsDBDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub Setrent_time_endNull()
             Me(Me.tablerental.rent_time_endColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isrent_statusNull() As Boolean
+            Return Me.IsNull(Me.tablerental.rent_statusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setrent_statusNull()
+            Me(Me.tablerental.rent_statusColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4251,86 +4731,90 @@ Partial Public Class PedalPalsDBDataSet1
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class Rental2Row
+    Partial Public Class myRentalRow
         Inherits Global.System.Data.DataRow
         
-        Private tableRental2 As Rental2DataTable
+        Private tablemyRental As myRentalDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableRental2 = CType(Me.Table,Rental2DataTable)
+            Me.tablemyRental = CType(Me.Table,myRentalDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ID() As Integer
+        Public Property rent_id() As Integer
             Get
-                Return CType(Me(Me.tableRental2.IDColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablemyRental.rent_idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_id' in table 'myRental' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tableRental2.IDColumn) = value
+                Me(Me.tablemyRental.rent_idColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Place() As String
+        Public Property rent_date() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableRental2.PlaceColumn),String)
+                    Return CType(Me(Me.tablemyRental.rent_dateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Place' in table 'Rental2' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_date' in table 'myRental' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRental2.PlaceColumn) = value
+                Me(Me.tablemyRental.rent_dateColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Type() As String
+        Public Property rent_hour() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableRental2.TypeColumn),String)
+                    Return CType(Me(Me.tablemyRental.rent_hourColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Type' in table 'Rental2' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_hour' in table 'myRental' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRental2.TypeColumn) = value
+                Me(Me.tablemyRental.rent_hourColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Date_Booking() As Date
+        Public Property type_name() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableRental2.Date_BookingColumn),Date)
+                    Return CType(Me(Me.tablemyRental.type_nameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Date_Booking' in table 'Rental2' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'type_name' in table 'myRental' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRental2.Date_BookingColumn) = value
+                Me(Me.tablemyRental.type_nameColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Hour() As Integer
+        Public Property rent_time_start() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableRental2.HourColumn),Integer)
+                    Return CType(Me(Me.tablemyRental.rent_time_startColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Hour' in table 'Rental2' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_time_start' in table 'myRental' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRental2.HourColumn) = value
+                Me(Me.tablemyRental.rent_time_startColumn) = value
             End Set
         End Property
         
@@ -4339,74 +4823,410 @@ Partial Public Class PedalPalsDBDataSet1
         Public Property mem_id() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableRental2.mem_idColumn),Integer)
+                    Return CType(Me(Me.tablemyRental.mem_idColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'mem_id' in table 'Rental2' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'mem_id' in table 'myRental' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRental2.mem_idColumn) = value
+                Me(Me.tablemyRental.mem_idColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsPlaceNull() As Boolean
-            Return Me.IsNull(Me.tableRental2.PlaceColumn)
+        Public Property total_price() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tablemyRental.total_priceColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'total_price' in table 'myRental' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemyRental.total_priceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property address() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemyRental.addressColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'address' in table 'myRental' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemyRental.addressColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property rent_status() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemyRental.rent_statusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_status' in table 'myRental' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemyRental.rent_statusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isrent_idNull() As Boolean
+            Return Me.IsNull(Me.tablemyRental.rent_idColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetPlaceNull()
-            Me(Me.tableRental2.PlaceColumn) = Global.System.Convert.DBNull
+        Public Sub Setrent_idNull()
+            Me(Me.tablemyRental.rent_idColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsTypeNull() As Boolean
-            Return Me.IsNull(Me.tableRental2.TypeColumn)
+        Public Function Isrent_dateNull() As Boolean
+            Return Me.IsNull(Me.tablemyRental.rent_dateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetTypeNull()
-            Me(Me.tableRental2.TypeColumn) = Global.System.Convert.DBNull
+        Public Sub Setrent_dateNull()
+            Me(Me.tablemyRental.rent_dateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsDate_BookingNull() As Boolean
-            Return Me.IsNull(Me.tableRental2.Date_BookingColumn)
+        Public Function Isrent_hourNull() As Boolean
+            Return Me.IsNull(Me.tablemyRental.rent_hourColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetDate_BookingNull()
-            Me(Me.tableRental2.Date_BookingColumn) = Global.System.Convert.DBNull
+        Public Sub Setrent_hourNull()
+            Me(Me.tablemyRental.rent_hourColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsHourNull() As Boolean
-            Return Me.IsNull(Me.tableRental2.HourColumn)
+        Public Function Istype_nameNull() As Boolean
+            Return Me.IsNull(Me.tablemyRental.type_nameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetHourNull()
-            Me(Me.tableRental2.HourColumn) = Global.System.Convert.DBNull
+        Public Sub Settype_nameNull()
+            Me(Me.tablemyRental.type_nameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isrent_time_startNull() As Boolean
+            Return Me.IsNull(Me.tablemyRental.rent_time_startColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setrent_time_startNull()
+            Me(Me.tablemyRental.rent_time_startColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function Ismem_idNull() As Boolean
-            Return Me.IsNull(Me.tableRental2.mem_idColumn)
+            Return Me.IsNull(Me.tablemyRental.mem_idColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub Setmem_idNull()
-            Me(Me.tableRental2.mem_idColumn) = Global.System.Convert.DBNull
+            Me(Me.tablemyRental.mem_idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Istotal_priceNull() As Boolean
+            Return Me.IsNull(Me.tablemyRental.total_priceColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Settotal_priceNull()
+            Me(Me.tablemyRental.total_priceColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsaddressNull() As Boolean
+            Return Me.IsNull(Me.tablemyRental.addressColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetaddressNull()
+            Me(Me.tablemyRental.addressColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isrent_statusNull() As Boolean
+            Return Me.IsNull(Me.tablemyRental.rent_statusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setrent_statusNull()
+            Me(Me.tablemyRental.rent_statusColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class RentalStatRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableRentalStat As RentalStatDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableRentalStat = CType(Me.Table,RentalStatDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property rent_id() As Integer
+            Get
+                Return CType(Me(Me.tableRentalStat.rent_idColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableRentalStat.rent_idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property rent_date() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableRentalStat.rent_dateColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_date' in table 'RentalStat' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRentalStat.rent_dateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property rent_hour() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableRentalStat.rent_hourColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_hour' in table 'RentalStat' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRentalStat.rent_hourColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property bike_id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableRentalStat.bike_idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'bike_id' in table 'RentalStat' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRentalStat.bike_idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property mem_id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableRentalStat.mem_idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'mem_id' in table 'RentalStat' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRentalStat.mem_idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property location_id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableRentalStat.location_idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'location_id' in table 'RentalStat' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRentalStat.location_idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property rent_time_start() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableRentalStat.rent_time_startColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_time_start' in table 'RentalStat' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRentalStat.rent_time_startColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property rent_time_end() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableRentalStat.rent_time_endColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_time_end' in table 'RentalStat' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRentalStat.rent_time_endColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property rent_status() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableRentalStat.rent_statusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rent_status' in table 'RentalStat' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRentalStat.rent_statusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isrent_dateNull() As Boolean
+            Return Me.IsNull(Me.tableRentalStat.rent_dateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setrent_dateNull()
+            Me(Me.tableRentalStat.rent_dateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isrent_hourNull() As Boolean
+            Return Me.IsNull(Me.tableRentalStat.rent_hourColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setrent_hourNull()
+            Me(Me.tableRentalStat.rent_hourColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isbike_idNull() As Boolean
+            Return Me.IsNull(Me.tableRentalStat.bike_idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setbike_idNull()
+            Me(Me.tableRentalStat.bike_idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Ismem_idNull() As Boolean
+            Return Me.IsNull(Me.tableRentalStat.mem_idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setmem_idNull()
+            Me(Me.tableRentalStat.mem_idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Islocation_idNull() As Boolean
+            Return Me.IsNull(Me.tableRentalStat.location_idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setlocation_idNull()
+            Me(Me.tableRentalStat.location_idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isrent_time_startNull() As Boolean
+            Return Me.IsNull(Me.tableRentalStat.rent_time_startColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setrent_time_startNull()
+            Me(Me.tableRentalStat.rent_time_startColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isrent_time_endNull() As Boolean
+            Return Me.IsNull(Me.tableRentalStat.rent_time_endColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setrent_time_endNull()
+            Me(Me.tableRentalStat.rent_time_endColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isrent_statusNull() As Boolean
+            Return Me.IsNull(Me.tableRentalStat.rent_statusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setrent_statusNull()
+            Me(Me.tableRentalStat.rent_statusColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4666,16 +5486,16 @@ Partial Public Class PedalPalsDBDataSet1
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class Rental2RowChangeEvent
+    Public Class myRentalRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As Rental2Row
+        Private eventRow As myRentalRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As Rental2Row, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As myRentalRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -4683,7 +5503,43 @@ Partial Public Class PedalPalsDBDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As Rental2Row
+        Public ReadOnly Property Row() As myRentalRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+    Public Class RentalStatRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As RentalStatRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub New(ByVal row As RentalStatRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property Row() As RentalStatRow
             Get
                 Return Me.eventRow
             End Get
@@ -6739,6 +7595,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
             tableMapping.ColumnMappings.Add("location_id", "location_id")
             tableMapping.ColumnMappings.Add("rent_time_start", "rent_time_start")
             tableMapping.ColumnMappings.Add("rent_time_end", "rent_time_end")
+            tableMapping.ColumnMappings.Add("rent_status", "rent_status")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -6747,7 +7604,8 @@ Namespace PedalPalsDBDataSet1TableAdapters
                 " AND ((? = 1 AND `bike_id` IS NULL) OR (`bike_id` = ?)) AND ((? = 1 AND `mem_id`"& _ 
                 " IS NULL) OR (`mem_id` = ?)) AND ((? = 1 AND `location_id` IS NULL) OR (`locatio"& _ 
                 "n_id` = ?)) AND ((? = 1 AND `rent_time_start` IS NULL) OR (`rent_time_start` = ?"& _ 
-                ")) AND ((? = 1 AND `rent_time_end` IS NULL) OR (`rent_time_end` = ?)))"
+                ")) AND ((? = 1 AND `rent_time_end` IS NULL) OR (`rent_time_end` = ?)) AND ((? = "& _ 
+                "1 AND `rent_status` IS NULL) OR (`rent_status` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_date", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -6764,10 +7622,13 @@ Namespace PedalPalsDBDataSet1TableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_time_start", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_start", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_time_end", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_time_end", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `rental` (`rent_date`, `rent_hour`, `bike_id`, `mem_id`, `location_id"& _ 
-                "`, `rent_time_start`, `rent_time_end`) VALUES (?, ?, ?, ?, ?, ?, ?)"
+                "`, `rent_time_start`, `rent_time_end`, `rent_status`) VALUES (?, ?, ?, ?, ?, ?, "& _ 
+                "?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_date", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_hour", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -6776,16 +7637,18 @@ Namespace PedalPalsDBDataSet1TableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("location_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "location_id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_time_start", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_start", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_time_end", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `rental` SET `rent_date` = ?, `rent_hour` = ?, `bike_id` = ?, `mem_id` = ?"& _ 
-                ", `location_id` = ?, `rent_time_start` = ?, `rent_time_end` = ? WHERE ((`rent_id"& _ 
-                "` = ?) AND ((? = 1 AND `rent_date` IS NULL) OR (`rent_date` = ?)) AND ((? = 1 AN"& _ 
-                "D `rent_hour` IS NULL) OR (`rent_hour` = ?)) AND ((? = 1 AND `bike_id` IS NULL) "& _ 
-                "OR (`bike_id` = ?)) AND ((? = 1 AND `mem_id` IS NULL) OR (`mem_id` = ?)) AND ((?"& _ 
-                " = 1 AND `location_id` IS NULL) OR (`location_id` = ?)) AND ((? = 1 AND `rent_ti"& _ 
-                "me_start` IS NULL) OR (`rent_time_start` = ?)) AND ((? = 1 AND `rent_time_end` I"& _ 
-                "S NULL) OR (`rent_time_end` = ?)))"
+                ", `location_id` = ?, `rent_time_start` = ?, `rent_time_end` = ?, `rent_status` ="& _ 
+                " ? WHERE ((`rent_id` = ?) AND ((? = 1 AND `rent_date` IS NULL) OR (`rent_date` ="& _ 
+                " ?)) AND ((? = 1 AND `rent_hour` IS NULL) OR (`rent_hour` = ?)) AND ((? = 1 AND "& _ 
+                "`bike_id` IS NULL) OR (`bike_id` = ?)) AND ((? = 1 AND `mem_id` IS NULL) OR (`me"& _ 
+                "m_id` = ?)) AND ((? = 1 AND `location_id` IS NULL) OR (`location_id` = ?)) AND ("& _ 
+                "(? = 1 AND `rent_time_start` IS NULL) OR (`rent_time_start` = ?)) AND ((? = 1 AN"& _ 
+                "D `rent_time_end` IS NULL) OR (`rent_time_end` = ?)) AND ((? = 1 AND `rent_statu"& _ 
+                "s` IS NULL) OR (`rent_status` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_date", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_hour", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -6794,6 +7657,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("location_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "location_id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_time_start", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_start", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_time_end", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_date", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_date", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -6809,6 +7673,8 @@ Namespace PedalPalsDBDataSet1TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_time_start", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_start", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_time_end", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_time_end", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6825,7 +7691,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT rent_id, rent_date, rent_hour, bike_id, mem_id, location_id, rent_time_sta"& _ 
-                "rt, rent_time_end FROM rental"
+                "rt, rent_time_end, rent_status FROM rental"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -6885,7 +7751,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_rent_id As Integer, ByVal Original_rent_date As Global.System.Nullable(Of Date), ByVal Original_rent_hour As Global.System.Nullable(Of Integer), ByVal Original_bike_id As Global.System.Nullable(Of Integer), ByVal Original_mem_id As Global.System.Nullable(Of Integer), ByVal Original_location_id As Global.System.Nullable(Of Integer), ByVal Original_rent_time_start As Global.System.Nullable(Of Date), ByVal Original_rent_time_end As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_rent_id As Integer, ByVal Original_rent_date As Global.System.Nullable(Of Date), ByVal Original_rent_hour As Global.System.Nullable(Of Integer), ByVal Original_bike_id As Global.System.Nullable(Of Integer), ByVal Original_mem_id As Global.System.Nullable(Of Integer), ByVal Original_location_id As Global.System.Nullable(Of Integer), ByVal Original_rent_time_start As Global.System.Nullable(Of Date), ByVal Original_rent_time_end As Global.System.Nullable(Of Date), ByVal Original_rent_status As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_rent_id,Integer)
             If (Original_rent_date.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -6936,6 +7802,13 @@ Namespace PedalPalsDBDataSet1TableAdapters
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
+            If (Original_rent_status Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_rent_status,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6955,7 +7828,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal rent_date As Global.System.Nullable(Of Date), ByVal rent_hour As Global.System.Nullable(Of Integer), ByVal bike_id As Global.System.Nullable(Of Integer), ByVal mem_id As Global.System.Nullable(Of Integer), ByVal location_id As Global.System.Nullable(Of Integer), ByVal rent_time_start As Global.System.Nullable(Of Date), ByVal rent_time_end As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Insert(ByVal rent_date As Global.System.Nullable(Of Date), ByVal rent_hour As Global.System.Nullable(Of Integer), ByVal bike_id As Global.System.Nullable(Of Integer), ByVal mem_id As Global.System.Nullable(Of Integer), ByVal location_id As Global.System.Nullable(Of Integer), ByVal rent_time_start As Global.System.Nullable(Of Date), ByVal rent_time_end As Global.System.Nullable(Of Date), ByVal rent_status As String) As Integer
             If (rent_date.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(rent_date.Value,Date)
             Else
@@ -6991,6 +7864,11 @@ Namespace PedalPalsDBDataSet1TableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
+            If (rent_status Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(rent_status,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -7010,7 +7888,24 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal rent_date As Global.System.Nullable(Of Date), ByVal rent_hour As Global.System.Nullable(Of Integer), ByVal bike_id As Global.System.Nullable(Of Integer), ByVal mem_id As Global.System.Nullable(Of Integer), ByVal location_id As Global.System.Nullable(Of Integer), ByVal rent_time_start As Global.System.Nullable(Of Date), ByVal rent_time_end As Global.System.Nullable(Of Date), ByVal Original_rent_id As Integer, ByVal Original_rent_date As Global.System.Nullable(Of Date), ByVal Original_rent_hour As Global.System.Nullable(Of Integer), ByVal Original_bike_id As Global.System.Nullable(Of Integer), ByVal Original_mem_id As Global.System.Nullable(Of Integer), ByVal Original_location_id As Global.System.Nullable(Of Integer), ByVal Original_rent_time_start As Global.System.Nullable(Of Date), ByVal Original_rent_time_end As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Update( _
+                    ByVal rent_date As Global.System.Nullable(Of Date),  _
+                    ByVal rent_hour As Global.System.Nullable(Of Integer),  _
+                    ByVal bike_id As Global.System.Nullable(Of Integer),  _
+                    ByVal mem_id As Global.System.Nullable(Of Integer),  _
+                    ByVal location_id As Global.System.Nullable(Of Integer),  _
+                    ByVal rent_time_start As Global.System.Nullable(Of Date),  _
+                    ByVal rent_time_end As Global.System.Nullable(Of Date),  _
+                    ByVal rent_status As String,  _
+                    ByVal Original_rent_id As Integer,  _
+                    ByVal Original_rent_date As Global.System.Nullable(Of Date),  _
+                    ByVal Original_rent_hour As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_bike_id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_mem_id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_location_id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_rent_time_start As Global.System.Nullable(Of Date),  _
+                    ByVal Original_rent_time_end As Global.System.Nullable(Of Date),  _
+                    ByVal Original_rent_status As String) As Integer
             If (rent_date.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(rent_date.Value,Date)
             Else
@@ -7046,55 +7941,67 @@ Namespace PedalPalsDBDataSet1TableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_rent_id,Integer)
-            If (Original_rent_date.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_rent_date.Value,Date)
+            If (rent_status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(rent_status,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_rent_id,Integer)
+            If (Original_rent_date.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_rent_date.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             If (Original_rent_hour.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_rent_hour.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_rent_hour.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
             If (Original_bike_id.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_bike_id.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_bike_id.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
             If (Original_mem_id.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_mem_id.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_mem_id.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
             If (Original_location_id.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_location_id.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_location_id.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
             If (Original_rent_time_start.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_rent_time_start.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_rent_time_start.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
             If (Original_rent_time_end.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_rent_time_end.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_rent_time_end.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_rent_status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_rent_status,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -7302,7 +8209,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class Rental2TableAdapter
+    Partial Public Class myRentalTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
@@ -7419,56 +8326,17 @@ Namespace PedalPalsDBDataSet1TableAdapters
             Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Rental2"
-            tableMapping.ColumnMappings.Add("ID", "ID")
-            tableMapping.ColumnMappings.Add("Place", "Place")
-            tableMapping.ColumnMappings.Add("Type", "Type")
-            tableMapping.ColumnMappings.Add("Date_Booking", "Date_Booking")
-            tableMapping.ColumnMappings.Add("Hour", "Hour")
+            tableMapping.DataSetTable = "myRental"
+            tableMapping.ColumnMappings.Add("rent_id", "rent_id")
+            tableMapping.ColumnMappings.Add("rent_date", "rent_date")
+            tableMapping.ColumnMappings.Add("rent_hour", "rent_hour")
+            tableMapping.ColumnMappings.Add("type_name", "type_name")
+            tableMapping.ColumnMappings.Add("rent_time_start", "rent_time_start")
             tableMapping.ColumnMappings.Add("mem_id", "mem_id")
+            tableMapping.ColumnMappings.Add("total_price", "total_price")
+            tableMapping.ColumnMappings.Add("address", "address")
+            tableMapping.ColumnMappings.Add("rent_status", "rent_status")
             Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Rental2` WHERE ((`ID` = ?) AND ((? = 1 AND `Date_Booking` IS NULL) O"& _ 
-                "R (`Date_Booking` = ?)) AND ((? = 1 AND `Hour` IS NULL) OR (`Hour` = ?)) AND ((?"& _ 
-                " = 1 AND `mem_id` IS NULL) OR (`mem_id` = ?)))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Date_Booking", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Booking", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Date_Booking", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Booking", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Hour", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Hour", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Rental2` (`Place`, `Type`, `Date_Booking`, `Hour`, `mem_id`) VALUES "& _ 
-                "(?, ?, ?, ?, ?)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Place", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Place", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Type", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Date_Booking", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Booking", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Hour", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `Rental2` SET `Place` = ?, `Type` = ?, `Date_Booking` = ?, `Hour` = ?, `me"& _ 
-                "m_id` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Date_Booking` IS NULL) OR (`Date_Bo"& _ 
-                "oking` = ?)) AND ((? = 1 AND `Hour` IS NULL) OR (`Hour` = ?)) AND ((? = 1 AND `m"& _ 
-                "em_id` IS NULL) OR (`mem_id` = ?)))"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Place", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Place", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Type", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Date_Booking", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Booking", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Hour", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Date_Booking", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Booking", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Date_Booking", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Booking", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Hour", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Hour", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7484,7 +8352,11 @@ Namespace PedalPalsDBDataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, Place, Type, Date_Booking, [Hour], mem_id FROM Rental2"
+            Me._commandCollection(0).CommandText = "SELECT rental.rent_id, rental.rent_status, rental.rent_date, rental.rent_hour, bi"& _ 
+                "ke.type_name, rental.rent_time_start, location.address, rental.rent_hour*bike.ho"& _ 
+                "urly_price AS total_price, member.mem_id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM rental JOIN member ON rental.mem_"& _ 
+                "id = member.mem_id JOIN bike ON rental.bike_id = bike.bike_id  JOIN location ON "& _ 
+                "rental.location_id = location.location_id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY rental.rent_id, mem_id;"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -7492,7 +8364,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As PedalPalsDBDataSet1.Rental2DataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As PedalPalsDBDataSet1.myRentalDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -7505,9 +8377,269 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As PedalPalsDBDataSet1.Rental2DataTable
+        Public Overloads Overridable Function GetData() As PedalPalsDBDataSet1.myRentalDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As PedalPalsDBDataSet1.Rental2DataTable = New PedalPalsDBDataSet1.Rental2DataTable()
+            Dim dataTable As PedalPalsDBDataSet1.myRentalDataTable = New PedalPalsDBDataSet1.myRentalDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class RentalStatTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
+        
+        Private _connection As Global.System.Data.OleDb.OleDbConnection
+        
+        Private _transaction As Global.System.Data.OleDb.OleDbTransaction
+        
+        Private _commandCollection() As Global.System.Data.OleDb.OleDbCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.OleDb.OleDbDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.OleDb.OleDbConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.OleDb.OleDbCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.OleDb.OleDbTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.OleDb.OleDbCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "RentalStat"
+            tableMapping.ColumnMappings.Add("rent_id", "rent_id")
+            tableMapping.ColumnMappings.Add("rent_date", "rent_date")
+            tableMapping.ColumnMappings.Add("rent_hour", "rent_hour")
+            tableMapping.ColumnMappings.Add("bike_id", "bike_id")
+            tableMapping.ColumnMappings.Add("mem_id", "mem_id")
+            tableMapping.ColumnMappings.Add("location_id", "location_id")
+            tableMapping.ColumnMappings.Add("rent_time_start", "rent_time_start")
+            tableMapping.ColumnMappings.Add("rent_time_end", "rent_time_end")
+            tableMapping.ColumnMappings.Add("rent_status", "rent_status")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `RentalStat` WHERE ((`rent_id` = ?) AND ((? = 1 AND `rent_date` IS NU"& _ 
+                "LL) OR (`rent_date` = ?)) AND ((? = 1 AND `rent_hour` IS NULL) OR (`rent_hour` ="& _ 
+                " ?)) AND ((? = 1 AND `bike_id` IS NULL) OR (`bike_id` = ?)) AND ((? = 1 AND `mem"& _ 
+                "_id` IS NULL) OR (`mem_id` = ?)) AND ((? = 1 AND `location_id` IS NULL) OR (`loc"& _ 
+                "ation_id` = ?)) AND ((? = 1 AND `rent_time_start` IS NULL) OR (`rent_time_start`"& _ 
+                " = ?)) AND ((? = 1 AND `rent_time_end` IS NULL) OR (`rent_time_end` = ?)) AND (("& _ 
+                "? = 1 AND `rent_status` IS NULL) OR (`rent_status` = ?)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_date", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_date", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_hour", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_hour", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_bike_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "bike_id", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_bike_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "bike_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_location_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "location_id", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_location_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "location_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_time_start", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_start", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_time_start", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_start", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_time_end", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_time_end", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `RentalStat` (`rent_date`, `rent_hour`, `bike_id`, `mem_id`, `locatio"& _ 
+                "n_id`, `rent_time_start`, `rent_time_end`, `rent_status`) VALUES (?, ?, ?, ?, ?,"& _ 
+                " ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_date", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_hour", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("bike_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "bike_id", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("location_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "location_id", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_time_start", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_start", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_time_end", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `RentalStat` SET `rent_date` = ?, `rent_hour` = ?, `bike_id` = ?, `mem_id`"& _ 
+                " = ?, `location_id` = ?, `rent_time_start` = ?, `rent_time_end` = ?, `rent_statu"& _ 
+                "s` = ? WHERE ((`rent_id` = ?) AND ((? = 1 AND `rent_date` IS NULL) OR (`rent_dat"& _ 
+                "e` = ?)) AND ((? = 1 AND `rent_hour` IS NULL) OR (`rent_hour` = ?)) AND ((? = 1 "& _ 
+                "AND `bike_id` IS NULL) OR (`bike_id` = ?)) AND ((? = 1 AND `mem_id` IS NULL) OR "& _ 
+                "(`mem_id` = ?)) AND ((? = 1 AND `location_id` IS NULL) OR (`location_id` = ?)) A"& _ 
+                "ND ((? = 1 AND `rent_time_start` IS NULL) OR (`rent_time_start` = ?)) AND ((? = "& _ 
+                "1 AND `rent_time_end` IS NULL) OR (`rent_time_end` = ?)) AND ((? = 1 AND `rent_s"& _ 
+                "tatus` IS NULL) OR (`rent_status` = ?)))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_date", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_hour", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("bike_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "bike_id", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("location_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "location_id", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_time_start", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_start", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_time_end", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("rent_status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_date", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_date", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_date", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_hour", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_hour", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_hour", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_bike_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "bike_id", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_bike_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "bike_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_mem_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "mem_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_location_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "location_id", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_location_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "location_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_time_start", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_start", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_time_start", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_start", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_time_end", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_time_end", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_time_end", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_rent_status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_rent_status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "rent_status", Global.System.Data.DataRowVersion.Original, false, Nothing))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.OleDb.OleDbConnection()
+            Me._connection.ConnectionString = Global.PedalPals.My.MySettings.Default.dataConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT rent_id, rent_date, rent_hour, bike_id, mem_id, location_id, rent_time_sta"& _ 
+                "rt, rent_time_end, rent_status FROM RentalStat"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As PedalPalsDBDataSet1.RentalStatDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As PedalPalsDBDataSet1.RentalStatDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As PedalPalsDBDataSet1.RentalStatDataTable = New PedalPalsDBDataSet1.RentalStatDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -7515,7 +8647,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As PedalPalsDBDataSet1.Rental2DataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As PedalPalsDBDataSet1.RentalStatDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -7523,7 +8655,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As PedalPalsDBDataSet1) As Integer
-            Return Me.Adapter.Update(dataSet, "Rental2")
+            Return Me.Adapter.Update(dataSet, "RentalStat")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7544,28 +8676,63 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Date_Booking As Global.System.Nullable(Of Date), ByVal Original_Hour As Global.System.Nullable(Of Integer), ByVal Original_mem_id As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
-            If (Original_Date_Booking.HasValue = true) Then
+        Public Overloads Overridable Function Delete(ByVal Original_rent_id As Integer, ByVal Original_rent_date As Global.System.Nullable(Of Date), ByVal Original_rent_hour As Global.System.Nullable(Of Integer), ByVal Original_bike_id As Global.System.Nullable(Of Integer), ByVal Original_mem_id As Global.System.Nullable(Of Integer), ByVal Original_location_id As Global.System.Nullable(Of Integer), ByVal Original_rent_time_start As Global.System.Nullable(Of Date), ByVal Original_rent_time_end As Global.System.Nullable(Of Date), ByVal Original_rent_status As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_rent_id,Integer)
+            If (Original_rent_date.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Date_Booking.Value,Date)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_rent_date.Value,Date)
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (Original_Hour.HasValue = true) Then
+            If (Original_rent_hour.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Hour.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_rent_hour.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (Original_mem_id.HasValue = true) Then
+            If (Original_bike_id.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_mem_id.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_bike_id.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_mem_id.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_mem_id.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (Original_location_id.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_location_id.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (Original_rent_time_start.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_rent_time_start.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_rent_time_end.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_rent_time_end.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (Original_rent_status Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_rent_status,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -7586,31 +8753,46 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Place As String, ByVal Type As String, ByVal Date_Booking As Global.System.Nullable(Of Date), ByVal Hour As Global.System.Nullable(Of Integer), ByVal mem_id As Global.System.Nullable(Of Integer)) As Integer
-            If (Place Is Nothing) Then
+        Public Overloads Overridable Function Insert(ByVal rent_date As Global.System.Nullable(Of Date), ByVal rent_hour As Global.System.Nullable(Of Integer), ByVal bike_id As Global.System.Nullable(Of Integer), ByVal mem_id As Global.System.Nullable(Of Integer), ByVal location_id As Global.System.Nullable(Of Integer), ByVal rent_time_start As Global.System.Nullable(Of Date), ByVal rent_time_end As Global.System.Nullable(Of Date), ByVal rent_status As String) As Integer
+            If (rent_date.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(rent_date.Value,Date)
+            Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Place,String)
             End If
-            If (Type Is Nothing) Then
+            If (rent_hour.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(rent_hour.Value,Integer)
+            Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Type,String)
             End If
-            If (Date_Booking.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Date_Booking.Value,Date)
+            If (bike_id.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(bike_id.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (Hour.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Hour.Value,Integer)
+            If (mem_id.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(mem_id.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (mem_id.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(mem_id.Value,Integer)
+            If (location_id.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(location_id.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (rent_time_start.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(rent_time_start.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (rent_time_end.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(rent_time_end.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (rent_status Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(rent_status,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -7631,53 +8813,120 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Place As String, ByVal Type As String, ByVal Date_Booking As Global.System.Nullable(Of Date), ByVal Hour As Global.System.Nullable(Of Integer), ByVal mem_id As Global.System.Nullable(Of Integer), ByVal Original_ID As Integer, ByVal Original_Date_Booking As Global.System.Nullable(Of Date), ByVal Original_Hour As Global.System.Nullable(Of Integer), ByVal Original_mem_id As Global.System.Nullable(Of Integer)) As Integer
-            If (Place Is Nothing) Then
+        Public Overloads Overridable Function Update( _
+                    ByVal rent_date As Global.System.Nullable(Of Date),  _
+                    ByVal rent_hour As Global.System.Nullable(Of Integer),  _
+                    ByVal bike_id As Global.System.Nullable(Of Integer),  _
+                    ByVal mem_id As Global.System.Nullable(Of Integer),  _
+                    ByVal location_id As Global.System.Nullable(Of Integer),  _
+                    ByVal rent_time_start As Global.System.Nullable(Of Date),  _
+                    ByVal rent_time_end As Global.System.Nullable(Of Date),  _
+                    ByVal rent_status As String,  _
+                    ByVal Original_rent_id As Integer,  _
+                    ByVal Original_rent_date As Global.System.Nullable(Of Date),  _
+                    ByVal Original_rent_hour As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_bike_id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_mem_id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_location_id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_rent_time_start As Global.System.Nullable(Of Date),  _
+                    ByVal Original_rent_time_end As Global.System.Nullable(Of Date),  _
+                    ByVal Original_rent_status As String) As Integer
+            If (rent_date.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(rent_date.Value,Date)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Place,String)
             End If
-            If (Type Is Nothing) Then
+            If (rent_hour.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(rent_hour.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Type,String)
             End If
-            If (Date_Booking.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Date_Booking.Value,Date)
+            If (bike_id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(bike_id.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (Hour.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Hour.Value,Integer)
+            If (mem_id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(mem_id.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (mem_id.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(mem_id.Value,Integer)
+            If (location_id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(location_id.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_ID,Integer)
-            If (Original_Date_Booking.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Date_Booking.Value,Date)
+            If (rent_time_start.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(rent_time_start.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (Original_Hour.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Hour.Value,Integer)
+            If (rent_time_end.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(rent_time_end.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (rent_status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(rent_status,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_rent_id,Integer)
+            If (Original_rent_date.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_rent_date.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (Original_rent_hour.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_rent_hour.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_bike_id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_bike_id.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
             If (Original_mem_id.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_mem_id.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_mem_id.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (Original_location_id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_location_id.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (Original_rent_time_start.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_rent_time_start.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_rent_time_end.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_rent_time_end.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_rent_status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_rent_status,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -7720,7 +8969,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
         
         Private _rentalTableAdapter As rentalTableAdapter
         
-        Private _rental2TableAdapter As Rental2TableAdapter
+        Private _rentalStatTableAdapter As RentalStatTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -7826,12 +9075,12 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property Rental2TableAdapter() As Rental2TableAdapter
+        Public Property RentalStatTableAdapter() As RentalStatTableAdapter
             Get
-                Return Me._rental2TableAdapter
+                Return Me._rentalStatTableAdapter
             End Get
             Set
-                Me._rental2TableAdapter = value
+                Me._rentalStatTableAdapter = value
             End Set
         End Property
         
@@ -7878,9 +9127,9 @@ Namespace PedalPalsDBDataSet1TableAdapters
                             AndAlso (Not (Me._rentalTableAdapter.Connection) Is Nothing)) Then
                     Return Me._rentalTableAdapter.Connection
                 End If
-                If ((Not (Me._rental2TableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._rental2TableAdapter.Connection) Is Nothing)) Then
-                    Return Me._rental2TableAdapter.Connection
+                If ((Not (Me._rentalStatTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._rentalStatTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._rentalStatTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -7913,7 +9162,7 @@ Namespace PedalPalsDBDataSet1TableAdapters
                 If (Not (Me._rentalTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._rental2TableAdapter) Is Nothing) Then
+                If (Not (Me._rentalStatTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -7981,12 +9230,12 @@ Namespace PedalPalsDBDataSet1TableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._rental2TableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Rental2.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._rentalStatTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.RentalStat.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._rental2TableAdapter.Update(updatedRows))
+                    result = (result + Me._rentalStatTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -8048,11 +9297,11 @@ Namespace PedalPalsDBDataSet1TableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._rental2TableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Rental2.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._rentalStatTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.RentalStat.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._rental2TableAdapter.Update(addedRows))
+                    result = (result + Me._rentalStatTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -8066,11 +9315,11 @@ Namespace PedalPalsDBDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As PedalPalsDBDataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._rental2TableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Rental2.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._rentalStatTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.RentalStat.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._rental2TableAdapter.Update(deletedRows))
+                    result = (result + Me._rentalStatTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -8193,8 +9442,8 @@ Namespace PedalPalsDBDataSet1TableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._rental2TableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._rental2TableAdapter.Connection) = false)) Then
+            If ((Not (Me._rentalStatTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._rentalStatTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -8284,13 +9533,13 @@ Namespace PedalPalsDBDataSet1TableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._rentalTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._rental2TableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._rental2TableAdapter, Me._rental2TableAdapter.Connection)
-                    Me._rental2TableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
-                    Me._rental2TableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
-                    If Me._rental2TableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._rental2TableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._rental2TableAdapter.Adapter)
+                If (Not (Me._rentalStatTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._rentalStatTableAdapter, Me._rentalStatTableAdapter.Connection)
+                    Me._rentalStatTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._rentalStatTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._rentalStatTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._rentalStatTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._rentalStatTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -8377,9 +9626,9 @@ Namespace PedalPalsDBDataSet1TableAdapters
                     Me._rentalTableAdapter.Connection = CType(revertConnections(Me._rentalTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._rentalTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._rental2TableAdapter) Is Nothing) Then
-                    Me._rental2TableAdapter.Connection = CType(revertConnections(Me._rental2TableAdapter),Global.System.Data.OleDb.OleDbConnection)
-                    Me._rental2TableAdapter.Transaction = Nothing
+                If (Not (Me._rentalStatTableAdapter) Is Nothing) Then
+                    Me._rentalStatTableAdapter.Connection = CType(revertConnections(Me._rentalStatTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._rentalStatTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

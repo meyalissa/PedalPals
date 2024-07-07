@@ -18,7 +18,7 @@
     End Sub
 
     Private Sub btnProfile2_Click(sender As Object, e As EventArgs) Handles btnProfile2.Click
-        SharedFunctions.switchPanel(profile_cust, Panel3)
+        SharedFunctions.switchPanel(profile_admin, Panel3)
     End Sub
 
     Private Sub btnSignout2_Click(sender As Object, e As EventArgs) Handles btnSignout2.Click

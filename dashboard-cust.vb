@@ -4,10 +4,8 @@ Public Class dashboard_cust
     Dim connection As New OleDbConnection(My.Settings.dataConnectionString)
 
     Private Sub dashboard_cust_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbltest.Text = login.LoggedInUsername
-        If connection.State = ConnectionState.Closed Then
-            connection.Open()
-        End If
+
+        connection.Open()
 
         Dim cmd As New OleDbCommand("SELECT type_name, hourly_price FROM bike", connection)
 
@@ -28,12 +26,7 @@ Public Class dashboard_cust
             End While
         End Using
 
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
+        connection.Close()
     End Sub
 
-    Private Sub lbltest_Click(sender As Object, e As EventArgs) Handles lbltest.Click
-
-    End Sub
 End Class
