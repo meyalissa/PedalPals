@@ -41,7 +41,6 @@ Partial Class dashboard_cust
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.lbltest = New System.Windows.Forms.Label()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +60,7 @@ Partial Class dashboard_cust
         Me.Label2.Location = New System.Drawing.Point(40, 36)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(194, 46)
+        Me.Label2.Size = New System.Drawing.Size(208, 48)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Dashboard"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -294,25 +293,12 @@ Partial Class dashboard_cust
         Me.PictureBox2.TabIndex = 32
         Me.PictureBox2.TabStop = False
         '
-        'lbltest
-        '
-        Me.lbltest.AutoSize = True
-        Me.lbltest.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltest.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lbltest.Location = New System.Drawing.Point(906, 36)
-        Me.lbltest.Name = "lbltest"
-        Me.lbltest.Size = New System.Drawing.Size(106, 39)
-        Me.lbltest.TabIndex = 38
-        Me.lbltest.Text = "lbltest"
-        Me.lbltest.Visible = False
-        '
         'dashboard_cust
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1060, 682)
-        Me.Controls.Add(Me.lbltest)
         Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.PictureBox5)
@@ -366,5 +352,4 @@ Partial Class dashboard_cust
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents lbltest As Label
 End Class
