@@ -12,7 +12,7 @@ Public Class login
                 connection.Open()
             End If
 
-            Dim cmd As New OleDbCommand("SELECT count(*) FROM member WHERE mem_username=? AND mem_password=?", connection)
+            Dim cmd As New OleDbCommand("SELECT * FROM member WHERE mem_username=? AND mem_password=?", connection)
             cmd.Parameters.AddWithValue("@1", OleDbType.VarChar).Value = txtUsername.Text
             cmd.Parameters.AddWithValue("@2", OleDbType.VarChar).Value = txtPass.Text
 
