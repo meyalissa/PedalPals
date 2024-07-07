@@ -57,8 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=""C:\Users\Dina Ghafar\Documents\Ped"& _ 
-            "alPalsDB.accdb""")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\myData\PedalPalsDB.accdb")>  _
         Public ReadOnly Property dataConnectionString() As String
             Get
                 Return CType(Me("dataConnectionString"),String)

@@ -79,7 +79,8 @@ Partial Class login_admin
         Me.txtPass.Location = New System.Drawing.Point(623, 306)
         Me.txtPass.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPass.Name = "txtPass"
-        Me.txtPass.Size = New System.Drawing.Size(199, 29)
+        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPass.Size = New System.Drawing.Size(199, 30)
         Me.txtPass.TabIndex = 21
         '
         'Label4
@@ -92,7 +93,7 @@ Partial Class login_admin
         Me.Label4.Location = New System.Drawing.Point(501, 306)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(103, 25)
+        Me.Label4.Size = New System.Drawing.Size(108, 28)
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "Password :"
         '
@@ -104,7 +105,7 @@ Partial Class login_admin
         Me.txtusername.Location = New System.Drawing.Point(623, 256)
         Me.txtusername.Margin = New System.Windows.Forms.Padding(4)
         Me.txtusername.Name = "txtusername"
-        Me.txtusername.Size = New System.Drawing.Size(199, 29)
+        Me.txtusername.Size = New System.Drawing.Size(199, 30)
         Me.txtusername.TabIndex = 19
         '
         'Label3
@@ -117,7 +118,7 @@ Partial Class login_admin
         Me.Label3.Location = New System.Drawing.Point(501, 256)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(109, 25)
+        Me.Label3.Size = New System.Drawing.Size(115, 28)
         Me.Label3.TabIndex = 18
         Me.Label3.Text = "Username :"
         '
@@ -132,7 +133,7 @@ Partial Class login_admin
         Me.Label2.Location = New System.Drawing.Point(540, 148)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(241, 46)
+        Me.Label2.Size = New System.Drawing.Size(255, 48)
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Admin Log In"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -148,7 +149,7 @@ Partial Class login_admin
         Me.Label1.Location = New System.Drawing.Point(495, 60)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(338, 89)
+        Me.Label1.Size = New System.Drawing.Size(354, 93)
         Me.Label1.TabIndex = 16
         Me.Label1.Text = "PedalPals"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
