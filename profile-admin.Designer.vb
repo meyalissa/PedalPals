@@ -47,7 +47,7 @@ Partial Class profile_admin
         Me.Label2.Location = New System.Drawing.Point(40, 36)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 48)
+        Me.Label2.Size = New System.Drawing.Size(125, 46)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Profile"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -58,7 +58,7 @@ Partial Class profile_admin
         Me.txtEmail.Location = New System.Drawing.Point(670, 274)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(240, 29)
+        Me.txtEmail.Size = New System.Drawing.Size(240, 28)
         Me.txtEmail.TabIndex = 64
         '
         'Label6
@@ -76,7 +76,7 @@ Partial Class profile_admin
         'btnUpdate
         '
         Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.944!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(515, 475)
+        Me.btnUpdate.Location = New System.Drawing.Point(479, 449)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(128, 47)
@@ -90,7 +90,7 @@ Partial Class profile_admin
         Me.txtusername.Location = New System.Drawing.Point(265, 226)
         Me.txtusername.Margin = New System.Windows.Forms.Padding(4)
         Me.txtusername.Name = "txtusername"
-        Me.txtusername.Size = New System.Drawing.Size(243, 29)
+        Me.txtusername.Size = New System.Drawing.Size(243, 28)
         Me.txtusername.TabIndex = 61
         '
         'txtFirstName
@@ -99,7 +99,7 @@ Partial Class profile_admin
         Me.txtFirstName.Location = New System.Drawing.Point(265, 274)
         Me.txtFirstName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(243, 29)
+        Me.txtFirstName.Size = New System.Drawing.Size(243, 28)
         Me.txtFirstName.TabIndex = 60
         '
         'txtcontact
@@ -108,7 +108,7 @@ Partial Class profile_admin
         Me.txtcontact.Location = New System.Drawing.Point(670, 226)
         Me.txtcontact.Margin = New System.Windows.Forms.Padding(4)
         Me.txtcontact.Name = "txtcontact"
-        Me.txtcontact.Size = New System.Drawing.Size(240, 29)
+        Me.txtcontact.Size = New System.Drawing.Size(240, 28)
         Me.txtcontact.TabIndex = 59
         '
         'txtLastName
@@ -117,7 +117,7 @@ Partial Class profile_admin
         Me.txtLastName.Location = New System.Drawing.Point(265, 323)
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(243, 29)
+        Me.txtLastName.Size = New System.Drawing.Size(243, 28)
         Me.txtLastName.TabIndex = 58
         '
         'Label5

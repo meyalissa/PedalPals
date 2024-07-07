@@ -29,18 +29,18 @@ Partial Class Dashboard_admin
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblP6 = New System.Windows.Forms.Label()
+        Me.lblB6 = New System.Windows.Forms.Label()
+        Me.lblP3 = New System.Windows.Forms.Label()
+        Me.lblB3 = New System.Windows.Forms.Label()
+        Me.lblP5 = New System.Windows.Forms.Label()
+        Me.lblB5 = New System.Windows.Forms.Label()
+        Me.lblP4 = New System.Windows.Forms.Label()
+        Me.lblB4 = New System.Windows.Forms.Label()
+        Me.lblP2 = New System.Windows.Forms.Label()
+        Me.lblB2 = New System.Windows.Forms.Label()
+        Me.lblP1 = New System.Windows.Forms.Label()
+        Me.lblB1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,173 +125,173 @@ Partial Class Dashboard_admin
         Me.PictureBox2.TabIndex = 50
         Me.PictureBox2.TabStop = False
         '
-        'Label12
+        'lblP6
         '
-        Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label12.Location = New System.Drawing.Point(798, 519)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(172, 23)
-        Me.Label12.TabIndex = 49
-        Me.Label12.Text = "Price Per Hour RM10"
+        Me.lblP6.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblP6.AutoSize = True
+        Me.lblP6.BackColor = System.Drawing.Color.Transparent
+        Me.lblP6.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblP6.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblP6.Location = New System.Drawing.Point(798, 519)
+        Me.lblP6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblP6.Name = "lblP6"
+        Me.lblP6.Size = New System.Drawing.Size(172, 23)
+        Me.lblP6.TabIndex = 49
+        Me.lblP6.Text = "Price Per Hour RM10"
         '
-        'Label13
+        'lblB6
         '
-        Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label13.Location = New System.Drawing.Point(846, 495)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(85, 23)
-        Me.Label13.TabIndex = 48
-        Me.Label13.Text = "CITY BIKE"
+        Me.lblB6.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblB6.AutoSize = True
+        Me.lblB6.BackColor = System.Drawing.Color.Transparent
+        Me.lblB6.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblB6.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblB6.Location = New System.Drawing.Point(846, 495)
+        Me.lblB6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblB6.Name = "lblB6"
+        Me.lblB6.Size = New System.Drawing.Size(85, 23)
+        Me.lblB6.TabIndex = 48
+        Me.lblB6.Text = "CITY BIKE"
         '
-        'Label10
+        'lblP3
         '
-        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label10.Location = New System.Drawing.Point(794, 288)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(176, 23)
-        Me.Label10.TabIndex = 47
-        Me.Label10.Text = "Price Per Hour: RM15"
+        Me.lblP3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblP3.AutoSize = True
+        Me.lblP3.BackColor = System.Drawing.Color.Transparent
+        Me.lblP3.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblP3.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblP3.Location = New System.Drawing.Point(794, 288)
+        Me.lblP3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblP3.Name = "lblP3"
+        Me.lblP3.Size = New System.Drawing.Size(176, 23)
+        Me.lblP3.TabIndex = 47
+        Me.lblP3.Text = "Price Per Hour: RM15"
         '
-        'Label11
+        'lblB3
         '
-        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label11.Location = New System.Drawing.Point(862, 258)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(46, 23)
-        Me.Label11.TabIndex = 46
-        Me.Label11.Text = "BMX"
+        Me.lblB3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblB3.AutoSize = True
+        Me.lblB3.BackColor = System.Drawing.Color.Transparent
+        Me.lblB3.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblB3.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblB3.Location = New System.Drawing.Point(862, 258)
+        Me.lblB3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblB3.Name = "lblB3"
+        Me.lblB3.Size = New System.Drawing.Size(46, 23)
+        Me.lblB3.TabIndex = 46
+        Me.lblB3.Text = "BMX"
         '
-        'Label8
+        'lblP5
         '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label8.Location = New System.Drawing.Point(466, 514)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(176, 23)
-        Me.Label8.TabIndex = 45
-        Me.Label8.Text = "Price Per Hour: RM30"
+        Me.lblP5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblP5.AutoSize = True
+        Me.lblP5.BackColor = System.Drawing.Color.Transparent
+        Me.lblP5.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblP5.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblP5.Location = New System.Drawing.Point(466, 514)
+        Me.lblP5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblP5.Name = "lblP5"
+        Me.lblP5.Size = New System.Drawing.Size(176, 23)
+        Me.lblP5.TabIndex = 45
+        Me.lblP5.Text = "Price Per Hour: RM30"
         '
-        'Label9
+        'lblB5
         '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label9.Location = New System.Drawing.Point(480, 490)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(141, 23)
-        Me.Label9.TabIndex = 44
-        Me.Label9.Text = "ELCETRICAL BIKE"
+        Me.lblB5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblB5.AutoSize = True
+        Me.lblB5.BackColor = System.Drawing.Color.Transparent
+        Me.lblB5.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblB5.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblB5.Location = New System.Drawing.Point(480, 490)
+        Me.lblB5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblB5.Name = "lblB5"
+        Me.lblB5.Size = New System.Drawing.Size(141, 23)
+        Me.lblB5.TabIndex = 44
+        Me.lblB5.Text = "ELCETRICAL BIKE"
         '
-        'Label6
+        'lblP4
         '
-        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label6.Location = New System.Drawing.Point(94, 514)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(176, 23)
-        Me.Label6.TabIndex = 43
-        Me.Label6.Text = "Price Per Hour: RM25"
+        Me.lblP4.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblP4.AutoSize = True
+        Me.lblP4.BackColor = System.Drawing.Color.Transparent
+        Me.lblP4.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblP4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblP4.Location = New System.Drawing.Point(94, 514)
+        Me.lblP4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblP4.Name = "lblP4"
+        Me.lblP4.Size = New System.Drawing.Size(176, 23)
+        Me.lblP4.TabIndex = 43
+        Me.lblP4.Text = "Price Per Hour: RM25"
         '
-        'Label7
+        'lblB4
         '
-        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label7.Location = New System.Drawing.Point(115, 490)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(142, 23)
-        Me.Label7.TabIndex = 42
-        Me.Label7.Text = "MOUNTAIN BIKE"
+        Me.lblB4.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblB4.AutoSize = True
+        Me.lblB4.BackColor = System.Drawing.Color.Transparent
+        Me.lblB4.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblB4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblB4.Location = New System.Drawing.Point(115, 490)
+        Me.lblB4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblB4.Name = "lblB4"
+        Me.lblB4.Size = New System.Drawing.Size(142, 23)
+        Me.lblB4.TabIndex = 42
+        Me.lblB4.Text = "MOUNTAIN BIKE"
         '
-        'Label4
+        'lblP2
         '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(440, 283)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(176, 23)
-        Me.Label4.TabIndex = 41
-        Me.Label4.Text = "Price Per Hour: RM10"
+        Me.lblP2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblP2.AutoSize = True
+        Me.lblP2.BackColor = System.Drawing.Color.Transparent
+        Me.lblP2.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblP2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblP2.Location = New System.Drawing.Point(440, 283)
+        Me.lblP2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblP2.Name = "lblP2"
+        Me.lblP2.Size = New System.Drawing.Size(176, 23)
+        Me.lblP2.TabIndex = 41
+        Me.lblP2.Text = "Price Per Hour: RM10"
         '
-        'Label5
+        'lblB2
         '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label5.Location = New System.Drawing.Point(487, 258)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(96, 23)
-        Me.Label5.TabIndex = 40
-        Me.Label5.Text = "ROAD BIKE"
+        Me.lblB2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblB2.AutoSize = True
+        Me.lblB2.BackColor = System.Drawing.Color.Transparent
+        Me.lblB2.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblB2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblB2.Location = New System.Drawing.Point(487, 258)
+        Me.lblB2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblB2.Name = "lblB2"
+        Me.lblB2.Size = New System.Drawing.Size(96, 23)
+        Me.lblB2.TabIndex = 40
+        Me.lblB2.Text = "ROAD BIKE"
         '
-        'Label1
+        'lblP1
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label1.Location = New System.Drawing.Point(94, 283)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(176, 23)
-        Me.Label1.TabIndex = 39
-        Me.Label1.Text = "Price Per Hour: RM20"
+        Me.lblP1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblP1.AutoSize = True
+        Me.lblP1.BackColor = System.Drawing.Color.Transparent
+        Me.lblP1.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblP1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblP1.Location = New System.Drawing.Point(94, 283)
+        Me.lblP1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblP1.Name = "lblP1"
+        Me.lblP1.Size = New System.Drawing.Size(176, 23)
+        Me.lblP1.TabIndex = 39
+        Me.lblP1.Text = "Price Per Hour: RM20"
         '
-        'Label3
+        'lblB1
         '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Location = New System.Drawing.Point(127, 258)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 23)
-        Me.Label3.TabIndex = 38
-        Me.Label3.Text = "TRIALTHON"
+        Me.lblB1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblB1.AutoSize = True
+        Me.lblB1.BackColor = System.Drawing.Color.Transparent
+        Me.lblB1.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblB1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblB1.Location = New System.Drawing.Point(127, 258)
+        Me.lblB1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblB1.Name = "lblB1"
+        Me.lblB1.Size = New System.Drawing.Size(100, 23)
+        Me.lblB1.TabIndex = 38
+        Me.lblB1.Text = "TRIALTHON"
         '
         'Dashboard_admin
         '
@@ -305,18 +305,18 @@ Partial Class Dashboard_admin
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblP6)
+        Me.Controls.Add(Me.lblB6)
+        Me.Controls.Add(Me.lblP3)
+        Me.Controls.Add(Me.lblB3)
+        Me.Controls.Add(Me.lblP5)
+        Me.Controls.Add(Me.lblB5)
+        Me.Controls.Add(Me.lblP4)
+        Me.Controls.Add(Me.lblB4)
+        Me.Controls.Add(Me.lblP2)
+        Me.Controls.Add(Me.lblB2)
+        Me.Controls.Add(Me.lblP1)
+        Me.Controls.Add(Me.lblB1)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -340,16 +340,16 @@ Partial Class Dashboard_admin
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblP6 As Label
+    Friend WithEvents lblB6 As Label
+    Friend WithEvents lblP3 As Label
+    Friend WithEvents lblB3 As Label
+    Friend WithEvents lblP5 As Label
+    Friend WithEvents lblB5 As Label
+    Friend WithEvents lblP4 As Label
+    Friend WithEvents lblB4 As Label
+    Friend WithEvents lblP2 As Label
+    Friend WithEvents lblB2 As Label
+    Friend WithEvents lblP1 As Label
+    Friend WithEvents lblB1 As Label
 End Class

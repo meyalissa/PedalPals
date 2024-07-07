@@ -1,6 +1,4 @@
 ﻿Imports System.Data.OleDb
-Imports System.Diagnostics.Eventing
-
 Public Class booking
     Public Event AddRowRequested(place As String, bikeType As String, bookingDate As Date, bookingHour As Integer)
     Dim connection As New OleDbConnection(My.Settings.dataConnectionString)
@@ -71,7 +69,7 @@ Public Class booking
 
         connection.Close()
 
-        MessageBox.Show("You have made a bicycle booking", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("You have booked a bicycle rental.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ' Raise the event to add a row to the DataGridView in FormWithDataGridView if it is subscribed
         RaiseEvent AddRowRequested(selectedPlace, selectedType, bookingDate, bookingHour)
@@ -85,13 +83,10 @@ Public Class booking
         If typeBooking.SelectedItem IsNot Nothing AndAlso hourBooking.Text.Trim() <> "" Then
             connection.Open()
 
-            ' Get the selected bicycle type from the ComboBox
             Dim selectedTypeName As String = typeBooking.SelectedItem.ToString()
-
-            ' Get the number of hours from the NumericUpDown control
             Dim hours As Integer = CInt(hourBooking.Value)
 
-            ' Prepare the SQL command to fetch the price for the given bicycle type
+
             Dim cmdPrice As New OleDbCommand("SELECT hourly_price FROM bike WHERE type_name = ?", connection)
             cmdPrice.Parameters.AddWithValue("?", selectedTypeName)
 

@@ -33,7 +33,5 @@ Public Class dashboard_cust
         End If
     End Sub
 
-    Private Sub lbltest_Click(sender As Object, e As EventArgs) Handles lbltest.Click
 
-    End Sub
 End Class

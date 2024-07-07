@@ -49,7 +49,7 @@ Partial Class profile_cust
         Me.Label2.Location = New System.Drawing.Point(40, 36)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 48)
+        Me.Label2.Size = New System.Drawing.Size(125, 46)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Profile"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -108,7 +108,7 @@ Partial Class profile_cust
         Me.txtLastName.Location = New System.Drawing.Point(249, 311)
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(243, 29)
+        Me.txtLastName.Size = New System.Drawing.Size(243, 28)
         Me.txtLastName.TabIndex = 45
         '
         'txtcontact
@@ -117,7 +117,7 @@ Partial Class profile_cust
         Me.txtcontact.Location = New System.Drawing.Point(654, 214)
         Me.txtcontact.Margin = New System.Windows.Forms.Padding(4)
         Me.txtcontact.Name = "txtcontact"
-        Me.txtcontact.Size = New System.Drawing.Size(240, 29)
+        Me.txtcontact.Size = New System.Drawing.Size(240, 28)
         Me.txtcontact.TabIndex = 46
         '
         'txtFirstName
@@ -126,7 +126,7 @@ Partial Class profile_cust
         Me.txtFirstName.Location = New System.Drawing.Point(249, 262)
         Me.txtFirstName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(243, 29)
+        Me.txtFirstName.Size = New System.Drawing.Size(243, 28)
         Me.txtFirstName.TabIndex = 47
         '
         'txtusername
@@ -135,13 +135,13 @@ Partial Class profile_cust
         Me.txtusername.Location = New System.Drawing.Point(249, 214)
         Me.txtusername.Margin = New System.Windows.Forms.Padding(4)
         Me.txtusername.Name = "txtusername"
-        Me.txtusername.Size = New System.Drawing.Size(243, 29)
+        Me.txtusername.Size = New System.Drawing.Size(243, 28)
         Me.txtusername.TabIndex = 48
         '
         'btnUpdate
         '
         Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.944!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(499, 463)
+        Me.btnUpdate.Location = New System.Drawing.Point(491, 464)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(128, 47)
@@ -167,7 +167,7 @@ Partial Class profile_cust
         Me.txtEmail.Location = New System.Drawing.Point(654, 262)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(240, 29)
+        Me.txtEmail.Size = New System.Drawing.Size(240, 28)
         Me.txtEmail.TabIndex = 51
         '
         'Label7
@@ -188,7 +188,7 @@ Partial Class profile_cust
         Me.txtAddress.Location = New System.Drawing.Point(249, 363)
         Me.txtAddress.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(645, 29)
+        Me.txtAddress.Size = New System.Drawing.Size(645, 28)
         Me.txtAddress.TabIndex = 53
         '
         'profile_cust
