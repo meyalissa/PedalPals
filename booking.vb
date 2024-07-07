@@ -68,7 +68,7 @@ Public Class booking
 
         connection.Close()
 
-        MessageBox.Show("Record has been recorded", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("You have make a bicycle booking", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ' Raise the event to add a row to the DataGridView in FormWithDataGridView if it is subscribed
         RaiseEvent AddRowRequested(selectedPlace.Value, selectedType.Value, bookingDate, bookingHour)

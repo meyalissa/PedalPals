@@ -25,22 +25,18 @@ Partial Class myrent_cust
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(myrent_cust))
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PedalPalsDBDataSet1 = New PedalPals.PedalPalsDBDataSet1()
-        Me.MyRentalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MyRentalTableAdapter = New PedalPals.PedalPalsDBDataSet1TableAdapters.myRentalTableAdapter()
-        Me.TableAdapterManager = New PedalPals.PedalPalsDBDataSet1TableAdapters.TableAdapterManager()
         Me.MyRentalBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.MyRentalBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.MyRentalDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,11 +48,15 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.PedalPalsDBDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MyRentalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MyRentalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PedalPalsDBDataSet1 = New PedalPals.PedalPalsDBDataSet1()
+        Me.MyRentalTableAdapter = New PedalPals.PedalPalsDBDataSet1TableAdapters.myRentalTableAdapter()
+        Me.TableAdapterManager = New PedalPals.PedalPalsDBDataSet1TableAdapters.TableAdapterManager()
         CType(Me.MyRentalBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MyRentalBindingNavigator.SuspendLayout()
         CType(Me.MyRentalDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MyRentalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PedalPalsDBDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -75,33 +75,6 @@ Partial Class myrent_cust
         Me.Label2.Text = "My Rental"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PedalPalsDBDataSet1
-        '
-        Me.PedalPalsDBDataSet1.DataSetName = "PedalPalsDBDataSet1"
-        Me.PedalPalsDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'MyRentalBindingSource
-        '
-        Me.MyRentalBindingSource.DataMember = "myRental"
-        Me.MyRentalBindingSource.DataSource = Me.PedalPalsDBDataSet1
-        '
-        'MyRentalTableAdapter
-        '
-        Me.MyRentalTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.adminTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.bikeTableAdapter = Nothing
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.locationTableAdapter = Nothing
-        Me.TableAdapterManager.memberTableAdapter = Nothing
-        Me.TableAdapterManager.paymentTableAdapter = Nothing
-        Me.TableAdapterManager.RentalStatTableAdapter = Nothing
-        Me.TableAdapterManager.rentalTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = PedalPals.PedalPalsDBDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'MyRentalBindingNavigator
         '
         Me.MyRentalBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
@@ -117,9 +90,34 @@ Partial Class myrent_cust
         Me.MyRentalBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.MyRentalBindingNavigator.Name = "MyRentalBindingNavigator"
         Me.MyRentalBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.MyRentalBindingNavigator.Size = New System.Drawing.Size(1060, 29)
+        Me.MyRentalBindingNavigator.Size = New System.Drawing.Size(1060, 33)
         Me.MyRentalBindingNavigator.TabIndex = 14
         Me.MyRentalBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(30, 29)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(47, 29)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(30, 29)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -127,7 +125,7 @@ Partial Class myrent_cust
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(30, 21)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(30, 29)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -136,34 +134,28 @@ Partial Class myrent_cust
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(30, 21)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(30, 29)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 33)
         '
         'BindingNavigatorPositionItem
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.216!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 29)
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(47, 21)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 33)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -171,7 +163,7 @@ Partial Class myrent_cust
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(30, 25)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(30, 29)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -180,31 +172,13 @@ Partial Class myrent_cust
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(30, 25)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(30, 29)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(30, 25)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(30, 25)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 33)
         '
         'MyRentalBindingNavigatorSaveItem
         '
@@ -212,7 +186,7 @@ Partial Class myrent_cust
         Me.MyRentalBindingNavigatorSaveItem.Enabled = False
         Me.MyRentalBindingNavigatorSaveItem.Image = CType(resources.GetObject("MyRentalBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.MyRentalBindingNavigatorSaveItem.Name = "MyRentalBindingNavigatorSaveItem"
-        Me.MyRentalBindingNavigatorSaveItem.Size = New System.Drawing.Size(30, 25)
+        Me.MyRentalBindingNavigatorSaveItem.Size = New System.Drawing.Size(30, 29)
         Me.MyRentalBindingNavigatorSaveItem.Text = "Save Data"
         '
         'MyRentalDataGridView
@@ -301,6 +275,33 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         Me.DataGridViewTextBoxColumn9.Width = 130
         '
+        'MyRentalBindingSource
+        '
+        Me.MyRentalBindingSource.DataMember = "myRental"
+        Me.MyRentalBindingSource.DataSource = Me.PedalPalsDBDataSet1
+        '
+        'PedalPalsDBDataSet1
+        '
+        Me.PedalPalsDBDataSet1.DataSetName = "PedalPalsDBDataSet1"
+        Me.PedalPalsDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'MyRentalTableAdapter
+        '
+        Me.MyRentalTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.adminTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.bikeTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.locationTableAdapter = Nothing
+        Me.TableAdapterManager.memberTableAdapter = Nothing
+        Me.TableAdapterManager.paymentTableAdapter = Nothing
+        Me.TableAdapterManager.RentalStatTableAdapter = Nothing
+        Me.TableAdapterManager.rentalTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = PedalPals.PedalPalsDBDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'myrent_cust
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -315,12 +316,12 @@ Partial Class myrent_cust
         Me.Name = "myrent_cust"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "myrent_cust"
-        CType(Me.PedalPalsDBDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MyRentalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MyRentalBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MyRentalBindingNavigator.ResumeLayout(False)
         Me.MyRentalBindingNavigator.PerformLayout()
         CType(Me.MyRentalDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MyRentalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PedalPalsDBDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
