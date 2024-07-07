@@ -25,32 +25,25 @@ Partial Class members
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(members))
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtemail = New System.Windows.Forms.TextBox()
-        Me.txtcontact = New System.Windows.Forms.TextBox()
-        Me.txtmemID = New System.Windows.Forms.TextBox()
-        Me.txtusername = New System.Windows.Forms.TextBox()
-        Me.btnAddmem = New System.Windows.Forms.Button()
         Me.PedalPalsDBDataSet1 = New PedalPals.PedalPalsDBDataSet1()
         Me.MemberBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MemberTableAdapter = New PedalPals.PedalPalsDBDataSet1TableAdapters.memberTableAdapter()
         Me.TableAdapterManager = New PedalPals.PedalPalsDBDataSet1TableAdapters.TableAdapterManager()
         Me.MemberBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.MemberBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.RentalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RentalTableAdapter = New PedalPals.PedalPalsDBDataSet1TableAdapters.rentalTableAdapter()
         Me.MemberDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,6 +57,7 @@ Partial Class members
         CType(Me.MemberBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MemberBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MemberBindingNavigator.SuspendLayout()
+        CType(Me.RentalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MemberDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -82,96 +76,6 @@ Partial Class members
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Members"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Malgun Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(109, 126)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(104, 21)
-        Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Member ID :"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Malgun Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(109, 160)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(105, 21)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Username   :"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Malgun Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(436, 123)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(106, 21)
-        Me.Label4.TabIndex = 16
-        Me.Label4.Text = "Email         :"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Malgun Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label5.Location = New System.Drawing.Point(436, 158)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(105, 21)
-        Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Contact No :"
-        '
-        'txtemail
-        '
-        Me.txtemail.Location = New System.Drawing.Point(551, 123)
-        Me.txtemail.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtemail.Name = "txtemail"
-        Me.txtemail.Size = New System.Drawing.Size(244, 22)
-        Me.txtemail.TabIndex = 20
-        '
-        'txtcontact
-        '
-        Me.txtcontact.Location = New System.Drawing.Point(551, 158)
-        Me.txtcontact.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtcontact.Name = "txtcontact"
-        Me.txtcontact.Size = New System.Drawing.Size(244, 22)
-        Me.txtcontact.TabIndex = 21
-        '
-        'txtmemID
-        '
-        Me.txtmemID.Location = New System.Drawing.Point(219, 126)
-        Me.txtmemID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtmemID.Name = "txtmemID"
-        Me.txtmemID.Size = New System.Drawing.Size(187, 22)
-        Me.txtmemID.TabIndex = 22
-        '
-        'txtusername
-        '
-        Me.txtusername.Location = New System.Drawing.Point(219, 160)
-        Me.txtusername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtusername.Name = "txtusername"
-        Me.txtusername.Size = New System.Drawing.Size(187, 22)
-        Me.txtusername.TabIndex = 23
-        '
-        'btnAddmem
-        '
-        Me.btnAddmem.Location = New System.Drawing.Point(839, 123)
-        Me.btnAddmem.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnAddmem.Name = "btnAddmem"
-        Me.btnAddmem.Size = New System.Drawing.Size(100, 28)
-        Me.btnAddmem.TabIndex = 24
-        Me.btnAddmem.Text = "ADD"
-        Me.btnAddmem.UseVisualStyleBackColor = True
         '
         'PedalPalsDBDataSet1
         '
@@ -217,13 +121,38 @@ Partial Class members
         Me.MemberBindingNavigator.TabIndex = 25
         Me.MemberBindingNavigator.Text = "BindingNavigator1"
         '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(30, 25)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(47, 29)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(30, 29)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(30, 25)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(30, 29)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -232,13 +161,13 @@ Partial Class members
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(30, 25)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(30, 29)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 29)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 33)
         '
         'BindingNavigatorPositionItem
         '
@@ -250,17 +179,10 @@ Partial Class members
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(47, 25)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 29)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 33)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -268,7 +190,7 @@ Partial Class members
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(30, 25)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(30, 29)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -277,39 +199,30 @@ Partial Class members
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(30, 25)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(30, 29)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 29)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(30, 25)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(30, 25)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 33)
         '
         'MemberBindingNavigatorSaveItem
         '
         Me.MemberBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.MemberBindingNavigatorSaveItem.Image = CType(resources.GetObject("MemberBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.MemberBindingNavigatorSaveItem.Name = "MemberBindingNavigatorSaveItem"
-        Me.MemberBindingNavigatorSaveItem.Size = New System.Drawing.Size(30, 25)
+        Me.MemberBindingNavigatorSaveItem.Size = New System.Drawing.Size(30, 29)
         Me.MemberBindingNavigatorSaveItem.Text = "Save Data"
+        '
+        'RentalBindingSource
+        '
+        Me.RentalBindingSource.DataMember = "rental"
+        Me.RentalBindingSource.DataSource = Me.PedalPalsDBDataSet1
+        '
+        'RentalTableAdapter
+        '
+        Me.RentalTableAdapter.ClearBeforeFill = True
         '
         'MemberDataGridView
         '
@@ -317,11 +230,11 @@ Partial Class members
         Me.MemberDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MemberDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.MemberDataGridView.DataSource = Me.MemberBindingSource
-        Me.MemberDataGridView.Location = New System.Drawing.Point(111, 233)
+        Me.MemberDataGridView.Location = New System.Drawing.Point(48, 160)
         Me.MemberDataGridView.Name = "MemberDataGridView"
         Me.MemberDataGridView.RowHeadersWidth = 53
         Me.MemberDataGridView.RowTemplate.Height = 24
-        Me.MemberDataGridView.Size = New System.Drawing.Size(828, 386)
+        Me.MemberDataGridView.Size = New System.Drawing.Size(951, 435)
         Me.MemberDataGridView.TabIndex = 25
         '
         'DataGridViewTextBoxColumn1
@@ -396,18 +309,9 @@ Partial Class members
         Me.ClientSize = New System.Drawing.Size(1060, 682)
         Me.Controls.Add(Me.MemberDataGridView)
         Me.Controls.Add(Me.MemberBindingNavigator)
-        Me.Controls.Add(Me.btnAddmem)
-        Me.Controls.Add(Me.txtusername)
-        Me.Controls.Add(Me.txtmemID)
-        Me.Controls.Add(Me.txtcontact)
-        Me.Controls.Add(Me.txtemail)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "members"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "members"
@@ -416,6 +320,7 @@ Partial Class members
         CType(Me.MemberBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MemberBindingNavigator.ResumeLayout(False)
         Me.MemberBindingNavigator.PerformLayout()
+        CType(Me.RentalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MemberDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -423,15 +328,6 @@ Partial Class members
     End Sub
 
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtemail As TextBox
-    Friend WithEvents txtcontact As TextBox
-    Friend WithEvents txtmemID As TextBox
-    Friend WithEvents txtusername As TextBox
-    Friend WithEvents btnAddmem As Button
     Friend WithEvents PedalPalsDBDataSet1 As PedalPalsDBDataSet1
     Friend WithEvents MemberBindingSource As BindingSource
     Friend WithEvents MemberTableAdapter As PedalPalsDBDataSet1TableAdapters.memberTableAdapter
@@ -449,6 +345,8 @@ Partial Class members
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents MemberBindingNavigatorSaveItem As ToolStripButton
+    Friend WithEvents RentalBindingSource As BindingSource
+    Friend WithEvents RentalTableAdapter As PedalPalsDBDataSet1TableAdapters.rentalTableAdapter
     Friend WithEvents MemberDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn

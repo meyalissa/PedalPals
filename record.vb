@@ -1,47 +1,57 @@
 ﻿Imports System.Data.OleDb
 
 Public Class Record
-    Private connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\myData\PedalPalsDB.accdb"
-    Private connection As OleDbConnection
-
-    Private Sub RentalBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles RentalBindingNavigatorSaveItem.Click
+    Private Sub RentalStatBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
-        Me.RentalBindingSource.EndEdit()
+        Me.RentalStatBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.PedalPalsDBDataSet1)
     End Sub
 
-    Private Sub Record_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PedalPalsDBDataSet1.rental' table. You can move, or remove it, as needed.
-        Me.RentalTableAdapter.Fill(Me.PedalPalsDBDataSet1.rental)
-        connection = New OleDbConnection(connectionString)
-    End Sub
-
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Dim bookID As String = txtBookID.Text
+        Dim rentID As Integer = Integer.Parse(txtBookID.Text)
         Dim status As String = ddStatus.SelectedItem.ToString()
 
-        If String.IsNullOrEmpty(bookID) OrElse String.IsNullOrEmpty(status) Then
-            MessageBox.Show("Please enter a valid Book ID and select a status.")
-            Return
-        End If
+        UpdateRentStatus(rentID, status)
+    End Sub
 
-        Dim query As String = "UPDATE rental SET status = @Status WHERE rent_id = @BookID"
+    Private Sub Record_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Load data into the DataGridView on form load
+        LoadRentalData()
+    End Sub
 
-        Using command As New OleDbCommand(query, connection)
-            command.Parameters.AddWithValue("@Status", status)
-            command.Parameters.AddWithValue("@BookID", bookID)
-
+    Private Sub UpdateRentStatus(rentID As Integer, status As String)
+        ' Adjust the connection string to match your settings
+        Using connection As New OleDbConnection(My.Settings.dataConnectionString)
             connection.Open()
-            Dim rowsAffected As Integer = command.ExecuteNonQuery()
-            connection.Close()
+            Dim query As String = "UPDATE RentalStat SET rent_status = ? WHERE rent_ID = ?"
+            Using command As New OleDbCommand(query, connection)
+                command.Parameters.AddWithValue("?", status)
+                command.Parameters.AddWithValue("?", rentID)
 
-            If rowsAffected > 0 Then
-                MessageBox.Show("Status updated successfully!")
-                ' Refresh the data grid view to reflect changes
-                Me.RentalTableAdapter.Fill(Me.PedalPalsDBDataSet1.rental)
-            Else
-                MessageBox.Show("Book ID not found.")
-            End If
+                Dim rowsAffected As Integer = command.ExecuteNonQuery()
+                If rowsAffected > 0 Then
+                    MsgBox("Rent status updated successfully.", MsgBoxStyle.Information)
+                    ' Refresh the DataGridView to reflect the update
+                    LoadRentalData()
+                Else
+                    MsgBox("Failed to update rent status.", MsgBoxStyle.Exclamation)
+                End If
+            End Using
+        End Using
+    End Sub
+
+    Private Sub LoadRentalData()
+        ' Load data into the DataGridView
+        Using connection As New OleDbConnection(My.Settings.dataConnectionString)
+            connection.Open()
+            Dim query As String = "SELECT * FROM RentalStat"
+            Using command As New OleDbCommand(query, connection)
+                Using adapter As New OleDbDataAdapter(command)
+                    Dim rentalData As New DataTable()
+                    adapter.Fill(rentalData)
+                    RentalStatDataGridView.DataSource = rentalData
+                End Using
+            End Using
         End Using
     End Sub
 End Class

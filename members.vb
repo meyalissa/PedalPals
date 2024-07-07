@@ -45,6 +45,8 @@
     End Sub
 
     Private Sub members_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'PedalPalsDBDataSet1.rental' table. You can move, or remove it, as needed.
+        Me.RentalTableAdapter.Fill(Me.PedalPalsDBDataSet1.rental)
         'TODO: This line of code loads data into the 'PedalPalsDBDataSet1.member' table. You can move, or remove it, as needed.
         Me.MemberTableAdapter.Fill(Me.PedalPalsDBDataSet1.member)
 

@@ -51,7 +51,7 @@ Partial Class booking
         Me.Label2.Location = New System.Drawing.Point(40, 36)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(154, 46)
+        Me.Label2.Size = New System.Drawing.Size(162, 48)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Booking"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -122,7 +122,7 @@ Partial Class booking
         Me.Label7.Location = New System.Drawing.Point(398, 408)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(77, 31)
+        Me.Label7.Size = New System.Drawing.Size(79, 32)
         Me.Label7.TabIndex = 24
         Me.Label7.Text = "Price :"
         '
@@ -149,7 +149,7 @@ Partial Class booking
         Me.lblPriceBooking.Location = New System.Drawing.Point(504, 408)
         Me.lblPriceBooking.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPriceBooking.Name = "lblPriceBooking"
-        Me.lblPriceBooking.Size = New System.Drawing.Size(27, 31)
+        Me.lblPriceBooking.Size = New System.Drawing.Size(27, 32)
         Me.lblPriceBooking.TabIndex = 26
         Me.lblPriceBooking.Text = "0"
         '
@@ -159,7 +159,7 @@ Partial Class booking
         Me.hourBooking.Location = New System.Drawing.Point(608, 281)
         Me.hourBooking.Margin = New System.Windows.Forms.Padding(4)
         Me.hourBooking.Name = "hourBooking"
-        Me.hourBooking.Size = New System.Drawing.Size(173, 29)
+        Me.hourBooking.Size = New System.Drawing.Size(173, 30)
         Me.hourBooking.TabIndex = 28
         '
         'dateBooking
@@ -170,7 +170,7 @@ Partial Class booking
         Me.dateBooking.Location = New System.Drawing.Point(204, 281)
         Me.dateBooking.Margin = New System.Windows.Forms.Padding(4)
         Me.dateBooking.Name = "dateBooking"
-        Me.dateBooking.Size = New System.Drawing.Size(309, 29)
+        Me.dateBooking.Size = New System.Drawing.Size(309, 30)
         Me.dateBooking.TabIndex = 29
         '
         'typeBooking
@@ -180,7 +180,7 @@ Partial Class booking
         Me.typeBooking.Location = New System.Drawing.Point(608, 227)
         Me.typeBooking.Margin = New System.Windows.Forms.Padding(4)
         Me.typeBooking.Name = "typeBooking"
-        Me.typeBooking.Size = New System.Drawing.Size(172, 29)
+        Me.typeBooking.Size = New System.Drawing.Size(172, 31)
         Me.typeBooking.TabIndex = 30
         '
         'placeBooking
@@ -190,7 +190,7 @@ Partial Class booking
         Me.placeBooking.Location = New System.Drawing.Point(204, 227)
         Me.placeBooking.Margin = New System.Windows.Forms.Padding(4)
         Me.placeBooking.Name = "placeBooking"
-        Me.placeBooking.Size = New System.Drawing.Size(309, 29)
+        Me.placeBooking.Size = New System.Drawing.Size(309, 31)
         Me.placeBooking.TabIndex = 31
         '
         'Button
