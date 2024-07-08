@@ -57,6 +57,9 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblLocation = New System.Windows.Forms.Label()
+        Me.ddLocation = New System.Windows.Forms.ComboBox()
+        Me.btnFilter = New System.Windows.Forms.Button()
         CType(Me.PedalPalsDBDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RentalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RentalBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -360,12 +363,47 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         Me.DataGridViewTextBoxColumn9.Width = 103
         '
+        'lblLocation
+        '
+        Me.lblLocation.AutoSize = True
+        Me.lblLocation.Font = New System.Drawing.Font("Malgun Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLocation.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblLocation.Location = New System.Drawing.Point(57, 597)
+        Me.lblLocation.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblLocation.Name = "lblLocation"
+        Me.lblLocation.Size = New System.Drawing.Size(83, 21)
+        Me.lblLocation.TabIndex = 33
+        Me.lblLocation.Text = "Location :"
+        '
+        'ddLocation
+        '
+        Me.ddLocation.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ddLocation.FormattingEnabled = True
+        Me.ddLocation.Location = New System.Drawing.Point(148, 592)
+        Me.ddLocation.Margin = New System.Windows.Forms.Padding(4)
+        Me.ddLocation.Name = "ddLocation"
+        Me.ddLocation.Size = New System.Drawing.Size(225, 31)
+        Me.ddLocation.TabIndex = 34
+        '
+        'btnFilter
+        '
+        Me.btnFilter.Location = New System.Drawing.Point(393, 594)
+        Me.btnFilter.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnFilter.Name = "btnFilter"
+        Me.btnFilter.Size = New System.Drawing.Size(100, 28)
+        Me.btnFilter.TabIndex = 35
+        Me.btnFilter.Text = "FILTER"
+        Me.btnFilter.UseVisualStyleBackColor = True
+        '
         'Record
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1060, 878)
+        Me.Controls.Add(Me.btnFilter)
+        Me.Controls.Add(Me.ddLocation)
+        Me.Controls.Add(Me.lblLocation)
         Me.Controls.Add(Me.RentalDataGridView)
         Me.Controls.Add(Me.RentalBindingNavigator)
         Me.Controls.Add(Me.ddStatus)
@@ -422,4 +460,7 @@ Partial Class Record
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents lblLocation As Label
+    Friend WithEvents ddLocation As ComboBox
+    Friend WithEvents btnFilter As Button
 End Class

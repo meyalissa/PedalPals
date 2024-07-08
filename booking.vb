@@ -57,14 +57,18 @@ Public Class booking
         ' Retrieve values from controls
         Dim bookingDate As Date = dateBooking.Value.Date ' Get the date value
         Dim bookingHour As Integer = CInt(hourBooking.Value) ' Get the integer value
+        Dim rentTimeStart As DateTime = bookingDate.AddHours(Now.Hour) ' Assuming booking starts at the current hour
+        Dim rentTimeEnd As DateTime = rentTimeStart.AddHours(bookingHour)
 
         ' Prepare the SQL query with parameterized values to prevent SQL injection
-        Dim cmd As New OleDbCommand("INSERT INTO Rental (mem_id, location_id, bike_id, rent_date, rent_hour, rent_status) VALUES (?, ?, ?, ?, ?, 'Booked')", connection)
+        Dim cmd As New OleDbCommand("INSERT INTO Rental (mem_id, location_id, bike_id, rent_date, rent_hour, rent_status, rent_time_start, rent_time_end) VALUES (?, ?, ?, ?, ?, 'Booked', ?, ?)", connection)
         cmd.Parameters.AddWithValue("@userid", userID)
         cmd.Parameters.AddWithValue("@place", placeID)
         cmd.Parameters.AddWithValue("@type", bikeID)
         cmd.Parameters.AddWithValue("@date", bookingDate)
         cmd.Parameters.AddWithValue("@hour", bookingHour)
+        cmd.Parameters.AddWithValue("@start", rentTimeStart)
+        cmd.Parameters.AddWithValue("@end", rentTimeEnd)
 
         ' Execute the query
         cmd.ExecuteNonQuery()
@@ -79,6 +83,7 @@ Public Class booking
         ' Show the payment form
         payment.Show()
     End Sub
+
 
     'Calculate Total Price
     Private Sub btnCalcPrice_Click(sender As Object, e As EventArgs) Handles btnCalcPrice.Click
