@@ -39,9 +39,10 @@ Partial Class home
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label1.Font = New System.Drawing.Font("Malgun Gothic", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.Label1.Location = New System.Drawing.Point(361, 44)
+        Me.Label1.Location = New System.Drawing.Point(481, 54)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(270, 71)
+        Me.Label1.Size = New System.Drawing.Size(354, 93)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "PedalPals"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -54,9 +55,10 @@ Partial Class home
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label2.Font = New System.Drawing.Font("Malgun Gothic", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.BurlyWood
-        Me.Label2.Location = New System.Drawing.Point(342, 115)
+        Me.Label2.Location = New System.Drawing.Point(456, 142)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(289, 37)
+        Me.Label2.Size = New System.Drawing.Size(388, 48)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Let's Rent For A Ride"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -69,9 +71,10 @@ Partial Class home
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label3.Font = New System.Drawing.Font("Malgun Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.Label3.Location = New System.Drawing.Point(391, 217)
+        Me.Label3.Location = New System.Drawing.Point(521, 267)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(213, 25)
+        Me.Label3.Size = New System.Drawing.Size(278, 35)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Welcome To PedalPals!"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -84,9 +87,10 @@ Partial Class home
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label4.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.Label4.Location = New System.Drawing.Point(433, 265)
+        Me.Label4.Location = New System.Drawing.Point(577, 326)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(136, 21)
+        Me.Label4.Size = New System.Drawing.Size(169, 30)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Let's Get Started"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -101,9 +105,10 @@ Partial Class home
         Me.btnLogin1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin1.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin1.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.btnLogin1.Location = New System.Drawing.Point(446, 328)
+        Me.btnLogin1.Location = New System.Drawing.Point(595, 404)
+        Me.btnLogin1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnLogin1.Name = "btnLogin1"
-        Me.btnLogin1.Size = New System.Drawing.Size(104, 33)
+        Me.btnLogin1.Size = New System.Drawing.Size(139, 41)
         Me.btnLogin1.TabIndex = 7
         Me.btnLogin1.Text = "LOG IN"
         Me.btnLogin1.UseVisualStyleBackColor = False
@@ -118,9 +123,10 @@ Partial Class home
         Me.btnAdmin1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdmin1.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdmin1.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.btnAdmin1.Location = New System.Drawing.Point(313, 328)
+        Me.btnAdmin1.Location = New System.Drawing.Point(417, 404)
+        Me.btnAdmin1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdmin1.Name = "btnAdmin1"
-        Me.btnAdmin1.Size = New System.Drawing.Size(104, 33)
+        Me.btnAdmin1.Size = New System.Drawing.Size(139, 41)
         Me.btnAdmin1.TabIndex = 8
         Me.btnAdmin1.Text = "ADMIN"
         Me.btnAdmin1.UseVisualStyleBackColor = False
@@ -135,21 +141,22 @@ Partial Class home
         Me.btnSignup1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSignup1.Font = New System.Drawing.Font("Malgun Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSignup1.ForeColor = System.Drawing.Color.AntiqueWhite
-        Me.btnSignup1.Location = New System.Drawing.Point(579, 328)
+        Me.btnSignup1.Location = New System.Drawing.Point(772, 404)
+        Me.btnSignup1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSignup1.Name = "btnSignup1"
-        Me.btnSignup1.Size = New System.Drawing.Size(104, 33)
+        Me.btnSignup1.Size = New System.Drawing.Size(139, 41)
         Me.btnSignup1.TabIndex = 6
         Me.btnSignup1.Text = "SIGN UP"
         Me.btnSignup1.UseVisualStyleBackColor = False
         '
         'home
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.BackgroundImage = Global.PedalPals.My.Resources.Resources.background_1_
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(992, 578)
+        Me.ClientSize = New System.Drawing.Size(1323, 711)
         Me.Controls.Add(Me.btnAdmin1)
         Me.Controls.Add(Me.btnLogin1)
         Me.Controls.Add(Me.btnSignup1)
@@ -159,6 +166,7 @@ Partial Class home
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "home"

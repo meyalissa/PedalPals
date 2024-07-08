@@ -99,6 +99,7 @@ Partial Class members
         Me.TableAdapterManager.locationTableAdapter = Nothing
         Me.TableAdapterManager.memberTableAdapter = Me.MemberTableAdapter
         Me.TableAdapterManager.paymentTableAdapter = Nothing
+        Me.TableAdapterManager.RentalStatTableAdapter = Nothing
         Me.TableAdapterManager.rentalTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = PedalPals.PedalPalsDBDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -133,7 +134,7 @@ Partial Class members
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(47, 29)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(47, 25)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -143,7 +144,7 @@ Partial Class members
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(30, 29)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(30, 25)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
@@ -152,7 +153,7 @@ Partial Class members
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(30, 29)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(30, 25)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -161,13 +162,13 @@ Partial Class members
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(30, 29)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(30, 25)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 33)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 29)
         '
         'BindingNavigatorPositionItem
         '
@@ -182,7 +183,7 @@ Partial Class members
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 33)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 29)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -190,7 +191,7 @@ Partial Class members
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(30, 29)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(30, 25)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -199,20 +200,20 @@ Partial Class members
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(30, 29)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(30, 25)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 33)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 29)
         '
         'MemberBindingNavigatorSaveItem
         '
         Me.MemberBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.MemberBindingNavigatorSaveItem.Image = CType(resources.GetObject("MemberBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.MemberBindingNavigatorSaveItem.Name = "MemberBindingNavigatorSaveItem"
-        Me.MemberBindingNavigatorSaveItem.Size = New System.Drawing.Size(30, 29)
+        Me.MemberBindingNavigatorSaveItem.Size = New System.Drawing.Size(30, 25)
         Me.MemberBindingNavigatorSaveItem.Text = "Save Data"
         '
         'RentalBindingSource
@@ -227,6 +228,9 @@ Partial Class members
         'MemberDataGridView
         '
         Me.MemberDataGridView.AutoGenerateColumns = False
+        Me.MemberDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.MemberDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.MemberDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.MemberDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MemberDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.MemberDataGridView.DataSource = Me.MemberBindingSource
@@ -243,7 +247,7 @@ Partial Class members
         Me.DataGridViewTextBoxColumn1.HeaderText = "mem_id"
         Me.DataGridViewTextBoxColumn1.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 130
+        Me.DataGridViewTextBoxColumn1.Width = 87
         '
         'DataGridViewTextBoxColumn2
         '
@@ -251,7 +255,7 @@ Partial Class members
         Me.DataGridViewTextBoxColumn2.HeaderText = "mem_username"
         Me.DataGridViewTextBoxColumn2.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Width = 130
+        Me.DataGridViewTextBoxColumn2.Width = 136
         '
         'DataGridViewTextBoxColumn3
         '
@@ -259,7 +263,7 @@ Partial Class members
         Me.DataGridViewTextBoxColumn3.HeaderText = "mem_password"
         Me.DataGridViewTextBoxColumn3.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 130
+        Me.DataGridViewTextBoxColumn3.Width = 135
         '
         'DataGridViewTextBoxColumn4
         '
@@ -267,7 +271,7 @@ Partial Class members
         Me.DataGridViewTextBoxColumn4.HeaderText = "mem_first_name"
         Me.DataGridViewTextBoxColumn4.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Width = 130
+        Me.DataGridViewTextBoxColumn4.Width = 137
         '
         'DataGridViewTextBoxColumn5
         '
@@ -275,7 +279,7 @@ Partial Class members
         Me.DataGridViewTextBoxColumn5.HeaderText = "mem_last_name"
         Me.DataGridViewTextBoxColumn5.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.Width = 130
+        Me.DataGridViewTextBoxColumn5.Width = 138
         '
         'DataGridViewTextBoxColumn6
         '
@@ -283,7 +287,7 @@ Partial Class members
         Me.DataGridViewTextBoxColumn6.HeaderText = "mem_phone_no"
         Me.DataGridViewTextBoxColumn6.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 130
+        Me.DataGridViewTextBoxColumn6.Width = 136
         '
         'DataGridViewTextBoxColumn7
         '
@@ -291,7 +295,7 @@ Partial Class members
         Me.DataGridViewTextBoxColumn7.HeaderText = "mem_email"
         Me.DataGridViewTextBoxColumn7.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Width = 130
+        Me.DataGridViewTextBoxColumn7.Width = 109
         '
         'DataGridViewTextBoxColumn8
         '
@@ -299,7 +303,7 @@ Partial Class members
         Me.DataGridViewTextBoxColumn8.HeaderText = "mem_address"
         Me.DataGridViewTextBoxColumn8.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.Width = 130
+        Me.DataGridViewTextBoxColumn8.Width = 126
         '
         'members
         '

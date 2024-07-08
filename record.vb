@@ -1,6 +1,7 @@
 ﻿Imports System.Data.OleDb
 
 Public Class Record
+    Dim connection As New OleDbConnection(My.Settings.dataConnectionString)
     Private Sub RentalStatBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.RentalBindingSource.EndEdit()
@@ -15,12 +16,20 @@ Public Class Record
     End Sub
 
     Private Sub Record_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PedalPalsDBDataSet1.rental' table. You can move, or remove it, as needed.
-        Me.RentalTableAdapter.Fill(Me.PedalPalsDBDataSet1.rental)
-        'TODO: This line of code loads data into the 'PedalPalsDBDataSet1.rental' table. You can move, or remove it, as needed.
-        Me.RentalTableAdapter.Fill(Me.PedalPalsDBDataSet1.rental)
         ' Load data into the DataGridView on form load
         LoadRentalData()
+
+        connection.Open()
+        Dim cmdAdd As New OleDbCommand("SELECT address FROM location", connection)
+        Using readerAdd As OleDbDataReader = cmdAdd.ExecuteReader()
+            ' Add "None" option
+            ddLocation.Items.Add("None")
+            While readerAdd.Read()
+                ddLocation.Items.Add(readerAdd("address").ToString())
+            End While
+        End Using
+
+        connection.Close()
     End Sub
 
     Private Sub UpdateRentStatus(rentID As Integer, status As String)
@@ -64,6 +73,41 @@ Public Class Record
         Me.RentalBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.PedalPalsDBDataSet1)
 
+    End Sub
+
+    Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
+        ' Retrieve selected place
+        Dim selectedPlace As String = ddLocation.SelectedItem.ToString()
+
+        ' Check if "None" is selected
+        If selectedPlace = "None" Then
+            ' Retrieve all data
+            LoadRentalData()
+        Else
+            ' Open the connection
+            connection.Open()
+
+            ' Get the location_id for the selected place
+            Dim placeID As Integer
+            Using cmdPlaceID As New OleDbCommand("SELECT location_id FROM location WHERE address = ?", connection)
+                cmdPlaceID.Parameters.AddWithValue("?", selectedPlace)
+                placeID = Convert.ToInt32(cmdPlaceID.ExecuteScalar())
+            End Using
+
+            ' Filter the Rental data based on the location_id
+            Using cmdFilter As New OleDbCommand("SELECT * FROM Rental WHERE location_id = ? ORDER BY rent_id DESC;", connection)
+                cmdFilter.Parameters.AddWithValue("?", placeID)
+
+                Using adapter As New OleDbDataAdapter(cmdFilter)
+                    Dim rentalData As New DataTable()
+                    adapter.Fill(rentalData)
+                    RentalDataGridView.DataSource = rentalData
+                End Using
+            End Using
+
+            ' Close the connection
+            connection.Close()
+        End If
     End Sub
 
 

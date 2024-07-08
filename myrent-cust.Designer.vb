@@ -192,6 +192,9 @@ Partial Class myrent_cust
         'MyRentalDataGridView
         '
         Me.MyRentalDataGridView.AutoGenerateColumns = False
+        Me.MyRentalDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.MyRentalDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.MyRentalDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.MyRentalDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MyRentalDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
         Me.MyRentalDataGridView.DataSource = Me.MyRentalBindingSource
@@ -208,7 +211,7 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn1.HeaderText = "rent_id"
         Me.DataGridViewTextBoxColumn1.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 130
+        Me.DataGridViewTextBoxColumn1.Width = 79
         '
         'DataGridViewTextBoxColumn2
         '
@@ -216,7 +219,7 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn2.HeaderText = "rent_date"
         Me.DataGridViewTextBoxColumn2.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Width = 130
+        Me.DataGridViewTextBoxColumn2.Width = 95
         '
         'DataGridViewTextBoxColumn3
         '
@@ -224,7 +227,7 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn3.HeaderText = "rent_hour"
         Me.DataGridViewTextBoxColumn3.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 130
+        Me.DataGridViewTextBoxColumn3.Width = 94
         '
         'DataGridViewTextBoxColumn4
         '
@@ -232,7 +235,7 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn4.HeaderText = "type_name"
         Me.DataGridViewTextBoxColumn4.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Width = 130
+        Me.DataGridViewTextBoxColumn4.Width = 106
         '
         'DataGridViewTextBoxColumn5
         '
@@ -240,7 +243,7 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn5.HeaderText = "rent_time_start"
         Me.DataGridViewTextBoxColumn5.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.Width = 130
+        Me.DataGridViewTextBoxColumn5.Width = 125
         '
         'DataGridViewTextBoxColumn6
         '
@@ -248,7 +251,7 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn6.HeaderText = "mem_id"
         Me.DataGridViewTextBoxColumn6.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 130
+        Me.DataGridViewTextBoxColumn6.Width = 87
         '
         'DataGridViewTextBoxColumn7
         '
@@ -257,7 +260,7 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn7.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Width = 130
+        Me.DataGridViewTextBoxColumn7.Width = 101
         '
         'DataGridViewTextBoxColumn8
         '
@@ -265,7 +268,7 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn8.HeaderText = "address"
         Me.DataGridViewTextBoxColumn8.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.Width = 130
+        Me.DataGridViewTextBoxColumn8.Width = 89
         '
         'DataGridViewTextBoxColumn9
         '
@@ -273,7 +276,7 @@ Partial Class myrent_cust
         Me.DataGridViewTextBoxColumn9.HeaderText = "rent_status"
         Me.DataGridViewTextBoxColumn9.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.Width = 130
+        Me.DataGridViewTextBoxColumn9.Width = 103
         '
         'MyRentalBindingSource
         '

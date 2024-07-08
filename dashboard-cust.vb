@@ -32,6 +32,4 @@ Public Class dashboard_cust
             connection.Close()
         End If
     End Sub
-
-
 End Class

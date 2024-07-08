@@ -57,6 +57,9 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblLocation = New System.Windows.Forms.Label()
+        Me.ddLocation = New System.Windows.Forms.ComboBox()
+        Me.btnFilter = New System.Windows.Forms.Button()
         CType(Me.PedalPalsDBDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RentalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RentalBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,7 +85,7 @@ Partial Class Record
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(631, 112)
+        Me.btnUpdate.Location = New System.Drawing.Point(624, 113)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(100, 28)
@@ -275,6 +278,9 @@ Partial Class Record
         'RentalDataGridView
         '
         Me.RentalDataGridView.AutoGenerateColumns = False
+        Me.RentalDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.RentalDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.RentalDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.RentalDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.RentalDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
         Me.RentalDataGridView.DataSource = Me.RentalBindingSource
@@ -282,7 +288,7 @@ Partial Class Record
         Me.RentalDataGridView.Name = "RentalDataGridView"
         Me.RentalDataGridView.RowHeadersWidth = 53
         Me.RentalDataGridView.RowTemplate.Height = 24
-        Me.RentalDataGridView.Size = New System.Drawing.Size(924, 469)
+        Me.RentalDataGridView.Size = New System.Drawing.Size(924, 360)
         Me.RentalDataGridView.TabIndex = 32
         '
         'DataGridViewTextBoxColumn1
@@ -291,7 +297,7 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn1.HeaderText = "rent_id"
         Me.DataGridViewTextBoxColumn1.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 130
+        Me.DataGridViewTextBoxColumn1.Width = 79
         '
         'DataGridViewTextBoxColumn2
         '
@@ -299,7 +305,7 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn2.HeaderText = "rent_date"
         Me.DataGridViewTextBoxColumn2.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Width = 130
+        Me.DataGridViewTextBoxColumn2.Width = 95
         '
         'DataGridViewTextBoxColumn3
         '
@@ -307,7 +313,7 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn3.HeaderText = "rent_hour"
         Me.DataGridViewTextBoxColumn3.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 130
+        Me.DataGridViewTextBoxColumn3.Width = 94
         '
         'DataGridViewTextBoxColumn4
         '
@@ -315,7 +321,7 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn4.HeaderText = "bike_id"
         Me.DataGridViewTextBoxColumn4.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Width = 130
+        Me.DataGridViewTextBoxColumn4.Width = 83
         '
         'DataGridViewTextBoxColumn5
         '
@@ -323,7 +329,7 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn5.HeaderText = "mem_id"
         Me.DataGridViewTextBoxColumn5.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.Width = 130
+        Me.DataGridViewTextBoxColumn5.Width = 87
         '
         'DataGridViewTextBoxColumn6
         '
@@ -331,7 +337,7 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn6.HeaderText = "location_id"
         Me.DataGridViewTextBoxColumn6.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 130
+        Me.DataGridViewTextBoxColumn6.Width = 104
         '
         'DataGridViewTextBoxColumn7
         '
@@ -339,7 +345,7 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn7.HeaderText = "rent_time_start"
         Me.DataGridViewTextBoxColumn7.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Width = 130
+        Me.DataGridViewTextBoxColumn7.Width = 125
         '
         'DataGridViewTextBoxColumn8
         '
@@ -347,7 +353,7 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn8.HeaderText = "rent_time_end"
         Me.DataGridViewTextBoxColumn8.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.Width = 130
+        Me.DataGridViewTextBoxColumn8.Width = 123
         '
         'DataGridViewTextBoxColumn9
         '
@@ -355,7 +361,39 @@ Partial Class Record
         Me.DataGridViewTextBoxColumn9.HeaderText = "rent_status"
         Me.DataGridViewTextBoxColumn9.MinimumWidth = 7
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.Width = 130
+        Me.DataGridViewTextBoxColumn9.Width = 103
+        '
+        'lblLocation
+        '
+        Me.lblLocation.AutoSize = True
+        Me.lblLocation.Font = New System.Drawing.Font("Malgun Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLocation.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblLocation.Location = New System.Drawing.Point(57, 597)
+        Me.lblLocation.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblLocation.Name = "lblLocation"
+        Me.lblLocation.Size = New System.Drawing.Size(83, 21)
+        Me.lblLocation.TabIndex = 33
+        Me.lblLocation.Text = "Location :"
+        '
+        'ddLocation
+        '
+        Me.ddLocation.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ddLocation.FormattingEnabled = True
+        Me.ddLocation.Location = New System.Drawing.Point(148, 592)
+        Me.ddLocation.Margin = New System.Windows.Forms.Padding(4)
+        Me.ddLocation.Name = "ddLocation"
+        Me.ddLocation.Size = New System.Drawing.Size(225, 31)
+        Me.ddLocation.TabIndex = 34
+        '
+        'btnFilter
+        '
+        Me.btnFilter.Location = New System.Drawing.Point(393, 594)
+        Me.btnFilter.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnFilter.Name = "btnFilter"
+        Me.btnFilter.Size = New System.Drawing.Size(100, 28)
+        Me.btnFilter.TabIndex = 35
+        Me.btnFilter.Text = "FILTER"
+        Me.btnFilter.UseVisualStyleBackColor = True
         '
         'Record
         '
@@ -363,6 +401,9 @@ Partial Class Record
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1060, 878)
+        Me.Controls.Add(Me.btnFilter)
+        Me.Controls.Add(Me.ddLocation)
+        Me.Controls.Add(Me.lblLocation)
         Me.Controls.Add(Me.RentalDataGridView)
         Me.Controls.Add(Me.RentalBindingNavigator)
         Me.Controls.Add(Me.ddStatus)
@@ -419,4 +460,7 @@ Partial Class Record
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents lblLocation As Label
+    Friend WithEvents ddLocation As ComboBox
+    Friend WithEvents btnFilter As Button
 End Class
