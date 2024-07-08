@@ -9,9 +9,7 @@ Public Class login
         If txtUsername.Text = Nothing Or txtPass.Text = Nothing Then
             MsgBox("Fill all the required fields", MsgBoxStyle.Exclamation)
         Else
-            If connection.State = ConnectionState.Closed Then
-                connection.Open()
-            End If
+            connection.Open()
 
             Dim cmd As New OleDbCommand("SELECT mem_id FROM member WHERE mem_username=? AND mem_password=?", connection)
             cmd.Parameters.AddWithValue("@1", txtUsername.Text)
@@ -22,7 +20,7 @@ Public Class login
             If reader.HasRows Then
                 reader.Read()
                 Dim memberId As Integer = reader("mem_id")
-                MsgBox("Login succeed", MsgBoxStyle.Information)
+                MsgBox("You have successfully logged in", MsgBoxStyle.Information)
 
                 ' Store the logged-in username and user ID
 
@@ -36,6 +34,13 @@ Public Class login
             reader.Close()
         End If
         Me.Hide() ' Hide the login form
+        connection.Close()
+
+        txtUsername.Clear()
+        txtPass.Clear()
+
+
+
     End Sub
 
     Private Sub btnBack1_Click(sender As Object, e As EventArgs) Handles btnBack1.Click 'Button Back3

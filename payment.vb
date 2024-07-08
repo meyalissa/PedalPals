@@ -19,7 +19,7 @@ Public Class payment
 
     Private Sub btnBook1_Click(sender As Object, e As EventArgs) Handles btnBook1.Click
         ' Show the message box indicating that the payment is successful
-        MessageBox.Show("Payment successful!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("Payment successful", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ' Close the form
         Me.Close()

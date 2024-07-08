@@ -28,7 +28,7 @@ Public Class login_admin
             If reader.HasRows Then
                 reader.Read()
                 logInuserID = reader("adm_id")
-                MsgBox("Login succeeded", MsgBoxStyle.Information)
+                MsgBox("You have successfully logged in", MsgBoxStyle.Information)
 
                 ' Show the sidebar or main form
                 sidebar_admin.Show()

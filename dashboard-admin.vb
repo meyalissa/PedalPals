@@ -1,73 +1,28 @@
-﻿Public Class Dashboard_admin
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+﻿Imports System.Data.OleDb
 
-    End Sub
+Public Class Dashboard_admin
+    Dim connection As New OleDbConnection(My.Settings.dataConnectionString)
+    Private Sub Dashboard_admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        connection.Open()
 
-    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+        Dim cmd As New OleDbCommand("SELECT type_name, hourly_price FROM bike", connection)
 
-    End Sub
+        Using reader As OleDbDataReader = cmd.ExecuteReader()
+            Dim index As Integer = 1
+            While reader.Read()
+                Dim lblType As Label = CType(Me.Controls("lblB" & index), Label)
+                Dim lblPrice As Label = CType(Me.Controls("lblP" & index), Label)
 
-    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+                If lblType IsNot Nothing AndAlso lblPrice IsNot Nothing Then
+                    lblType.Text = reader("type_name").ToString()
+                    lblType.TextAlign = ContentAlignment.MiddleCenter
+                    lblPrice.Text = "Price Per Hour: RM" & reader("hourly_price").ToString()
 
-    End Sub
+                End If
 
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-
-    End Sub
-
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-
-    End Sub
-
-    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
-
-    End Sub
-
-    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
-
-    End Sub
-
-    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
-
-    End Sub
-
-    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-
-    End Sub
-
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-
-    End Sub
-
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
-
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
+                index += 1
+            End While
+        End Using
+        connection.Close()
     End Sub
 End Class
